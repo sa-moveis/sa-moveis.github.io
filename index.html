@@ -64,7 +64,6 @@
                 </div>
             </div>
         </section>
-        
 
  <!-- <section class="categorias1">
             <h1>Categorias</h1>
@@ -120,12 +119,42 @@
                             R$ 650,00
                         </p>
                         <p class="parcelas">
-                            Ou 10 x de 75,00 no Cartão
+                            10 x de 75,00 no Cartão
                         </p>
                     </a>
                 </div>
 
                 <div class="c2div2">
+                    <a href="pagina-produtos/produto4.html">
+                        <img src="imagens/imgp/produtos4/produtoA.jpeg" alt="">
+                        <p class="produto">
+                            Guarda Roupa Com <br>Espelho
+                        </p>
+                        <p class="valor">
+                            R$ 1.100,00
+                        </p>
+                        <p class="parcelas">
+                            12 x de 105,00 no Cartão
+                        </p>
+                    </a>
+                </div>
+
+                <div class="c2div4">
+                    <a href="">
+                        <img src="imagens/imgp/produtos6/produtob.jpeg" alt="">
+                        <p class="produto">
+                            Roupeiro Casal <br>Andorinha 
+                        </p>
+                        <p class="valor">
+                            R$ 1.299,99
+                        </p>
+                        <p class="parcelas">
+                            10 x de 125,00 no Cartão
+                        </p>
+                        </a>
+                    </div>
+
+                    <div class="c2div3">
                     <a href="pagina-produtos/produto.html">
                     <img src="imagens/imgp/produtos1/produtoA.jpeg" alt="">
                     <p class="produto">
@@ -139,8 +168,28 @@
                     </p>
                     </a>
                 </div>
+                
+            </div>
 
-                <div class="c2div3">
+            <div class="subcategorias2">
+
+
+                <div class="c2div4">
+                    <a href="pagina-produtos/produto5.html">
+                        <img src="imagens/imgp/produtos5/produtoA.jpg" alt="">
+                        <p class="produto">
+                            Roupeiro Casal Parma com Espelho
+                        </p>
+                        <p class="valor">
+                            R$ 1.499,99
+                        </p>
+                        <p class="parcelas">
+                            10 x de 170,00 no Cartão
+                        </p>
+                    </a>
+                </div>
+
+                <div class="c2div1">
                     <a href="pagina-produtos/produto3.html">
                         <img src="imagens/imgp/produtos3/produtoA.jpeg" alt="">
                         <p class="produto">
@@ -155,66 +204,6 @@
                     </a>
                 </div>
 
-                <div class="c2div4">
-                    <a href="#">
-                        <img src="#" alt="">
-                        <p class="produto">
-                            Nome do produto
-                        </p>
-                        <p class="valor">
-                            R$ 0.000,00
-                        </p>
-                        <p class="parcelas">
-                            10 x de 00,00 no Cartão
-                        </p>
-                    </a>
-                </div>
-            </div>
-
-            <div class="subcategorias2">
-                <div class="c2div1">
-                    <a href="#">
-                        <img src="imagens/imgp/roupeiroA.jpeg" alt="">
-                        <p class="produto">
-                            Nome do produto
-                        </p>
-                        <p class="valor">
-                            R$ 0.000,00
-                        </p>
-                        <p class="parcelas">
-                            10 x de 00,00 no Cartão
-                        </p>
-                    </a>
-                </div>
-
-                <div class="c2div2">
-                    <a href="#">
-                        <img src="imagens/imgp/roupeiroA.jpeg" alt="">
-                        <p class="produto">
-                            Nome do produto
-                        </p>
-                        <p class="valor">
-                            R$ 0.000,00
-                        </p>
-                        <p class="parcelas">
-                            10 x de 00,00 no Cartão
-                        </p>
-                    </a>
-                </div>
-                <div class="c2div3">
-                    <a href="#">
-                        <img src="imagens/imgp/roupeiroA.jpeg" alt="">
-                        <p class="produto">
-                            Nome do produto
-                        </p>
-                        <p class="valor">
-                            R$ 0.000,00
-                        </p>
-                        <p class="parcelas">
-                            10 x de 00,00 no Cartão
-                        </p>
-                    </a>
-                </div>
 
                 <div class="c2div4">
                     <a href="#">
@@ -230,9 +219,24 @@
                         </p>
                         </a>
                     </div>
+
+                    <div class="c2div4">
+                    <a href="#">
+                        <img src="imagens/imgp/roupeiroA.jpeg" alt="">
+                        <p class="produto">
+                            Nome do produto
+                        </p>
+                        <p class="valor">
+                            R$ 0.000,00
+                        </p>
+                        <p class="parcelas">
+                            10 x de 00,00 no Cartão
+                        </p>
+                        </a>
+                    </div>
                 </div>
 
-            <div class="subcategorias2">
+            <!-- <div class="subcategorias2">
                 <div class="c2div1">
                     <a href="#">
                         <img src="imagens/imgp/roupeiroA.jpeg" alt="">
@@ -292,7 +296,7 @@
                         </p>
                         </a>
                     </div>
-                </div>            
+                </div>             -->
         </section> 
         
         <section class="qs">
@@ -323,37 +327,105 @@
 
     </main>
 
-    <script>
-function enviarWhatsapp() {
-    const linkProduto = window.location.href;
+        <script>
+            document.getElementById('a2').addEventListener('click', function (e) {
+            e.preventDefault();
 
-    const mensagem = `
-[❗Mensagem Teste - Não Responda❗]
-👋 Olá! Acessei o site da *S.A Móveis* e me interessei em conhecer melhor os produtos e condições de compra. 🤩
+            const linkProduto = window.location.href;
 
-🔗 ${linkProduto}
-    `.trim();
+            const mensagem = `
+            [❗Mensagem Teste - Não Responda❗]
+👋 Olá! Acessei a página inicial do site da *S.A Móveis* e me interessei em conhecer melhor os produtos e condições de compra.🤩
 
-    const url = `https://api.whatsapp.com/send?phone=5586981373829&text=${encodeURIComponent(mensagem)}`;
+🔗 https://caioneis.github.io/SA---Projeto/index.html
 
-    window.open(url, '_blank');
-}
+            `.trim();
 
-document.getElementById('a2')?.addEventListener('click', function(e){
-    e.preventDefault();
-    enviarWhatsapp();
-});
+            const url = `https://api.whatsapp.com/send?phone=5586981373829&text=${encodeURIComponent(mensagem)}`;
 
-document.getElementById('a3')?.addEventListener('click', function(e){
-    e.preventDefault();
-    enviarWhatsapp();
-});
+            window.open(url, '_blank');
+            });
+        </script>
 
-document.getElementById('lwtp')?.addEventListener('click', function(e){
-    e.preventDefault();
-    enviarWhatsapp();
-});
-</script>
+        <script>
+            document.getElementById('a3').addEventListener('click', function (e) {
+            e.preventDefault();
+
+            const linkProduto = window.location.href;
+
+            const mensagem = `
+            [❗Mensagem Teste - Não Responda❗]
+👋 Olá! Acessei a página inicial do *Site da S.A Móveis* e me interessei em conhecer melhor os produtos e condições de compra.🤩
+
+🔗 https://caioneis.github.io/SA---Projeto/index.html
+
+            `.trim();
+
+            const url = `https://api.whatsapp.com/send?phone=5586981373829&text=${encodeURIComponent(mensagem)}`;
+
+            window.open(url, '_blank');
+            });
+        </script>
+
+        <script>
+            document.getElementById('lwtp').addEventListener('click', function (e) {
+            e.preventDefault();
+
+            const linkProduto = window.location.href;
+
+            const mensagem = `
+            [❗Mensagem Teste - Não Responda❗]
+👋 Olá! Acessei a página inicial do *Site da S.A Móveis* e me interessei em conhecer melhor os produtos e condições de compra.🤩
+
+🔗 https://caioneis.github.io/SA---Projeto/index.html
+
+            `.trim();
+
+            const url = `https://api.whatsapp.com/send?phone=5586981373829&text=${encodeURIComponent(mensagem)}`;
+
+            window.open(url, '_blank');
+            });
+        </script>
+
+        
+
+        <script>
+            function scrollSuave(target, duration = 1000) {
+            const targetPosition = target.getBoundingClientRect().top;
+            const startPosition = window.pageYOffset;
+            let startTime = null;
+
+            function animation(currentTime) {
+                if (startTime === null) startTime = currentTime;
+                const timeElapsed = currentTime - startTime;
+
+                const ease = easeInOutCubic(timeElapsed, startPosition, targetPosition, duration);
+                window.scrollTo(0, ease);
+
+                if (timeElapsed < duration) requestAnimationFrame(animation);
+            }
+
+            function easeInOutCubic(t, b, c, d) {
+                t /= d / 2;
+                if (t < 1) return c / 2 * t * t * t + b;
+                t -= 2;
+                return c / 2 * (t * t * t + 2) + b;
+            }
+
+            requestAnimationFrame(animation);
+            }
+
+            document.querySelectorAll('a[href^="#"]').forEach(link => {
+            link.addEventListener('click', function (e) {
+                const alvo = document.querySelector(this.getAttribute('href'));
+                if (!alvo) return;
+
+                e.preventDefault();
+                scrollSuave(alvo, 1100); 
+                });
+            });
+        </script>
+
 
     <footer>
         <abbr title="">
