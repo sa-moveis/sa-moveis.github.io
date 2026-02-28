@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+const menuToggle = document.getElementById('menuToggle');
+const navLinks = document.getElementById('navLinks');
+
+menuToggle.addEventListener('click', () => {
+    navLinks.classList.toggle('active');
+});
+</script>
+    <style>
+        body {
+            background-color: rgba(255, 0, 0, 0.534);
+        }
+        /* ===== NAV RESPONSIVO ===== */
+
+.nav-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+/* botão hamburguer */
+.menu-toggle {
+    display: none;
+    font-size: 2em;
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+    padding: 10px;
+}
+
+/* comportamento mobile */
+@media (max-width: 768px) {
+
+    .nav-container {
+        justify-content: space-between;
+        padding: 0 15px;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .links {
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        background-color: #a10f27;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.4s ease;
+    }
+
+    .links a {
+        width: 100%;
+        text-align: center;
+        padding: 15px;
+        font-size: 1.2em;
+    }
+
+    .links.active {
+        max-height: 500px;
+    }
+}
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+    <div class="nav-container">
+        <button class="menu-toggle" id="menuToggle">&#9776;</button>
+
+        <div class="links" id="navLinks">
+            <a href="#header">INÍCIO</a>
+            <a href="https://www.instagram.com/s.a_moveiseletro/" target="_blank">MÍDIAS</a>
+            <a href="pagina-localizacao/localizacao.html">LOCALIZAÇÃO</a>
+            <a id="lwtp" href="#" target="_blank">FALE NO WHATSAPP</a>
+        </div>
+    </div>
+</nav>
+</body>
+</html>
