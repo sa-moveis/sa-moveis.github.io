@@ -761,3 +761,53 @@ footer {
         font-size: 0.8em;
     }
 }
+
+
+
+.aviso-novidades {
+  position: relative;
+  text-align: center;
+  padding: 18px 30px;         
+  font-family: var(--Black);
+  font-size: 1.3em;
+  color: white;
+  background: linear-gradient(270deg, #d11333, #003087, #0047BB, #d11333);
+  background-size: 600% 600%;
+  animation: gradienteAnimado 8s ease infinite;
+  letter-spacing: 1px;
+  border-radius: 12px;              
+  overflow: hidden;                 
+  z-index: 1;
+  border: 3px solid transparent;    
+  background-clip: padding-box;     
+  background-origin: border-box;    
+}
+
+/* Animação do fundo original (mantida) */
+@keyframes gradienteAnimado {
+  0%   { background-position: 0% 50%; }
+  50%  { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.aviso-novidades p {
+  margin: 0;
+  position: relative;
+  z-index: 2;                       /* Texto fica acima de tudo */
+}
+
+/* Rotação infinita da fita */
+@keyframes rotateLED {
+  0%   { transform: rotate(0deg); }
+  100% { transform: rotate(10deg); }
+}
+
+/* Opcional: glow extra ao redor (pra reforçar o efeito LED) */
+.aviso-novidades {
+  box-shadow: 
+    0 0 20px rgba(209, 19, 51, 0.2),
+    0 0 20px rgba(0, 71, 187, 0.2),
+    0 0 20px rgba(0, 48, 135, 0.2);
+}
+
+
