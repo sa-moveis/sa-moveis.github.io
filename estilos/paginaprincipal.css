@@ -161,12 +161,12 @@ header {
 
 /* Seção principal (front) */
 .front {
-    background-image: url("../imagens/imagemdafrente/imgdestaque2.jpg");
+     background-image: url("../imagens/imagemdafrente/imgdestaque2.jpg");
     background-repeat: no-repeat;
     background-position: right center;
-    background-size: cover;
-    min-height: 70vh;
-    transition: 0.5s;
+    background-size: cover; /* não estica */
+    padding: 50px 0px;
+             /* espaço interno define altura */
 }
 
 .contentp {
