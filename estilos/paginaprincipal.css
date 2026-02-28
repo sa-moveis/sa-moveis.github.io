@@ -343,7 +343,7 @@ a.lwtp:hover {
 /* Produtos em destaque */
 .categorias2 {
     background-color: var(--branco);
-    margin: 0px 20px;
+    margin: 0px 60px;
     
 }
 
@@ -693,12 +693,18 @@ a.lwtp:hover {
 
 }
 @media (max-width:555px) {
+    .categorias2 {
+        margin: 0px 30px;
     
+}
 }
 /* Celulares pequenos */
 @media (max-width: 480px) {
     
-
+    .categorias2 {
+            margin: 0px 20px;
+        
+    }
     .nomeloja {
         font-size: 2.5em;
     }
