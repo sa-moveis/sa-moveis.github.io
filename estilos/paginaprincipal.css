@@ -57,7 +57,6 @@ main {
     box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.300);
 }
 
-/* Cabeçalho e logo */
 header {
     background-color: #a10f27;
 }
@@ -67,9 +66,9 @@ header {
 }
 
 .imglogo {
-    width: 200px;
     border-radius: 50%;
     margin: auto;
+    width: 300px;
     display: block;
     transition: 0.5s;
 }
