@@ -54,12 +54,12 @@ body a {
 main {
     margin: 0 auto;
     max-width: 1350px;
-    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.300);
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.300);
 }
 
 /* Cabeçalho e logo */
 header {
-    background-image: linear-gradient(to bottom, var(--vermelho-sa), #a10f27);
+    background-color: #a10f27;
 }
 
 .divlogo {
@@ -76,32 +76,43 @@ header {
 
 /* Navbar */
 .navbar {
+    width: 95%;
     background-color: #a10f27;
     position: sticky;
     top: 0px;
-    box-shadow: 0px 10px 5px rgba(0, 0, 0, 0.185);
+    /* box-shadow: 0px 10px 5px rgba(0, 0, 0, 0.185); */
     z-index: 10;
     text-align: center;
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 10px 20px;
+    box-shadow: 0px 0px 10px #00000028;
+    border-radius: 8px;
+}
+.navbar1 {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    background-color: #a10f27;
+    padding: 10px 10px 10px 10px;
+
 }
 
 /* Menu hambúrguer - inicialmente escondido */
 .menu-toggle {
+    
     display: none;
     flex-direction: column;
     background: transparent;
     border: none;
     cursor: pointer;
-    padding: 10px;
+    padding: 10px 10px 10px 10px;
     z-index: 20;
 }
 
 .menu-toggle span {
     width: 40px;
-    height: 3px;
+    height: 4px;
     background-color: var(--branco);
     margin: 4px 0;
     transition: 0.5s;
@@ -164,9 +175,8 @@ header {
      background-image: url("../imagens/imagemdafrente/imgdestaque2.jpg");
     background-repeat: no-repeat;
     background-position: right center;
-    background-size: cover; /* não estica */
+    background-size: cover;
     padding: 50px 0px;
-             /* espaço interno define altura */
 }
 
 .contentp {
@@ -427,6 +437,7 @@ header {
 }
 
 .qs1 p {
+    text-align: justify;
     display: grid;
     font-size: 1.5em;
     padding: 10px;
@@ -434,16 +445,17 @@ header {
 }
 
 .qs1 a {
+    font-family: var(--roboto);
+    font-weight: 600;
     color: var(--branco);
-    font-size: 1.8em;
-    padding: 10px;
-    border-radius: 15px;
+    font-size: 1.5em;
+    padding: 15px 5px;
+    border-radius: 6px;
     background-color: var(--verdeescuro);
 }
 
 .qs2 {
     display: grid;
-    width: 50vw;
 }
 
 .qs2 img {
@@ -741,11 +753,12 @@ footer {
         font-size: 1.4em;
     }
     .qs .subqs .qs1 a {
-        font-size: 1.4em;
-        padding: 3px 5px;
-        border-radius: 10px;
+        font-size: 100%;
+        padding: 10px 4px;
+        border-radius: 6px;
     }
     .qs .subqs .qs1 p {
+        text-align: justify;
         font-size: 1.3em;
     }
     .subqs .qs1 h2 {
