@@ -737,7 +737,7 @@ footer {
 @media (max-width: 650px) {
     .imglogo {
         transition: 0.5s;
-        width: 180px;
+        width: 170px;
     }
     .nomeloja {
         margin-bottom: 20px;
