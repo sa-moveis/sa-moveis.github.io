@@ -508,7 +508,7 @@ footer {
     }
     .contentp {
         margin-left: 0;
-        padding: 50px 0px 0px 0px;
+        
     }
     .contentp h1 {
         font-size: 2.6em;
@@ -573,6 +573,9 @@ footer {
         max-width: 1000px;
         margin: 0 auto;
         text-align: center;
+    }
+    .contentp {
+        padding-left: 0px;
     }
     .contentp h1 {
         font-size: 2.1em;
