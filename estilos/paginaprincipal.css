@@ -183,7 +183,6 @@ header {
     background-repeat: no-repeat;
     background-position: right center;
     background-size: cover;
-    padding: 45px 0px;
 }
 
 .contentp {
@@ -651,7 +650,7 @@ footer {
         transition: max-height 0.4s ease-in-out;
         box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.3);
     }
-
+    
     /* Quando ativo, mostra o menu */
     .links.active {
         max-height: 600px;
