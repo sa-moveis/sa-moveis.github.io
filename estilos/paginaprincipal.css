@@ -739,6 +739,12 @@ footer {
         transition: 0.5s;
         width: 180px;
     }
+    .nomeloja {
+        margin-bottom: 20px;
+    }
+    .linkfrente {
+        margin-top: 0px;
+    }
 }
 
 @media (max-width: 555px) {
