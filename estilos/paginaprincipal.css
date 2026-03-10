@@ -53,7 +53,7 @@ body a {
 
 main {
     margin: 0 auto;
-    max-width: 1350px;
+    max-width: 1250px;
     box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.300);
 }
 
@@ -367,7 +367,7 @@ header {
     font-weight: 500;
 }
 
-.c2div1, .c2div2, .c2div3, .c2div4 {
+.c2divA, .c2divB, .c2div3, .c2div4 {
     border-radius: 10px;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.400);
     overflow: hidden;
@@ -375,32 +375,33 @@ header {
     background-color: #fff;
 }
 
-.c2div1:hover, .c2div2:hover, .c2div3:hover, .c2div4:hover {
+.c2divA:hover, .c2divB:hover, .c2div3:hover, .c2div4:hover {
     transform: scale(0.95)
 }
 
-.c2div1 .produto, .c2div2 .produto, .c2div3 .produto, .c2div4 .produto {
+.c2divA .produto, .c2divB .produto, .c2div3 .produto, .c2div4 .produto {
     font-family: var(--Anton);
     font-size: 1.6em;
     margin: 5px;
     color: black;
 }
 
-.c2div1 .valor {
+.c2divA .valor {
     color: var(--vermelho-sa);
 }
 
-.c2div2 .valor {
+.c2divB .valor {
     color: var(--azul-medio-sa);
 }
 
-.c2div3 .valor {
+.c2divA .valor {
     color: var(--vermelho-sa);
 }
 
-.c2div4 .valor {
+.c2divB .valor {
     color: var(--azul-medio-sa);
 }
+
 
 .subcategorias2 .valor {
     font-weight: bolder;
@@ -731,6 +732,7 @@ footer {
     .subqs .qs2 {
         width: 100%;
     }
+
 }
 
 @media (max-width: 650px) {
@@ -861,4 +863,10 @@ footer {
     0 0 20px rgba(0, 48, 135, 0.2);
 }
 
-
+@media screen and (min-width: 1024px) {
+    .subcategorias2:last-of-type {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+    }
+}
