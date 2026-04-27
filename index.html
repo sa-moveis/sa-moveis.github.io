@@ -18,6 +18,10 @@
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-4N96KS2NQS"></script>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css"/>
+<script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+
     <script>
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
@@ -94,22 +98,53 @@
         </section>
 
         <section class="categorias2" id="produtosi">
-            <h1>CONHEÇA NOSSA VITRINE</h1>
-            <div class="subcategorias2">
-                <div class="c2divA">
-                    <a href="pagina-produtos/produto2.html">
-                        <img src="imagens/imgp/produtos2/produtoA.jpeg" alt="">
-                        <p class="produto">
+    <h1>CONHEÇA NOSSA VITRINE</h1>
+
+    <div class="subcategorias2">
+
+        <div class="swiper minha-vitrine">
+  <div class="swiper-wrapper">
+
+    <div class="swiper-slide produto-card">
+     <a href="pagina-produtos/produto2.html">
+                        
+                        <img src="imagens/imgp/produtos2/produtoA.jpeg" alt="Imagem produto">
+                        
+                        <h3 class="nome-produto">
                             Guarda-roupa Solteiro Estrela Premium
-                        </p>
-                        <p class="valor">
+                        </h3>
+                        
+                        <p class="valor-produto">
                             R$ 650,00
                         </p>
-                        <p class="parcelas">
+                        
+                        <p class="parcelas-produto">
                             ou R$ <span class="valor-acrescimo">750,00</span> em 10x de 75,00 no Cartão
                         </p>
                     </a>
-                </div>
+    </div>
+
+    <div class="swiper-slide produto-card">Produto 2</div>
+    <div class="swiper-slide produto-card">Produto 3</div>
+    <div class="swiper-slide produto-card">Produto 4</div>
+    <div class="swiper-slide produto-card">Produto 2</div>
+    <div class="swiper-slide produto-card">Produto 3</div>
+    <div class="swiper-slide produto-card">Produto 4</div>
+    <div class="swiper-slide produto-card">Produto 2</div>
+    <div class="swiper-slide produto-card">Produto 3</div>
+    <div class="swiper-slide produto-card">Produto 4</div>
+
+  </div>
+
+  <!-- setas -->
+  <div class="swiper-button-prev custom-prev"></div>
+  <div class="swiper-button-next custom-next"></div>
+</div>
+
+
+
+<!-- class="swiper-slide"
+
                 <div class="c2divB">
                     <a href="pagina-produtos/produto4.html">
                         <img src="imagens/imgp/produtos4/produtoA.jpeg" alt="">
@@ -124,6 +159,7 @@
                         </p>
                     </a>
                 </div>
+
                 <div class="c2divA">
                     <a href="pagina-produtos/produto6.html">
                         <img src="imagens/imgp/produtos6/produtoB.jpeg" alt="">
@@ -138,6 +174,7 @@
                         </p>
                     </a>
                 </div>
+
                 <div class="c2divB">
                     <a href="pagina-produtos/produto.html">
                         <img src="imagens/imgp/produtos1/produtoA.jpeg" alt="">
@@ -153,7 +190,7 @@
                     </a>
                 </div>
             </div>
-            <div class="subcategorias2">
+             <div class="subcategorias2">
                 <div class="c2divA">
                     <a href="pagina-produtos/produto5.html">
                         <img src="imagens/imgp/produtos5/produtoA.jpg" alt="">
@@ -254,7 +291,8 @@
                             </p>
                         </a>
                     </div>
-                </div>
+                </div> -->
+        </section> 
             <section class="aviso-novidades">
                 <p>🚀 Novos produtos e promoções chegando! Nosso catálogo está em expansão.</p>
             </section>
@@ -382,6 +420,24 @@
                 scrollSuave(alvo, 1100);
             });
         });
+    </script>
+
+    <script>
+        const swiper = new Swiper('.minha-vitrine', {
+  slidesPerView: 1.2,
+  spaceBetween: 15,
+
+  navigation: {
+    nextEl: '.swiper-button-next',
+    prevEl: '.swiper-button-prev',
+  },
+
+  breakpoints: {
+    480: { slidesPerView: 2 },
+    768: { slidesPerView: 3 },
+    
+  }
+});
     </script>
 </body>
 </html>

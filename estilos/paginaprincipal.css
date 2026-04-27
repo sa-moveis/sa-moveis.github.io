@@ -33,6 +33,7 @@ body {
     font-family: var(--roboto);
     animation: fadeIn 0.8s ease-in-out forwards;
     position: relative;
+    background-color: #F4F5F7;
 }
 
 @keyframes fadeIn {
@@ -60,7 +61,7 @@ header {
     background: linear-gradient(
     to bottom,
     #b90c29 50%,
-    white 50%
+    #F4F5F7 50%
     );
     position: relative;
     width: 100%;
@@ -68,19 +69,17 @@ header {
 
 }
 
-
-
-
-
 .divlogo {
     display: flex;
     justify-content: center;
     align-items: center;
     background-color: #b90c29;
     
-    border: solid 4px rgb(218, 218, 218);
+    border: solid 4px white;
     border-radius: 8px;
     margin: 0px 15px;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.308);
+    margin-top: 20px;
 }
 .divlogo img {
     width: 200px
@@ -163,11 +162,6 @@ header {
     text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.63);
 }
 
-
-
-
-
-
 .links a:hover {
     box-shadow: 0px 0px 20px red;
     border-radius: 5px;
@@ -188,7 +182,7 @@ header {
 
 /* Seção principal (front) */
 .front {
-     background-image: url("../imagens/imagemdafrente/imgdestaque2.jpg");
+    
     background-repeat: no-repeat;
     background-position: right center;
     background-size: cover;
@@ -228,14 +222,14 @@ header {
     font-family: var(--roboto);
     font-size: 3em;
     font-weight: bolder;
-    text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.500);
+    text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
     margin-bottom: 25px;
 }
 
 .contentp p {
     font-size: 1.5em;
     font-family: var(--roboto);
-    text-shadow: 0px 0px 5px rgba(0, 0, 0, 0.534);
+    text-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3);
 }
 
 .linkfrente {
@@ -272,13 +266,13 @@ header {
 }
 
 .linkfrente .a1:hover {
-    box-shadow: 0px 0px 10px var(--vermelho-sa);
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.4);
     transform: scaleX(1.1);
     transform: scaleY(1.1);
 }
 
 .linkfrente #a2:hover {
-    box-shadow: 0px 0px 10px var(--verdeescuro);
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.4);
     transform: scaleX(1.1);
     transform: scaleY(1.1);
 }
@@ -335,9 +329,14 @@ header {
     transform: scale(0.95)
 }
 
+
+
+
+
+
+
 /* Produtos em destaque */
 .categorias2 {
-    background-color: var(--branco);
     margin: 0px 60px;
 }
 
@@ -353,84 +352,91 @@ header {
     background-color: #e2e2e2de;
 }
 
+
+
+
+
+
+
+
 .subcategorias2 {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 20px;
-    margin-bottom: 50px;
-    transition: 0.5;
-}
-
-.subcategorias2 img {
     width: 100%;
-    height: 250px;        /* altura padrão das imagens */
-    object-fit: cover;    /* corta sem distorcer */
-    border-radius: 10px 10px 0px 0px;
-    display: block;
+    
+    margin-bottom: 50px;
+    transition: 0.3;
 }
 
-.subcategorias2 p {
-    margin: 10px;
-    text-align: center;
-    font-family: var(--Black);
-    font-size: 1.2em;
-    font-weight: 500;
-}
-
-.c2divA, .c2divB, .c2div3, .c2div4 {
+.produto-card {
     border-radius: 10px;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.400);
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.25);
     overflow: hidden;
     transition: 0.5s;
     background-color: #fff;
+    text-align: center;
+    padding-bottom: 6px;
+    max-width: 250px;
+}
+        .produto-card:hover {
+        box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.5)
+    }
+
+.produto-card img {
+    width: 100%;
+    max-width: 220px;
+    width: 100%;
+    padding: 8px;
+    height: 60%;        /* altura padrão das imagens */
+    object-fit: cover;    /* corta sem distorcer */
+    border-radius: 15px;
 }
 
-.c2divA:hover, .c2divB:hover, .c2div3:hover, .c2div4:hover {
-    transform: scale(0.95)
+.produto-card .nome-produto {
+    
+    text-align: center;
+    font-family: var(--Black);
+    font-size: 1.3em;
+    font-weight: 500;
+    color: black;
 }
-
-.c2divA .produto, .c2divB .produto, .c2div3 .produto, .c2div4 .produto {
+.produto-card .valor-produto {
     font-family: var(--Anton);
     font-size: 1.6em;
     margin: 5px;
     color: black;
-}
-
-.c2divA .valor {
     color: var(--vermelho-sa);
-}
-
-.c2divB .valor {
-    color: var(--azul-medio-sa);
-}
-
-.c2divA .valor {
-    color: var(--vermelho-sa);
-}
-
-.c2divB .valor {
-    color: var(--azul-medio-sa);
-}
-
-
-.subcategorias2 .valor {
     font-weight: bolder;
     font-size: 1.6em;
     text-shadow: 0px 0px 1px black;
 }
+        .valor-produto:hover {
+            text-decoration: underline;
+        }
 
-.subcategorias2 .valor:hover {
-    text-decoration: underline;
-}
-
-.parcelas {
+.parcelas-produto {
     font-size: 1.2em;
     color: rgb(58, 58, 58);
 }
-
 .valor-acrescimo {
     font-weight: bold;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 /* Quem Somos */
 .qs {
@@ -504,7 +510,72 @@ footer {
     font-family: var(--roboto);
     font-size: 0.9rem;
 }
+/* ===== CONTAINER DO SWIPER ===== */
+.minha-vitrine {
+    position: relative;
+    width: 100%;
+    padding: 20px 40px; /* espaço pras setas */
+}
 
+/* ===== CARD ===== */
+.produto-card {
+    background: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    text-align: center;
+}
+
+/* ===== IMAGEM ===== */
+.produto-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+/* ===== SETAS BASE ===== */
+.swiper-button-next,
+.swiper-button-prev {
+    width: 45px;
+    height: 45px;
+    background: #d11333;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: white;
+    box-shadow: 0 0 12px rgba(0,0,0,0.3);
+
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 999;
+
+    transition: 0.3s;
+}
+
+/* ===== HOVER ===== */
+.swiper-button-next:hover,
+.swiper-button-prev:hover {
+    transform: translateY(-50%) scale(1.1);
+    background: #b10f29;
+}
+
+/* ===== TAMANHO DO ÍCONE (ESSENCIAL) ===== */
+.swiper-button-next::after,
+.swiper-button-prev::after {
+    font-size: 10px;
+    font-weight: bold;
+}
+
+/* ===== POSIÇÃO ===== */
+.swiper-button-prev {
+    left: 5px;
+}
+
+.swiper-button-next {
+    right: 5px;
+}
 /* ============================================= 
    MEDIA QUERIES - RESPONSIVIDADE PROGRESSIVA 
    ============================================= */
@@ -742,6 +813,12 @@ footer {
     .subqs .qs2 {
         width: 100%;
     }
+
+
+
+    .produto-card {
+    max-width: 250px;
+  }
 
 }
 
