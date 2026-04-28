@@ -99,19 +99,17 @@ header {
     display: flex;
     justify-content: center;
     align-items: center;
-    background: transparent;
-    
-
+    background: transparent;    
 }
 .navbar1 {
     display: flex;
     justify-content: center;
     width: 100%;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
     backdrop-filter: blur(12px);
     background: #b90c29;
+    position: sticky;
+    top: 1px;
+    z-index: 999;
 }
 
 /* Menu hambúrguer - inicialmente escondido */
@@ -251,6 +249,9 @@ header {
     font-family: var(--roboto);
     text-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3);
 }
+
+
+
 
 .linkfrente {
    
@@ -399,9 +400,19 @@ header {
     margin: 0px;
 }
 
-.produto-card:hover {
-    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.12);
-}
+        .produto-card:hover {
+            box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.12);
+        }
+        .swiper .swiper-slide:nth-child(odd) .valor-produto {
+            color: var(--vermelho-sa);
+            font-weight: 700;
+        }
+
+        .swiper .swiper-slide:nth-child(even) .valor-produto {
+            color: var(--azul-escuro-sa);
+            font-weight: 700;
+        
+        }
 
 .produto-card a {
     display: flex;
