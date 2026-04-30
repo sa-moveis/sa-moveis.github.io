@@ -31,7 +31,7 @@
 
 body {
     font-family: var(--roboto);
-    animation: fadeIn 0.8s ease-in-out forwards;
+    /* animation: fadeIn 0.8s ease-in-out forwards; */
     position: relative;
     background-color: #F4F5F7;
 }
@@ -62,7 +62,7 @@ header {
     flex-direction: column;
     align-items: center;
     background-color: #b90c29;
-    position: relative;
+    
     width: 100%;
     
 
@@ -95,21 +95,37 @@ header {
 .navbar {    
     width: 100%;
     max-width: 1400px;
-    padding: 20px 25px;
+    padding: 6px;
     display: flex;
     justify-content: center;
     align-items: center;
     background: transparent;    
+    
 }
 .navbar1 {
     display: flex;
     justify-content: center;
     width: 100%;
-    backdrop-filter: blur(12px);
+    /* backdrop-filter: blur(12px); */
     background: #b90c29;
     position: sticky;
-    top: 1px;
+    top: 0px;
     z-index: 999;
+}
+
+
+.nav-imgg {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8px 15px;
+    flex-shrink: 0;
+}
+
+.nav-imgg img {
+    height: 55px;
+    width: auto;
+    display: none;
 }
 
 /* Menu hambúrguer - inicialmente escondido */
@@ -222,6 +238,17 @@ header {
     margin-bottom: 85px;
     transition: 0.5s;
 }
+
+    .nomeloja-nav {
+        justify-content: center;
+        align-items: center;
+        display: none;
+        font-family: var(--Black);
+        font-weight: 800;
+        font-size: 1.5em;
+        color: #1a1919;
+        transition: 0.5s;
+    }
 
 #MOVEIS {
     color: var(--vermelho-sa);
@@ -794,8 +821,30 @@ footer {
     }
 
     .navbar1 {
-        padding: 10px;    
+        padding: 0px 20px;    
     }
+
+    .nomeloja-nav {
+        justify-content: center;
+        align-items: center;
+        display: flex;
+        font-family: var(--Black);
+        font-weight: 800;
+        font-size: 1.5em;
+        color: #1a1919;
+        transition: 0.5s;
+        padding: 10px;
+        color: white;
+         
+    }
+        #S, #A {
+            color: white;
+        }
+        #MOVEIS, #ELETRO {
+            color: white;
+
+        }
+
 
     /* Links ficam em coluna e escondidos por padrão */
     .links {
@@ -835,11 +884,26 @@ footer {
         display: none;
     }
 
-
-     .navbar1 {
-        position: relative;
-        top: auto;
+    .navbar1 {
+    position: sticky;
+    top: 0px;
+    
     }
+
+    .nav-imgg {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8px 15px;
+    flex-shrink: 0;
+}
+
+    .nav-imgg img {
+        height: 55px;
+        width: auto;
+        display: block;  
+    }
+
 
     .navbar {
         position: relative;
@@ -847,7 +911,7 @@ footer {
 
     .divlogo {
         width: 97%;
-        height: 25vh;
+        height: 20vh;
     }
 
 
