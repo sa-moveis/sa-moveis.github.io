@@ -98,7 +98,10 @@ header {
     justify-content: center;
     align-items: center;
     background: transparent;    
-    
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+    margin: 0px 10px 20px;
+    border-radius: 10px;
+
 }
 .navbar1 {
     display: flex;
@@ -175,7 +178,7 @@ header {
     padding: 12px 18px;
     margin: 0;
     color: white;
-    font-size: 1rem;
+    font-size: 1.4rem;
     font-weight: 700;
     letter-spacing: 0.5px;
     border-radius: 12px;
@@ -214,7 +217,7 @@ header {
 
 /* Seção principal (front) */
 .front {
-    height: 70vh;
+    height: 600px;
     background-image: url("/imagens/imagemdafrente/imgdestaque2.jpg");
     background-repeat: no-repeat;
     background-position: right center;
@@ -385,7 +388,7 @@ header {
 
 /* Produtos em destaque */
 .categorias2 {
-    margin: 0px 60px;
+    margin: 20px 60px;
 }
 
 .categorias2 h1 {
@@ -839,7 +842,10 @@ footer {
     .S, .A, .ELETROO, .MOVEISS {
         color: white;
 }
-
+    .navbar {
+        box-shadow: none;
+        justify-content: center;
+    }
     /* Links ficam em coluna e escondidos por padrão */
     .links {
         position: absolute;
