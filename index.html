@@ -18,7 +18,6 @@
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-4N96KS2NQS"></script>
-
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css"/>
 <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
 
@@ -43,7 +42,7 @@
         "addressRegion": "PI",
         "addressCountry": "BR"
         },
-        "areaServed": [
+        "areaServed": 
         "Teresina",
         "Timon"
         ]
@@ -94,7 +93,7 @@
                     </p>
                 </div>
                 <div class="linkfrente">
-                    <a id="a2" href="#" target="_blank"><i style="font-size:25px" class="fa">&#xf232;</i> Falar no Whatsapp</a>
+                    <a id="a2" href="#" target="_blank"><i style="font-size:25px" class="fa">&#xf232;</i> &nbsp;Falar no Whatsapp</a>
                     <a class="a1" href="#produtosi">Ver Produtos</a>
                 </div>
             </div>
@@ -182,6 +181,24 @@
 
         <p class="parcelas-produto">
             ou R$ <span class="valor-acrescimo">1.699,99</span> em 10x de 169,99 no Cartão
+        </p>
+    </a>
+</div>
+
+<div class="swiper-slide produto-card">
+    <a href="pagina-produtos/produto3.html">
+        <img src="imagens/imgp/produtos3/produtoA.jpeg" alt="Imagem produto">
+
+        <h3 class="nome-produto">
+            Guarda Roupa Casal Chicago
+        </h3>
+
+        <p class="valor-produto">
+            R$ 2.599,99
+        </p>
+
+        <p class="parcelas-produto">
+            ou R$ <span class="valor-acrescimo">2.960,00</span> em 10x de 296,00 no Cartão
         </p>
     </a>
 </div>
@@ -470,153 +487,6 @@
             <p>&copy; 2026 SA - MÓVEIS E ELETRO - TODOS OS DIREITOS RESERVADOS</p>
         </abbr>
     </footer>
-
-    <!-- Scripts -->
-    <script>
-        // Menu hambúrguer toggle
-        const menuToggle = document.getElementById('menuToggle');
-        const navLinks = document.getElementById('navLinks');
-
-        menuToggle.addEventListener('click', function() {
-            navLinks.classList.toggle('active');
-            menuToggle.classList.toggle('active');
-        });
-
-        // Fecha o menu ao clicar em um link (em mobile)
-        const links = document.querySelectorAll('.links a');
-        links.forEach(link => {
-            link.addEventListener('click', function() {
-                if (window.innerWidth <= 768) {
-                    navLinks.classList.remove('active');
-                    menuToggle.classList.remove('active');
-                }
-            });
-        });
-    </script>
-
-    <script>
-        document.getElementById('a2').addEventListener('click', function (e) {
-            e.preventDefault();
-            const linkProduto = window.location.href;
-            const mensagem = `👋 Olá! Acessei a página inicial do site da *S.A Móveis* e me interessei em conhecer melhor os produtos e condições de compra.🤩 
-            
-🔗 https://sa-moveis.github.io`.trim();
-            const url = `https://api.whatsapp.com/send?phone=5586981373829&text=${encodeURIComponent(mensagem)}`;
-            window.open(url, '_blank');
-        });
-    </script>
-
-    <script>
-        document.getElementById('a3').addEventListener('click', function (e) {
-            e.preventDefault();
-            const linkProduto = window.location.href;
-            const mensagem = `👋 Olá! Acessei a página inicial do *Site da S.A Móveis* e me interessei em conhecer melhor os produtos e condições de compra.🤩 
-            
-🔗 https://sa-moveis.github.io`.trim();
-            const url = `https://api.whatsapp.com/send?phone=5586981373829&text=${encodeURIComponent(mensagem)}`;
-            window.open(url, '_blank');
-        });
-    </script>
-
-    <script>
-        document.getElementById('lwtp').addEventListener('click', function (e) {
-            e.preventDefault();
-            const linkProduto = window.location.href;
-            const mensagem = `👋 Olá! Acessei a página inicial do *Site da S.A Móveis* e me interessei em conhecer melhor os produtos e condições de compra.🤩 
-            
-🔗 https://sa-moveis.github.io`.trim();
-            const url = `https://api.whatsapp.com/send?phone=5586981373829&text=${encodeURIComponent(mensagem)}`;
-            window.open(url, '_blank');
-        });
-    </script>
-
-    <script>
-        function scrollSuave(target, duration = 1000) {
-            const targetPosition = target.getBoundingClientRect().top;
-            const startPosition = window.pageYOffset;
-            let startTime = null;
-
-            function animation(currentTime) {
-                if (startTime === null) startTime = currentTime;
-                const timeElapsed = currentTime - startTime;
-                const ease = easeInOutCubic(timeElapsed, startPosition, targetPosition, duration);
-                window.scrollTo(0, ease);
-                if (timeElapsed < duration) requestAnimationFrame(animation);
-            }
-
-            function easeInOutCubic(t, b, c, d) {
-                t /= d / 2;
-                if (t < 1) return c / 2 * t * t * t + b;
-                t -= 2;
-                return c / 2 * (t * t * t + 2) + b;
-            }
-
-            requestAnimationFrame(animation);
-        }
-
-        document.querySelectorAll('a[href^="#"]').forEach(link => {
-            link.addEventListener('click', function (e) {
-                const alvo = document.querySelector(this.getAttribute('href'));
-                if (!alvo) return;
-                e.preventDefault();
-                scrollSuave(alvo, 1100);
-            });
-        });
-    </script>
-
-    <script>
-const vitrines = document.querySelectorAll('.swiper');
-
-vitrines.forEach((vitrine) => {
-  const next = vitrine.querySelector('.swiper-button-next');
-  const prev = vitrine.querySelector('.swiper-button-prev');
-
-  new Swiper(vitrine, {
-    loop: true,
-    spaceBetween: 10,
-    speed: 400,
-
-    navigation: {
-      nextEl: next,
-      prevEl: prev,
-    },
-
-    breakpoints: {
-      0: { slidesPerView: 1 },
-      700: { slidesPerView: 2 },
-      1100: { slidesPerView: 4 }
-    }
-  });
-});
-    </script>
-
-    <script>
-const searchInput = document.getElementById("searchInput");
-const slides = document.querySelectorAll(".produto-card");
-
-searchInput.addEventListener("input", function () {
-    const termo = this.value.toLowerCase().trim();
-
-    slides.forEach(slide => {
-        const titulo = slide.querySelector(".nome-produto");
-
-        if (!titulo) return;
-
-        const textoProduto = titulo.textContent.toLowerCase();
-
-        if (textoProduto.includes(termo) || termo === "") {
-            slide.style.display = "";
-        } else {
-            slide.style.display = "none";
-        }
-    });
-
-    swiper.update();
-});
-</script>
+    <script src="index.js"></script>
 </body>
 </html>
-
-
-
-

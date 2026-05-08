@@ -4,6 +4,8 @@
     padding: 0px;
     margin: 0px;
     box-sizing: border-box;
+
+    /* outline: 1px solid #0047BB; */
 }
 
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
@@ -61,6 +63,7 @@ main {
     }
 
 header {
+    background-image: url("/imagens/imagemdafrente/b14.png");
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -71,25 +74,7 @@ header {
 
 }
 
-/* .divlogo {
-    display: flex;
-    justify-content: center;
-    align-items: center;
 
-    background: url("/imagens/logo/logoaaa.png");
-    background-size: 300px;
-    background-repeat: no-repeat;
-    background-position: center center;
-
-    
-    min-width: 80%;
-    border-radius: 8px;
-    margin: 0px 15px;
-    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.308);
-    margin-top: 20px;
-} */
-
-/* Navbar */
 .navbar {    
     width: 100%;
     max-width: 1400px;
@@ -98,9 +83,10 @@ header {
     justify-content: center;
     align-items: center;
     background: transparent;    
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
-    margin: 0px 10px 20px;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2);
+    margin: 10px;
     border-radius: 10px;
+    
 
 }
 .navbar1 {
@@ -124,7 +110,7 @@ header {
 }
 
 .nav-imgg img {
-    height: 55px;
+    height: 522px;
     width: auto;
     display: none;
 }
@@ -217,27 +203,29 @@ header {
 
 /* Seção principal (front) */
 .front {
+    display: flex;
     height: 600px;
-    background-image: url("/imagens/imagemdafrente/imgdestaque2.jpg");
+    background-image: url("/imagens/imagemdafrente/ChatGPT\ Image\ 5\ de\ mai.\ de\ 2026\,\ 12_17_52.png");
     background-repeat: no-repeat;
     background-position: right center;
     background-size: cover;
+
 }
 
 .contentp {
-    padding-top: 70px;
-    margin-left: 5%;
-    margin-right: 5%;
-    max-width: 1000px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 100%;
+    margin-left: 100px;
 }
 
 
 .nomeloja {
     font-family: var(--Black);
     font-weight: 900;
-    font-size: 4.5em;
+    font-size: 4.5rem;
     color: #1a1919;
-    margin-bottom: 85px;
     transition: 0.5s;
 }
 
@@ -269,38 +257,40 @@ header {
     font-family: var(--roboto);
     font-size: 3em;
     font-weight: bolder;
-    text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
-    margin-bottom: 25px;
+    text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+    
 }
 
 .contentp p {
     font-size: 1.5em;
     font-family: var(--roboto);
-    text-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3);
+    text-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+    margin-top: 30px;
 }
-
 
 
 
 .linkfrente {
-   
-    
+    display: flex;
     border-radius: 8px;
-    margin: 30px 0px;
+    gap: 10px;
 }
 
 .linkfrente a.a1 {
+    display: flex;
+    align-items: center;
     text-decoration: none;
     font-family: var(--roboto);
     font-weight: bold;
     font-size: 1.5em;
-    padding: 15px;
-    margin: 0px -20px;
     color: var(--branco);
-    background-color: var(--vermelho-sa);
-  
+    background-image: linear-gradient(to left, #d60d2f, #a00a23);
     border-radius: 10px;
     transition: 0.3s;
+    
+    padding: 20px;
+
+    
 }
 
 .linkfrente a#a2 {
@@ -309,23 +299,23 @@ header {
     font-weight: bold;
     font-size: 1.5em;
     border-radius: 10px;
-    padding: 15px;
-    margin: 0px 30px 0px 0px;
     color: var(--branco);
     background: linear-gradient(135deg, #1faa59, #17603c);
     transition: 0.3s;
+
+    padding: 20px;
+
+    
+
 }
 
 .linkfrente .a1:hover {
     box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.4);
-    transform: scaleX(1.1);
-    transform: scaleY(1.1);
 }
 
 .linkfrente #a2:hover {
     box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.4);
-    transform: scaleX(1.1);
-    transform: scaleY(1.1);
+    
 }
 
 /* Categorias */
@@ -422,7 +412,7 @@ header {
     overflow: hidden;
     text-align: center;
     max-width: 250px;
-    min-height: 90px;
+    height: 430px;
     display: flex;
     flex-direction: column;
     transition: .3s;
@@ -453,7 +443,6 @@ header {
 
 .produto-card img {
     width: 100%;
-    height: 240px;
     object-fit: cover;
     display: block;
     padding: 8px;
@@ -461,7 +450,7 @@ header {
 }
 
 .nome-produto {
-    min-height: 70px;
+    height: 80px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -589,12 +578,7 @@ footer {
 }
 
 /* ===== CARD ===== */
-.produto-card {
-    background: #fff;
-    border-radius: 10px;
-    overflow: hidden;
-    text-align: center;
-}
+
 
 /* ===== IMAGEM ===== */
 .produto-card img {
@@ -683,67 +667,60 @@ footer {
     background: transparent;
     color: #111827;
 }
-/* ============================================= 
+
+
+ /* ============================================= 
    MEDIA QUERIES - RESPONSIVIDADE PROGRESSIVA 
    ============================================= */
 
-/* Começa a reduzir a partir de 1500px */
-@media (max-width: 1500px) {
+ /* Começa a reduzir a partir de 1500px */
+ @media (max-width: 1500px) {
     .nomeloja {
-        font-size: 4.2em;
+        font-size: 4.5em;
     }
     .imglogo {
-        width: 250px;
+        width: 300px;
     }
     .contentp {
         margin-left: 0;
         
     }
-    .contentp h1 {
-        font-size: 2.6em;
-    }
-    .contentp p {
-        font-size: 1.3em;
-    }
-    .linkfrente a.a1, .linkfrente a#a2 {
-        font-size: 1.3em;
-        padding: 12px 20px;
-    }
-    .linkfrente a#a2 img {
-        width: 32px;
-    }
+    
+   
+    
+    
     .front {
         background-position: center center;
         min-height: 60vh;
         transition: 0.5s;
     }
     .contentp {
-        padding-left: 50px;
+        padding-left: 100px;
     }
-}
+} 
 
 @media (max-width: 1280px) {
     .nomeloja {
-        font-size: 3.2em;
-        margin-bottom: 50px;
+        font-size: 3.5em;
+        margin-bottom: 0px;
     }
     .imglogo {
-        width: 220px;
+        width: 250px;
     }
     .contentp {
         margin-left: 30px;
-        padding-top: 40px;
+        padding-top: 30px;
     }
     .contentp h1 {
-        font-size: 2.3em;
+        font-size: 2.2em;
     }
     .links a {
         font-size: 1.4em;
-        padding: 5px 20px;
-        margin: 6px;
+        padding: 5px 10px;
+        margin: 5px;
     }
     .front {
-        min-height: 50vh;
+        min-height: 60vh;
     }
 }
 
@@ -751,14 +728,12 @@ footer {
 @media (max-width: 1024px) {
     .nomeloja {
         font-size: 2.8em;
-        margin-bottom: 40px;
         text-align: center;
     }
     .imglogo {
-        width: 200px;
+        width: 230px;
     }
     .contentp {
-        padding-top: 70px;
         max-width: 1000px;
         margin: 0 auto;
         text-align: center;
@@ -779,9 +754,9 @@ footer {
         gap: 15px;
     }
     .linkfrente a.a1, .linkfrente a#a2 {
-        width: 70%;
-        text-align: center;
-        margin: 0;
+        display: flex;
+        justify-content: center;
+        width: 60%;
     }
     .links a {
         font-size: 1.2em;
@@ -799,19 +774,19 @@ footer {
     .subcategorias2 {
         grid-template-columns: repeat(2, 1fr);
     }
-}
+} 
 
 /* Quando não couber mais 4 colunas → cai para 2 */
-@media (max-width: 960px) {
+ @media (max-width: 960px) {
     .subcategorias1 {
         grid-template-columns: repeat(2, 1fr);
     }
-}
+}  
 
 /* Tablets portrait / celulares grandes - ATIVA MENU HAMBÚRGUER */
-@media (max-width: 768px) {
+ @media (max-width: 768px) { 
     /* Mostra o botão hambúrguer */
-    .menu-toggle {
+     .menu-toggle {
         display: flex;
         width: 100%;
         justify-content: center;
@@ -844,8 +819,8 @@ footer {
 }
     .navbar {
         box-shadow: none;
-        justify-content: center;
-    }
+        justify-content: center; 
+     } 
     /* Links ficam em coluna e escondidos por padrão */
     .links {
         position: absolute;
@@ -877,7 +852,6 @@ footer {
        width: 100%;
         text-align: left;
         font-size: 1rem;
-        padding: 14px 16px;
     }
 
     .links a::after {
@@ -920,39 +894,29 @@ footer {
         width: calc(100% - 40px);
     }
 
-    .nomeloja {
-        font-size: 2.5em;
-    }
+    
     .contentp {
-        padding: 30px 15px 15px;
-        margin: 0;
+        margin: 0 auto;
         text-align: center;
     }
-    .contentp h1 {
-        font-size: 2em;
-    }
     .imglogo {
-        width: 190px;
+        width: 200px;
     }
     .categorias1 h1, .categorias2 h1 {
         font-size: 2em;
         text-align: center;
     }
     .categorias1 img, .categorias2 img {
-        max-width: 100%;
-        height: auto;
-    }
-    .produto {
+    max-width: 100%;
+}
+    .nome-produto {
         font-size: 1.3em !important;
     }
-    .valor {
+    .valor-produto {
         font-size: 1.7em;
     }
-    .parcelas {
+    .parcelas-produto {
         font-size: 1em !important;
-    }
-    .subcategorias1 p {
-        font-size: 1.2em;
     }
     .subqs {
         flex-direction: column;
@@ -975,7 +939,7 @@ footer {
   }
 
   
-}
+} 
 
 @media (max-width: 650px) {
     .imglogo {
@@ -1002,10 +966,10 @@ footer {
     .subcategorias1 {
         grid-template-columns: 1fr;
     }
-}
+} 
 
 /* Celulares pequenos */
-@media (max-width: 480px) {
+ @media (max-width: 480px) {
     .categorias2 {
         margin: 0px 20px;
     }
@@ -1055,7 +1019,7 @@ footer {
     footer p {
         font-size: 0.8em;
     }
-}
+}  
 
 
 
@@ -1112,3 +1076,31 @@ footer {
         gap: 20px;
     }
 }
+
+
+
+/* PAGINAÇÃO */
+
+.swiper-pagination {
+    position: relative !important;
+    margin-top: 20px;
+    text-align: center;
+}
+
+.swiper-pagination-bullet {
+    width: 10px;
+    height: 10px;
+    background: #bdbdbd;
+    opacity: 1;
+    transition: 0.3s;
+}
+
+.swiper-pagination-bullet-active {
+    width: 30px;
+    border-radius: 20px;
+    background: #b90c29;
+}
+
+
+
+
