@@ -63,15 +63,11 @@ main {
     }
 
 header {
-    background-image: url("/imagens/imagemdafrente/b14.png");
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: #b90c29;
-    
     width: 100%;
-    
-
+    background: url("/imagens/imagemdafrente/b14.png") #b90c29;
 }
 
 
@@ -83,7 +79,7 @@ header {
     justify-content: center;
     align-items: center;
     background: transparent;    
-    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2);
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.3);
     margin: 10px;
     border-radius: 10px;
     
@@ -94,7 +90,6 @@ header {
     justify-content: center;
     width: 100%;
     /* backdrop-filter: blur(12px); */
-    background: #b90c29;
     position: sticky;
     top: 0px;
     z-index: 999;
@@ -169,7 +164,7 @@ header {
     letter-spacing: 0.5px;
     border-radius: 12px;
     transition: all 0.35s ease;
-    text-shadow: none;
+    text-shadow: 1px 1px 4px black;
 }
 
 .links a::after {
@@ -481,23 +476,6 @@ header {
 }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /* Quem Somos */
 .qs {
     background: white;
@@ -635,15 +613,16 @@ footer {
 
 
 .search-box {
-    display: flex; 
+    width: 70%;
+    display: none; 
     align-items: center;
     gap: 12px;
     background: #fff;
     border: 2px solid #e5e7eb;
-    border-radius: 16px;
-    padding: 14px 18px;
-    max-width: 650px;
-    margin: 0 auto 30px auto;
+    border-radius: 12px;
+    padding: 10px 15px;
+    
+    
     box-shadow: 0 8px 20px rgba(0,0,0,0.06);
     transition: 0.3s ease;
 }
@@ -788,14 +767,24 @@ footer {
     /* Mostra o botão hambúrguer */
      .menu-toggle {
         display: flex;
-        width: 100%;
-        justify-content: center;
-        position: absolute;
-        top: 50%;
-        transform: translateY(-50%);
-        flex-direction: column;
-        align-items: flex-end;
+        display: flex;
+       
     }
+
+    .search-box {
+    width: 70%;
+    display: flex; 
+    align-items: center;
+    gap: 12px;
+    background: #fff;
+    border: 2px solid #e5e7eb;
+    border-radius: 12px;
+    padding: 10px 15px;
+    
+    
+    box-shadow: 0 8px 20px rgba(0,0,0,0.06);
+    transition: 0.3s ease;
+}
 
     .navbar1 {
         padding: 0px 20px;    
@@ -819,20 +808,21 @@ footer {
 }
     .navbar {
         box-shadow: none;
-        justify-content: center; 
+        justify-content: space-between; 
      } 
     /* Links ficam em coluna e escondidos por padrão */
     .links {
+        box-shadow: 0px 0px 10px black;
         position: absolute;
-        top: 100%;
-        right: -5px;
-        width: 280px;
+        top: 85px;
+        right: 0px;
+        width: 200px;
         flex-direction: column;
         align-items: stretch;
         background: #b90c29;
         backdrop-filter: blur(15px);
         border-radius: 8px;
-        padding: 12px;
+        
         box-shadow: 0 20px 35px rgba(0,0,0,0.25);
 
         opacity: 0;
