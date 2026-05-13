@@ -694,6 +694,74 @@ footer {
 
 
 
+@media (max-width: 768px) {
+    .bloco-vitrine .swiper {
+        padding: 0 0 34px !important;
+    }
+
+    .bloco-vitrine .swiper-button-prev,
+    .bloco-vitrine .swiper-button-next {
+        display: none !important;
+    }
+}
+
+
+/* ================= PRODUTO ESGOTADO ================= */
+
+.produto-card {
+    position: relative;
+    overflow: hidden;
+}
+
+.produto-card.produto-esgotado {
+    cursor: not-allowed;
+}
+
+.produto-card.produto-esgotado a {
+    pointer-events: none;
+    cursor: not-allowed;
+}
+
+.produto-card.produto-esgotado img,
+.produto-card.produto-esgotado h3,
+.produto-card.produto-esgotado p {
+    filter: grayscale(1);
+    opacity: 0.45;
+}
+
+.produto-card.produto-esgotado::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 15;
+    background: rgba(0, 0, 0, 0.253);
+    pointer-events: none;
+}
+
+.faixa-esgotado {
+    position: absolute;
+    top: 42%;
+    left: 50%;
+    z-index: 30;
+    transform: translate(-50%, -50%) rotate(-6deg);
+
+    width: 115%;
+    padding: 12px 0;
+
+    background: rgba(185, 12, 41, 0.96);
+    color: #ffffff;
+
+    text-align: center;
+    font-size: clamp(1rem, 2vw, 1.25rem);
+    font-weight: 900;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+
+    box-shadow: 0 8px 22px rgba(0, 0, 0, 0.35);
+    pointer-events: none;
+}
+
+
 
 /* ===============================
    FILTROS DA VITRINE - LAYOUT FINAL

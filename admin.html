@@ -461,6 +461,37 @@
     color: #555;
     cursor: not-allowed;
 }
+
+
+.btn-stock {
+    border: none;
+    padding: 10px 14px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: 700;
+    transition: 0.3s;
+    background: #1f2937;
+    color: white;
+}
+
+.btn-stock:hover {
+    transform: scale(1.05);
+}
+
+.btn-stock.esgotado {
+    background: #17603c;
+}
+
+.status-esgotado-admin {
+    display: inline-block;
+    margin-top: 8px;
+    padding: 5px 9px;
+    border-radius: 999px;
+    background: #b90c29;
+    color: #ffffff;
+    font-size: 0.75rem;
+    font-weight: 900;
+}
     </style>
 </head>
 <body>
@@ -568,13 +599,9 @@
                         required>
 
                     <datalist id="listaImagens">
-                        <option value="imagens/produtos/roupeiro1.jpeg">
+                        <option value="imagens/imgp/produtosX/produto1.jpeg">
                         <option value="imagens/produtos/roupeiro2.jpeg">
-                        <option value="imagens/produtos/sofa1.jpeg">
-                        <option value="imagens/produtos/cama1.jpeg">
-                        <option value="imagens/produtos/mesa1.jpeg">
                     </datalist>
-
                     <div class="preview-imagem-box">
                         <button type="button" class="btn-preview-img" onclick="mostrarPreviewImagem()">
                             Ver imagem
@@ -595,6 +622,7 @@ Material: 100% MDP
 Altura: 208 cm"></textarea>
 
                     <input type="text" id="link" placeholder="Link gerado automaticamente" readonly>
+                    
 
                     <button class="btn btn-primary" type="submit">
                         Adicionar produto
@@ -627,40 +655,39 @@ Altura: 208 cm"></textarea>
         </div>
 
     </div>
-
     <script>
     // ===============================
     // DADOS PRINCIPAIS
     // ===============================
     const blocosPadrao = {
-    bloco1: [],
-    bloco2: [],
-    bloco3: [],
-    bloco4: [],
-    bloco5: []
+        bloco1: [],
+        bloco2: [],
+        bloco3: [],
+        bloco4: [],
+        bloco5: []
     };
 
     function carregarProdutos() {
-    const dadosSalvos = JSON.parse(localStorage.getItem("produtos")) || {};
+        const dadosSalvos = JSON.parse(localStorage.getItem("produtos")) || {};
 
-    if (Array.isArray(dadosSalvos)) {
+        if (Array.isArray(dadosSalvos)) {
+            return {
+                bloco1: dadosSalvos,
+                bloco2: [],
+                bloco3: [],
+                bloco4: [],
+                bloco5: []
+            };
+        }
+
         return {
-            bloco1: dadosSalvos,
-            bloco2: [],
-            bloco3: [],
-            bloco4: [],
-            bloco5: []
+            bloco1: dadosSalvos.bloco1 || dadosSalvos.roupeiros || [],
+            bloco2: dadosSalvos.bloco2 || dadosSalvos.sofas || [],
+            bloco3: dadosSalvos.bloco3 || dadosSalvos.mesas || [],
+            bloco4: dadosSalvos.bloco4 || dadosSalvos.camas || [],
+            bloco5: dadosSalvos.bloco5 || dadosSalvos.eletros || []
         };
     }
-
-    return {
-        bloco1: dadosSalvos.bloco1 || dadosSalvos.roupeiros || [],
-        bloco2: dadosSalvos.bloco2 || dadosSalvos.sofas || [],
-        bloco3: dadosSalvos.bloco3 || dadosSalvos.mesas || [],
-        bloco4: dadosSalvos.bloco4 || dadosSalvos.camas || [],
-        bloco5: dadosSalvos.bloco5 || dadosSalvos.eletros || []
-    };
-}
 
     let produtos = carregarProdutos();
     let produtoEditando = null;
@@ -750,34 +777,60 @@ Altura: 208 cm"></textarea>
         });
     }
 
+    // ===============================
+    // GERAR ID E LINK
+    // ===============================
     function criarIdProduto(nome) {
-    return nome
-        .toLowerCase()
-        .normalize("NFD")
-        .replace(/[\u0300-\u036f]/g, "")
-        .replace(/[^a-z0-9]+/g, "-")
-        .replace(/^-+|-+$/g, "");
-}
-
-function transformarLinhasEmArray(texto) {
-    return texto
-        .split("\n")
-        .map(item => item.trim())
-        .filter(item => item !== "");
-}
-
-function gerarLinkProduto() {
-    const idProduto = criarIdProduto(nomeInput.value);
-
-    if (!idProduto) {
-        linkInput.value = "";
-        return;
+        return nome
+            .toLowerCase()
+            .normalize("NFD")
+            .replace(/[\u0300-\u036f]/g, "")
+            .replace(/[^a-z0-9]+/g, "-")
+            .replace(/^-+|-+$/g, "");
     }
 
-    linkInput.value = `pagina-produtos/produto.html?id=${idProduto}`;
-}
+    function transformarLinhasEmArray(texto) {
+        return texto
+            .split("\n")
+            .map(item => item.trim())
+            .filter(item => item !== "");
+    }
 
-nomeInput.addEventListener("input", gerarLinkProduto);
+    function gerarLinkProduto() {
+        const idProduto = criarIdProduto(nomeInput.value);
+
+        if (!idProduto) {
+            linkInput.value = "";
+            return;
+        }
+
+        linkInput.value = `pagina-produtos/produto.html?id=${idProduto}`;
+    }
+
+    nomeInput.addEventListener("input", gerarLinkProduto);
+
+    // ===============================
+    // VERIFICAR ID REPETIDO
+    // ===============================
+    function idProdutoJaExiste(idProduto, indexIgnorado = null) {
+        const blocoSelecionado = pegarBlocoAtual();
+
+        for (const nomeBloco in produtos) {
+            const listaDoBloco = produtos[nomeBloco] || [];
+
+            for (let i = 0; i < listaDoBloco.length; i++) {
+                const mesmoProdutoEditado =
+                    nomeBloco === blocoSelecionado &&
+                    i === indexIgnorado;
+
+                if (!mesmoProdutoEditado && listaDoBloco[i].id === idProduto) {
+                    return true;
+                }
+            }
+        }
+
+        return false;
+    }
 
     // ===============================
     // ADICIONAR OU SALVAR ALTERAÇÃO
@@ -786,35 +839,51 @@ nomeInput.addEventListener("input", gerarLinkProduto);
         e.preventDefault();
 
         const idProduto = criarIdProduto(nomeInput.value);
-const imagemPrincipal = imagemInput.value.trim();
+        const imagemPrincipal = imagemInput.value.trim();
 
-const imagensExtras = transformarLinhasEmArray(imagensExtrasInput.value);
+        if (!idProduto) {
+            alert("Digite um nome válido para o produto.");
+            return;
+        }
 
-const imagensProduto = [
-    imagemPrincipal,
-    ...imagensExtras
-].filter(imagem => imagem !== "");
+        if (idProdutoJaExiste(idProduto, produtoEditando)) {
+            alert(`Já existe um produto com o ID "${idProduto}". Altere um pouco o nome do produto para gerar outro link.`);
+            return;
+        }
 
-const descricaoProduto = transformarLinhasEmArray(descricaoCompletaInput.value);
+        const imagensExtras = transformarLinhasEmArray(imagensExtrasInput.value);
 
-const produto = {
-    id: idProduto,
-    nome: nomeInput.value.trim(),
-    preco: precoInput.value,
-    precoCartao: precoCartaoInput.value,
-    parcelas: Number(parcelasInput.value),
-    valorParcela: calcularParcela(precoCartaoInput.value, parcelasInput.value),
+        const imagensProduto = [
+            imagemPrincipal,
+            ...imagensExtras
+        ].filter(imagem => imagem !== "");
 
-    imagem: imagemPrincipal,
-    imagens: imagensProduto,
-
-    resumo: resumoInput.value.trim(),
-    descricao: descricaoProduto,
-
-    link: `pagina-produtos/produto.html?id=${idProduto}`
-};
+        const descricaoProduto = transformarLinhasEmArray(descricaoCompletaInput.value);
 
         const produtosDoBloco = pegarProdutosDoBlocoAtual();
+
+        const produtoAnterior = produtoEditando !== null
+            ? produtosDoBloco[produtoEditando]
+            : null;
+
+        const produto = {
+            id: idProduto,
+            nome: nomeInput.value.trim(),
+            preco: precoInput.value,
+            precoCartao: precoCartaoInput.value,
+            parcelas: Number(parcelasInput.value),
+            valorParcela: calcularParcela(precoCartaoInput.value, parcelasInput.value),
+
+            imagem: imagemPrincipal,
+            imagens: imagensProduto,
+
+            resumo: resumoInput.value.trim(),
+            descricao: descricaoProduto,
+
+            esgotado: produtoAnterior ? produtoAnterior.esgotado === true : false,
+
+            link: `pagina-produtos/produto.html?id=${idProduto}`
+        };
 
         if (produtoEditando === null) {
             const confirmarAdicao = confirm(
@@ -842,13 +911,13 @@ const produto = {
         }
 
         salvarProdutos();
-form.reset();
+        form.reset();
 
-document.getElementById("previewImagemProduto").style.display = "none";
-document.getElementById("previewImagemProduto").src = "";
+        document.getElementById("previewImagemProduto").style.display = "none";
+        document.getElementById("previewImagemProduto").src = "";
 
-gerarLinkProduto();
-atualizarTela();
+        gerarLinkProduto();
+        atualizarTela();
     });
 
     // ===============================
@@ -876,12 +945,21 @@ atualizarTela();
                     <div class="produto-info">
                         <h3>${produto.nome}</h3>
                         <p>${produto.preco}</p>
+
                         <small>
                             Cartão: ${produto.precoCartao} em ${produto.parcelas}x de ${produto.valorParcela}
                         </small>
+
+                        ${produto.esgotado ? '<span class="status-esgotado-admin">ESGOTADO</span>' : ''}
                     </div>
 
                     <div class="acoes">
+                        <button 
+                            class="btn-stock ${produto.esgotado ? 'esgotado' : ''}" 
+                            onclick="alternarEsgotado(${index})">
+                            ${produto.esgotado ? 'Disponível' : 'Esgotar'}
+                        </button>
+
                         <button class="btn-edit" onclick="editarProduto(${index})">
                             Editar
                         </button>
@@ -908,24 +986,26 @@ atualizarTela();
         jsonGerado.value = JSON.stringify(produtos, null, 4);
     }
 
-
+    // ===============================
+    // PRÉVIA DA IMAGEM
+    // ===============================
     function mostrarPreviewImagem() {
-    const caminhoImagem = imagemInput.value.trim();
-    const preview = document.getElementById("previewImagemProduto");
+        const caminhoImagem = imagemInput.value.trim();
+        const preview = document.getElementById("previewImagemProduto");
 
-    if (caminhoImagem === "") {
-        alert("Coloque o caminho da imagem primeiro.");
-        return;
+        if (caminhoImagem === "") {
+            alert("Coloque o caminho da imagem primeiro.");
+            return;
+        }
+
+        preview.src = caminhoImagem;
+        preview.style.display = "block";
+
+        preview.onerror = function () {
+            preview.style.display = "none";
+            alert("Imagem não encontrada. Confira se o caminho está correto.");
+        };
     }
-
-    preview.src = caminhoImagem;
-    preview.style.display = "block";
-
-    preview.onerror = function () {
-        preview.style.display = "none";
-        alert("Imagem não encontrada. Confira se o caminho está correto.");
-    };
-}
 
     // ===============================
     // EDITAR PRODUTO
@@ -934,21 +1014,21 @@ atualizarTela();
         const produto = pegarProdutosDoBlocoAtual()[index];
 
         nomeInput.value = produto.nome || "";
-precoInput.value = produto.preco || "";
-precoCartaoInput.value = produto.precoCartao || "";
-parcelasInput.value = produto.parcelas || "";
-imagemInput.value = produto.imagem || "";
-linkInput.value = produto.link || "";
+        precoInput.value = produto.preco || "";
+        precoCartaoInput.value = produto.precoCartao || "";
+        parcelasInput.value = produto.parcelas || "";
+        imagemInput.value = produto.imagem || "";
+        linkInput.value = produto.link || "";
 
-resumoInput.value = produto.resumo || "";
+        resumoInput.value = produto.resumo || "";
 
-descricaoCompletaInput.value = Array.isArray(produto.descricao)
-    ? produto.descricao.join("\n")
-    : "";
+        descricaoCompletaInput.value = Array.isArray(produto.descricao)
+            ? produto.descricao.join("\n")
+            : "";
 
-imagensExtrasInput.value = Array.isArray(produto.imagens)
-    ? produto.imagens.filter(img => img !== produto.imagem).join("\n")
-    : "";
+        imagensExtrasInput.value = Array.isArray(produto.imagens)
+            ? produto.imagens.filter(img => img !== produto.imagem).join("\n")
+            : "";
 
         produtoEditando = index;
         botaoSubmit.textContent = "Salvar alteração";
@@ -957,6 +1037,23 @@ imagensExtrasInput.value = Array.isArray(produto.imagens)
             top: 0,
             behavior: "smooth"
         });
+    }
+
+    // ===============================
+    // ALTERNAR PRODUTO ESGOTADO
+    // ===============================
+    function alternarEsgotado(index) {
+        const produtosDoBloco = pegarProdutosDoBlocoAtual();
+        const produto = produtosDoBloco[index];
+
+        if (!produto) {
+            return;
+        }
+
+        produto.esgotado = !produto.esgotado;
+
+        salvarProdutos();
+        atualizarTela();
     }
 
     // ===============================
@@ -1008,6 +1105,10 @@ imagensExtrasInput.value = Array.isArray(produto.imagens)
         botaoSubmit.textContent = "Adicionar produto";
         pesquisaAdmin.value = "";
         form.reset();
+
+        document.getElementById("previewImagemProduto").style.display = "none";
+        document.getElementById("previewImagemProduto").src = "";
+
         atualizarTela();
     });
 

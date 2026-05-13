@@ -63,6 +63,8 @@ if (!produto) {
     function montarProduto(produto) {
         const nomeProduto = produto.nome || produto.titulo || 'Produto';
         const precoProduto = produto.preco || produto.valor || 'Consulte o valor';
+        const precoAntigoProduto = produto.precoCartao || produto.precoPrazo || '';
+        const economiaProduto = calcularEconomia(precoAntigoProduto, precoProduto);
         const parcelasProduto = produto.condicao ||
         produto.parcelamento ||
         (
@@ -88,6 +90,17 @@ if (!produto) {
         document.getElementById('preco-produto').innerText = precoProduto;
         document.getElementById('parcelas-produto').innerText = parcelasProduto;
         document.getElementById('resumo-produto').innerText = resumoProduto;
+
+        const precoAntigoEl = document.getElementById('preco-antigo-produto');
+        const economiaPixEl = document.getElementById('economia-pix-produto');
+
+        if (precoAntigoProduto && economiaProduto > 0) {
+            precoAntigoEl.innerText = precoAntigoProduto;
+            economiaPixEl.innerText = `À vista no PIX você economiza ${formatarMoedaBR(economiaProduto)}`;
+        } else {
+            precoAntigoEl.style.display = 'none';
+            economiaPixEl.style.display = 'none';
+        }
 
         const imagemPrincipal = document.getElementById('imagemPrincipal');
         const miniaturasProduto = document.getElementById('miniaturasProduto');
@@ -121,6 +134,8 @@ if (!produto) {
             const li = document.createElement('li');
             li.innerText = item;
             listaDescricao.appendChild(li);
+
+
         });
 
         function atualizarImagem(index) {
@@ -462,5 +477,35 @@ function normalizarTextoRelacionado(texto) {
         .replace(/\s+/g, ' ')
         .toLowerCase()
         .trim();
+}
+function converterMoedaParaNumero(valor) {
+    if (!valor) return 0;
+
+    let texto = String(valor)
+        .replace(/\s/g, '')
+        .replace('R$', '')
+        .replace(/\./g, '')
+        .replace(',', '.')
+        .replace(/[^\d.]/g, '');
+
+    return Number(texto) || 0;
+}
+
+function calcularEconomia(precoMaior, precoMenor) {
+    const valorMaior = converterMoedaParaNumero(precoMaior);
+    const valorMenor = converterMoedaParaNumero(precoMenor);
+
+    if (!valorMaior || !valorMenor) {
+        return 0;
+    }
+
+    return valorMaior - valorMenor;
+}
+
+function formatarMoedaBR(valor) {
+    return valor.toLocaleString('pt-BR', {
+        style: 'currency',
+        currency: 'BRL'
+    });
 }
 });

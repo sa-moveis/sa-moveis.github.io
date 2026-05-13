@@ -458,14 +458,20 @@ function renderizarVitrine(idLista, idBloco, produtos) {
     produtos.forEach(produto => {
         const categoriaProduto = identificarCategoria(produto);
         const precoNumerico = precoParaNumero(produto.preco);
+        const produtoEsgotado = produto.esgotado === true || produto.esgotado === "true";
 
         lista.innerHTML += `
-            <div class="swiper-slide produto-card"
+            <div class="swiper-slide produto-card ${produtoEsgotado ? 'produto-esgotado' : ''}"
                 data-name="${normalizarTexto(produto.nome)}"
                 data-categoria="${categoriaProduto}"
                 data-preco="${precoNumerico}">
 
-                <a href="${produto.link}">
+                ${produtoEsgotado ? '<div class="faixa-esgotado">ESGOTADO</div>' : ''}
+
+                <a 
+                    href="${produtoEsgotado ? '#' : produto.link}" 
+                    ${produtoEsgotado ? 'onclick="event.preventDefault(); return false;" aria-disabled="true"' : ''}>
+
                     <img src="${produto.imagem}" alt="${produto.nome}">
 
                     <h3 class="nome-produto">${produto.nome}</h3>
@@ -483,7 +489,6 @@ function renderizarVitrine(idLista, idBloco, produtos) {
 
     return produtos.length;
 }
-
 // ===============================
 // INICIAR SWIPER
 // ===============================
@@ -511,9 +516,14 @@ function iniciarSwipers() {
         vitrine.appendChild(pagination);
 
         const swiper = new Swiper(vitrine, {
-            loop: wrapper.children.length > 2,
+            loop: false,
+            rewind: true,
+            watchOverflow: true,
+            centerInsufficientSlides: true,
+
             speed: 500,
-            spaceBetween: 12,
+            spaceBetween: 20,
+            slidesPerGroup: 1,
 
             navigation: {
                 nextEl: next,
@@ -528,21 +538,21 @@ function iniciarSwipers() {
             breakpoints: {
                 0: {
                     slidesPerView: 2,
-                    slidesPerGroup: 1,
                     spaceBetween: 10,
                 },
-                500: {
+
+                600: {
                     slidesPerView: 2,
-                    slidesPerGroup: 1,
                     spaceBetween: 12,
                 },
+
                 900: {
                     slidesPerView: 3,
-                    slidesPerGroup: 1,
+                    spaceBetween: 16,
                 },
+
                 1100: {
                     slidesPerView: 4,
-                    slidesPerGroup: 1,
                     spaceBetween: 20,
                 }
             }
