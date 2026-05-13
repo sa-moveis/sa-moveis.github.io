@@ -1,17 +1,327 @@
 {
     "bloco1": [
         {
-            "nome": "Guarda Roupas Solteiro",
+            "id": "roupeiro-casal-panama",
+            "nome": "Roupeiro casal Panamá",
+            "preco": "R$ 1.400,00",
+            "precoCartao": "R$ 1.600,00",
+            "parcelas": 10,
+            "valorParcela": "R$ 160,00",
+            "imagem": "imagens/imgp/produtos1/produto1.jpeg",
+            "imagens": [
+                "imagens/imgp/produtos1/produto1.jpeg",
+                "imagens/imgp/produtos1/produto2.jpeg",
+                "imagens/imgp/produtos1/produto3.jpeg",
+                "imagens/imgp/produtos1/produto4.jpeg"
+            ],
+            "resumo": "Guarda Roupa Casal com Espelho 3 Portas 4 Gavetas Panamá",
+            "descricao": [
+                "Dimensões:",
+                "Altura: 180cm",
+                "Largura: 100cm",
+                "Profundidade: 40cm",
+                "Portas: 3",
+                "Gavetas: 4"
+            ],
+            "esgotado": false,
+            "link": "pagina-produtos/produto.html?id=roupeiro-casal-panama"
+        },
+        {
+            "id": "roupeiro-solteiro-estrela",
+            "nome": "Roupeiro Solteiro Estrela",
             "preco": "R$ 650,00",
             "precoCartao": "R$ 750,00",
             "parcelas": 10,
             "valorParcela": "R$ 75,00",
-            "imagem": "https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcTduimepcgw_orVi_ZclKU_9HMhOaDQOu6a7AOZCspSKGzM7yKW8PnykYgJIBK0hR2SToOXo6IUdeIHCTjqPSiXV6Wf6PrMxC30mfHm46gz",
-            "link": "https://sa-moveis.github.io/pagina-produtos/produto2.html"
+            "imagem": "imagens/imgp/produtos2/produto1.jpeg",
+            "imagens": [
+                "imagens/imgp/produtos2/produto1.jpeg",
+                "imagens/imgp/produtos2/produto2.jpeg",
+                "imagens/imgp/produtos2/produto3.jpeg",
+                "imagens/imgp/produtos2/produto4.jpeg"
+            ],
+            "resumo": "Guarda-roupa Solteiro Estrela Premium",
+            "descricao": [
+                "Dimensões:",
+                "Altura: 180cm",
+                "Largura: 100cm",
+                "Profundidade: 40cm",
+                "Portas: 4",
+                "Gavetas: 2"
+            ],
+            "esgotado": false,
+            "link": "pagina-produtos/produto.html?id=roupeiro-solteiro-estrela"
+        },
+        {
+            "id": "roupeiro-casal-chicago",
+            "nome": "Roupeiro casal Chicago",
+            "preco": "R$ 2.600,00",
+            "precoCartao": "R$ 2.960,00",
+            "parcelas": 10,
+            "valorParcela": "R$ 296,00",
+            "imagem": "imagens/imgp/produtos3/produto1.jpeg",
+            "imagens": [
+                "imagens/imgp/produtos3/produto1.jpeg",
+                "imagens/imgp/produtos3/produto2.jpeg",
+                "imagens/imgp/produtos3/produto3.jpeg"
+            ],
+            "resumo": "Roupeiro Casal Chicago C/Espelho-Carmolar -Naturale/Off White",
+            "descricao": [
+                "Dimensões:",
+                "Altura: 180cm",
+                "Largura: 100cm",
+                "Profundidade: 40cm",
+                "Portas: 6",
+                "Gavetas: 7"
+            ],
+            "esgotado": false,
+            "link": "pagina-produtos/produto.html?id=roupeiro-casal-chicago"
+        },
+        {
+            "id": "roupeiro-com-espelho",
+            "nome": "Roupeiro com espelho",
+            "preco": "R$ 1.100,00",
+            "precoCartao": "R$ 1.260,00",
+            "parcelas": 12,
+            "valorParcela": "R$ 105,00",
+            "imagem": "imagens/imgp/produtos4/produto1.jpeg",
+            "imagens": [
+                "imagens/imgp/produtos4/produto1.jpeg",
+                "imagens/imgp/produtos4/produto2.jpeg",
+                "imagens/imgp/produtos4/produto3.jpeg",
+                "imagens/imgp/produtos4/produto4.jpeg",
+                "imagens/imgp/produtos4/produto5.jpeg"
+            ],
+            "resumo": "Roupeiro com espelho 2 Portas",
+            "descricao": [
+                "Dimensões:",
+                "Altura: 213cm",
+                "Largura: 126,5cm",
+                "Profundidade: 47cm",
+                "Portas: 2",
+                "Gavetas: 2"
+            ],
+            "esgotado": false,
+            "link": "pagina-produtos/produto.html?id=roupeiro-com-espelho"
+        },
+        {
+            "id": "roupeiro-casal-parma",
+            "nome": "Roupeiro casal Parma",
+            "preco": "R$ 1.500,00",
+            "precoCartao": "R$ 1.700,00",
+            "parcelas": 10,
+            "valorParcela": "R$ 170,00",
+            "imagem": "imagens/imgp/produtos5/produto1.jpg",
+            "imagens": [
+                "imagens/imgp/produtos5/produto1.jpg",
+                "imagens/imgp/produtos5/produto2.jpeg",
+                "imagens/imgp/produtos5/produto3.jpeg",
+                "imagens/imgp/produtos5/produto4.jpeg"
+            ],
+            "resumo": "Roupeiro Casal Parma com Espelho",
+            "descricao": [
+                "Dimensões:",
+                "Altura: 205cm",
+                "Largura: 183cm",
+                "Profundidade: 47cm",
+                "Portas: 6",
+                "Gavetas: 3"
+            ],
+            "esgotado": false,
+            "link": "pagina-produtos/produto.html?id=roupeiro-casal-parma"
         }
     ],
-    "bloco2": [],
-    "bloco3": [],
+    "bloco2": [
+        {
+            "id": "cama-box-bau-casal-socimol",
+            "nome": "Cama Box Baú Casal Socimol",
+            "preco": "R$ 3.499,99",
+            "precoCartao": "R$ 3.924,00",
+            "parcelas": 12,
+            "valorParcela": "R$ 327,00",
+            "imagem": "imagens/imgp/produtos6/produto1.jpeg",
+            "imagens": [
+                "imagens/imgp/produtos6/produto1.jpeg",
+                "imagens/imgp/produtos6/produto2.jpeg",
+                "imagens/imgp/produtos6/produto3.jpeg",
+                "imagens/imgp/produtos6/produto4.jpeg"
+            ],
+            "resumo": "Cama Box Baú Casal Socimol Sintra New com Molas Fio Contínuo",
+            "descricao": [
+                "Medidas:",
+                "Comp: 188 cm",
+                "Larg: 138 cm",
+                "Alt: 70 cm",
+                "Marca: Onix Socimol",
+                "Modelo: Sintra New",
+                "Tipo: Casal",
+                "Tipo de mola: Fio contínuo ensacadas",
+                "Estofamento e composição:",
+                "Espuma de aglomerado densidade 70 kg/m³ (5 cm em cada face)",
+                "Feltro resinado 3 mm / 500 g/m² em cada face",
+                "Revestimento:",
+                "Tecido 100% poliéster",
+                "Tratamento antiácaro",
+                "Faixa lateral em poliéster e polipropileno",
+                "Acabamento:",
+                "Agulhamento na capa",
+                "Agulhamento lateral",
+                "Base:",
+                "Box baú com estrutura resistente"
+            ],
+            "esgotado": false,
+            "link": "pagina-produtos/produto.html?id=cama-box-bau-casal-socimol"
+        },
+        {
+            "id": "cama-box-casal-libre",
+            "nome": "Cama Box Casal Libre",
+            "preco": "R$ 2.699,99",
+            "precoCartao": "R$ 3.120,00",
+            "parcelas": 12,
+            "valorParcela": "R$ 260,00",
+            "imagem": "imagens/imgp/produtos7/produto1.jpeg",
+            "imagens": [
+                "imagens/imgp/produtos7/produto1.jpeg",
+                "imagens/imgp/produtos7/produto2.jpeg",
+                "imagens/imgp/produtos7/produto3.jpeg",
+                "imagens/imgp/produtos7/produto4.jpeg",
+                "imagens/imgp/produtos7/produto5.jpeg"
+            ],
+            "resumo": "Cama Box Casal Libre Onix Molas Ensacadas",
+            "descricao": [
+                "Dimensões",
+                "Comp: 188 cm",
+                "Larg: 138 cm",
+                "Alt: 70 cm",
+                "Características",
+                "Conjunto completo com colchão e base box",
+                "Sistema de molas ensacadas individualmente",
+                "Redução de transferência de movimento",
+                "Estrutura com boa sustentação",
+                "Revestimento com proteção antiácaro",
+                "Informações Técnicas",
+                "Marca: Onix",
+                "Modelo: Libre",
+                "Colchão:",
+                "Sistema de molas ensacadas",
+                "Média de 220 molas/m²",
+                "Bitola de 1,83 mm e 2,0 mm",
+                "Espumas densidade 28 kg/m³",
+                "Mantas de feltro resinado 3mm (500 g/m²)",
+                "Revestimento 55% poliéster e 45% polipropileno",
+                "Tecido 100% poliéster",
+                "Tratamento antiácaro",
+                "Base:",
+                "Estrutura em madeira maciça",
+                "Modelo box sommier",
+                "Capacidade:",
+                "Ideal para 2 pessoas",
+                "Informações adicionais:",
+                "Produto enviado desmontado",
+                "Acompanha manual",
+                "Cor enviada conforme disponibilidade"
+            ],
+            "esgotado": false,
+            "link": "pagina-produtos/produto.html?id=cama-box-casal-libre"
+        },
+        {
+            "id": "sofa-retratil-reclinavel-ibiza",
+            "nome": "Sofá Retrátil Reclinavel Ibiza",
+            "preco": "R$ 1.599,99",
+            "precoCartao": "R$ 1.836,00",
+            "parcelas": 12,
+            "valorParcela": "R$ 153,00",
+            "imagem": "imagens/imgp/produtos8/produto1.jpeg",
+            "imagens": [
+                "imagens/imgp/produtos8/produto1.jpeg",
+                "imagens/imgp/produtos8/produto2.jpeg"
+            ],
+            "resumo": "Sofá Retrátil Reclinavel Ibiza",
+            "descricao": [
+                "Dimensões:",
+                "Comprimento: 2.10cm",
+                "Altura: 100cm",
+                "Aberto: 135cm"
+            ],
+            "esgotado": false,
+            "link": "pagina-produtos/produto.html?id=sofa-retratil-reclinavel-ibiza"
+        },
+        {
+            "id": "sofa-imola-onix",
+            "nome": "Sofá Imola Onix",
+            "preco": "R$ 1.499,99",
+            "precoCartao": "R$ 1.740,00",
+            "parcelas": 12,
+            "valorParcela": "R$ 145,00",
+            "imagem": "imagens/imgp/produtos9/produto1.jpg",
+            "imagens": [
+                "imagens/imgp/produtos9/produto1.jpg",
+                "imagens/imgp/produtos9/produto2.jpg",
+                "imagens/imgp/produtos9/produto3.jpg"
+            ],
+            "resumo": "Sofá Imola Onix 3 lugares",
+            "descricao": [
+                "Dimensões:",
+                "Largura: 2.23cm",
+                "Altura: 0.87cm",
+                "Profuncidade: 0.94cm",
+                "Quantidade de Lugares: 3"
+            ],
+            "esgotado": false,
+            "link": "pagina-produtos/produto.html?id=sofa-imola-onix"
+        }
+    ],
+    "bloco3": [
+        {
+            "id": "sofa-retratil-reclinavel-san-juan",
+            "nome": "Sófa retratil reclinável San Juan",
+            "preco": "R$ 1.599,99",
+            "precoCartao": "R$ 1.836,00",
+            "parcelas": 12,
+            "valorParcela": "R$ 153,00",
+            "imagem": "imagens/imgp/produtos10/produto1.jpeg",
+            "imagens": [
+                "imagens/imgp/produtos10/produto1.jpeg",
+                "imagens/imgp/produtos10/produto2.jpeg"
+            ],
+            "resumo": "Sófa retratil reclinável Onix San Juan",
+            "descricao": [
+                "Dimensões:",
+                "Altura: 95cm",
+                "Comprimento: 180cm",
+                "Profundidade do Assento Fechado: 111cm",
+                "Profundidade do Assento Aberto: 140cm"
+            ],
+            "esgotado": false,
+            "link": "pagina-produtos/produto.html?id=sofa-retratil-reclinavel-san-juan"
+        },
+        {
+            "id": "roupeiro-andorinha",
+            "nome": "Roupeiro Andorinha",
+            "preco": "R$ 1.299,99",
+            "precoCartao": "R$ 1.500,00",
+            "parcelas": 12,
+            "valorParcela": "R$ 125,00",
+            "imagem": "imagens/imgp/produtos11/produto1.jpeg",
+            "imagens": [
+                "imagens/imgp/produtos11/produto1.jpeg",
+                "imagens/imgp/produtos11/produto2.jpeg",
+                "imagens/imgp/produtos11/produto3.jpeg"
+            ],
+            "resumo": "Roupeiro Casal Andorinha",
+            "descricao": [
+                "Dimensões:",
+                "Altura: 225 cm",
+                "Largura: 185 cm",
+                "Profundidade: 47 cm",
+                "Portas: 6",
+                "Gavetas: 2",
+                "Material: 100% MDF"
+            ],
+            "esgotado": false,
+            "link": "pagina-produtos/produto.html?id=roupeiro-andorinha"
+        }
+    ],
     "bloco4": [],
     "bloco5": []
 }

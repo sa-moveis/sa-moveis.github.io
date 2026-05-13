@@ -438,7 +438,6 @@ function atualizarVitrines() {
     mostrarMensagemSemProdutos(totalProdutosExibidos);
     iniciarSwipers();
 }
-
 // ===============================
 // RENDERIZAR PRODUTOS NA TELA
 // ===============================
@@ -461,34 +460,37 @@ function renderizarVitrine(idLista, idBloco, produtos) {
         const produtoEsgotado = produto.esgotado === true || produto.esgotado === "true";
 
         lista.innerHTML += `
-            <div class="swiper-slide produto-card ${produtoEsgotado ? 'produto-esgotado' : ''}"
+            <div class="swiper-slide"
                 data-name="${normalizarTexto(produto.nome)}"
                 data-categoria="${categoriaProduto}"
                 data-preco="${precoNumerico}">
 
-                ${produtoEsgotado ? '<div class="faixa-esgotado">ESGOTADO</div>' : ''}
+                <div class="produto-card ${produtoEsgotado ? 'produto-esgotado' : ''}">
+                    ${produtoEsgotado ? '<div class="faixa-esgotado">ESGOTADO</div>' : ''}
 
-                <a 
-                    href="${produtoEsgotado ? '#' : produto.link}" 
-                    ${produtoEsgotado ? 'onclick="event.preventDefault(); return false;" aria-disabled="true"' : ''}>
+                    <a 
+                        href="${produtoEsgotado ? '#' : produto.link}" 
+                        ${produtoEsgotado ? 'onclick="event.preventDefault(); return false;" aria-disabled="true"' : ''}>
 
-                    <img src="${produto.imagem}" alt="${produto.nome}">
+                        <img src="${produto.imagem}" alt="${produto.nome}">
 
-                    <h3 class="nome-produto">${produto.nome}</h3>
+                        <h3 class="nome-produto">${produto.nome}</h3>
 
-                    <p class="valor-produto">${produto.preco}</p>
+                        <p class="valor-produto">${produto.preco}</p>
 
-                    <p class="parcelas-produto">
-                        ou <span class="valor-acrescimo">${produto.precoCartao}</span>
-                        em ${produto.parcelas}x de ${produto.valorParcela} no Cartão
-                    </p>
-                </a>
+                        <p class="parcelas-produto">
+                            ou <span class="valor-acrescimo">${produto.precoCartao}</span>
+                            em ${produto.parcelas}x de ${produto.valorParcela} no Cartão
+                        </p>
+                    </a>
+                </div>
             </div>
         `;
     });
 
     return produtos.length;
 }
+
 // ===============================
 // INICIAR SWIPER
 // ===============================
@@ -516,10 +518,13 @@ function iniciarSwipers() {
         vitrine.appendChild(pagination);
 
         const swiper = new Swiper(vitrine, {
-            loop: false,
+            loop: true,
             rewind: true,
-            watchOverflow: true,
-            centerInsufficientSlides: true,
+            watchOverflow: false,
+            centerInsufficientSlides: false,
+            centeredSlides: false,
+            freeMode: false,
+            roundLengths: true,
 
             speed: 500,
             spaceBetween: 20,
@@ -538,21 +543,25 @@ function iniciarSwipers() {
             breakpoints: {
                 0: {
                     slidesPerView: 2,
+                    slidesPerGroup: 1,
                     spaceBetween: 10,
                 },
 
-                600: {
+                768: {
                     slidesPerView: 2,
+                    slidesPerGroup: 1,
                     spaceBetween: 12,
                 },
 
                 900: {
                     slidesPerView: 3,
+                    slidesPerGroup: 1,
                     spaceBetween: 16,
                 },
 
                 1100: {
                     slidesPerView: 4,
+                    slidesPerGroup: 1,
                     spaceBetween: 20,
                 }
             }
@@ -561,7 +570,6 @@ function iniciarSwipers() {
         swipersCriados.push(swiper);
     });
 }
-
 // ===============================
 // MENSAGEM QUANDO NÃO ENCONTRA PRODUTO
 // ===============================
