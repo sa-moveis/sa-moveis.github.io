@@ -1,0 +1,768 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Links dos Produtos - SA Móveis</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&family=Archivo+Black&display=swap" rel="stylesheet">
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --vermelho-sa: #b90c29;
+            --azul-sa: #0047BB;
+            --azul-escuro: #003087;
+            --cinza-bg: #f4f5f7;
+            --branco: #ffffff;
+            --texto: #1e1e1e;
+            --borda: #e5e7eb;
+            --shadow: 0 10px 25px rgba(0,0,0,0.08);
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            background: var(--cinza-bg);
+            color: var(--texto);
+            padding: 30px;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: auto;
+        }
+
+        .topo {
+            background: linear-gradient(135deg, var(--vermelho-sa), var(--azul-sa));
+            color: white;
+            padding: 30px;
+            border-radius: 18px;
+            margin-bottom: 25px;
+            box-shadow: var(--shadow);
+        }
+
+        .topo h1 {
+            font-family: 'Archivo Black', sans-serif;
+            font-size: 2.4rem;
+            margin-bottom: 8px;
+        }
+
+        .topo p {
+            font-size: 1.1rem;
+            opacity: 0.95;
+        }
+
+        .search-box {
+            background: white;
+            padding: 18px;
+            border-radius: 18px;
+            box-shadow: var(--shadow);
+            margin-bottom: 25px;
+        }
+
+        .search-box input {
+            width: 100%;
+            padding: 15px;
+            border-radius: 12px;
+            border: 2px solid var(--borda);
+            font-size: 1rem;
+            outline: none;
+            transition: 0.3s;
+        }
+
+        .search-box input:focus {
+            border-color: var(--azul-sa);
+            box-shadow: 0 0 0 4px rgba(0,71,187,0.10);
+        }
+
+        .lista {
+            display: grid;
+            gap: 16px;
+        }
+
+        .produto-card {
+            background: white;
+            border-radius: 18px;
+            padding: 18px;
+            box-shadow: var(--shadow);
+            display: grid;
+            grid-template-columns: 90px 1fr auto;
+            gap: 18px;
+            align-items: center;
+            transition: 0.3s;
+        }
+
+        .produto-card:hover {
+            transform: translateY(-2px);
+        }
+
+        .produto-card img {
+            width: 90px;
+            height: 90px;
+            object-fit: cover;
+            border-radius: 14px;
+            background: #eee;
+        }
+
+        .produto-info h2 {
+            font-size: 1.2rem;
+            margin-bottom: 6px;
+            color: var(--azul-escuro);
+        }
+
+        .produto-info p {
+            font-weight: 700;
+            color: var(--vermelho-sa);
+            margin-bottom: 6px;
+        }
+
+        .produto-info small {
+            display: block;
+            color: #666;
+            word-break: break-all;
+            line-height: 1.4;
+        }
+
+        .btn-copy {
+            border: none;
+            padding: 13px 18px;
+            border-radius: 12px;
+            background: linear-gradient(135deg, var(--azul-sa), var(--azul-escuro));
+            color: white;
+            font-weight: 700;
+            cursor: pointer;
+            transition: 0.3s;
+            white-space: nowrap;
+        }
+
+        .btn-copy:hover {
+            transform: scale(1.04);
+            box-shadow: 0 8px 18px rgba(0,71,187,0.25);
+        }
+
+        #telaSenha {
+            position: fixed;
+            inset: 0;
+            background: #f4f5f7;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 99999;
+        }
+
+        .login-box {
+            background: white;
+            width: 100%;
+            max-width: 380px;
+            padding: 30px;
+            border-radius: 18px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.12);
+            text-align: center;
+        }
+
+        .login-box h2 {
+            color: var(--vermelho-sa);
+            margin-bottom: 10px;
+        }
+
+        .login-box p {
+            color: #555;
+            margin-bottom: 20px;
+        }
+
+        .login-box input {
+            width: 100%;
+            padding: 14px;
+            border-radius: 12px;
+            border: 2px solid var(--borda);
+            outline: none;
+            font-size: 1rem;
+            margin-bottom: 15px;
+        }
+
+        .btn-login {
+            width: 100%;
+            padding: 14px;
+            border: none;
+            border-radius: 12px;
+            background: linear-gradient(135deg, #b90c29, #0047BB);
+            color: white;
+            font-weight: bold;
+            font-size: 1rem;
+            cursor: pointer;
+        }
+
+        #erroSenha {
+            display: none;
+            color: var(--vermelho-sa);
+            margin-top: 15px;
+            font-weight: bold;
+        }
+
+        @media (max-width: 700px) {
+
+             body {
+        padding: 12px;
+    }
+
+    .topo {
+        padding: 22px;
+    }
+
+    .topo h1 {
+        font-size: 1.6rem;
+    }
+
+    .produto-card {
+
+        grid-template-columns: 65px 1fr auto;
+
+        gap: 12px;
+
+        padding: 12px;
+
+        align-items: center;
+    }
+
+    .produto-card img {
+
+        width: 65px;
+        height: 65px;
+
+        border-radius: 10px;
+    }
+
+    .produto-info h2 {
+        font-size: 0.95rem;
+        margin-bottom: 4px;
+    }
+
+    .produto-info p {
+        font-size: 0.9rem;
+        margin-bottom: 3px;
+    }
+
+    .produto-info small {
+        font-size: 0.7rem;
+    }
+
+    .btn-copy {
+
+        width: auto;
+
+        padding: 10px 12px;
+
+        font-size: 0.8rem;
+
+        border-radius: 10px;
+    }
+}
+
+.filtros-produtos {
+    background: white;
+    padding: 14px;
+    border-radius: 18px;
+    box-shadow: var(--shadow);
+    margin-bottom: 25px;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+        "pesquisa pesquisa"
+        "categoria ordem";
+    gap: 10px;
+}
+
+.filtros-produtos .search-box {
+    grid-area: pesquisa;
+    padding: 0;
+    margin: 0;
+    box-shadow: none;
+    border-radius: 0;
+    background: transparent;
+}
+
+.filtros-produtos .search-box input,
+.filtro-select {
+    width: 100%;
+    height: 50px;
+    padding: 0 14px;
+    border-radius: 12px;
+    border: 2px solid var(--borda);
+    background: #f9fafb;
+    font-size: 1rem;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 600;
+    outline: none;
+    transition: 0.3s;
+}
+
+.filtros-produtos .search-box input:focus,
+.filtro-select:focus {
+    background: white;
+    border-color: var(--azul-sa);
+    box-shadow: 0 0 0 4px rgba(0,71,187,0.10);
+}
+
+#filtroCategoria {
+    grid-area: categoria;
+}
+
+#filtroPreco {
+    grid-area: ordem;
+}
+
+@media (max-width: 700px) {
+    .filtros-produtos {
+        padding: 10px;
+        gap: 8px;
+    }
+
+    .filtros-produtos .search-box input {
+        height: 44px;
+        font-size: 0.85rem;
+    }
+
+    .filtro-select {
+        height: 42px;
+        font-size: 0.72rem;
+        padding: 0 6px;
+    }
+}
+    </style>
+</head>
+<body>
+
+    <div id="telaSenha">
+
+        <div class="login-box">
+
+            <h2>Acesso restrito</h2>
+
+            <p>
+                Digite a senha para acessar os links dos produtos.
+            </p>
+
+            <input type="password" id="senhaInput" placeholder="Digite a senha">
+
+            <button class="btn-login" onclick="verificarSenha()">
+                Entrar
+            </button>
+
+            <div id="erroSenha">
+                Senha incorreta.
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="container">
+
+        <div class="topo">
+            <h1>Links dos Produtos</h1>
+
+            <p>
+                Pesquise o produto e copie o link direto para usar nos Stories, WhatsApp ou Instagram.
+            </p>
+        </div>
+
+        <div class="filtros-produtos">
+    <div class="search-box">
+        <input type="text" id="pesquisa" placeholder="Buscar produto, roupeiro, sofá...">
+    </div>
+
+    <select id="filtroCategoria" class="filtro-select">
+        <option value="todos">Todas as categorias</option>
+        <option value="roupeiros">Roupeiros / Guarda-roupas</option>
+        <option value="sofas">Sofás</option>
+        <option value="camas">Camas / Colchões</option>
+        <option value="mesas">Mesas / Cadeiras</option>
+        <option value="eletros">Eletros</option>
+        <option value="outros">Outros produtos</option>
+    </select>
+
+    <select id="filtroPreco" class="filtro-select">
+        <option value="padrao">Ordenar por</option>
+        <option value="maior">Maior preço</option>
+        <option value="menor">Menor preço</option>
+        <option value="recente">Mais recentes</option>
+    </select>
+</div>
+
+        <div class="lista" id="listaProdutos"></div>
+
+    </div>
+
+    <script>
+
+    const senhaCorreta = "1234";
+    const telaSenha = document.getElementById("telaSenha");
+
+    if (localStorage.getItem("adminAutorizado") === "sim") {
+        telaSenha.style.display = "none";
+    }
+
+    function verificarSenha() {
+        const senhaDigitada = document.getElementById("senhaInput").value;
+        const erroSenha = document.getElementById("erroSenha");
+
+        if (senhaDigitada === senhaCorreta) {
+            localStorage.setItem("adminAutorizado", "sim");
+            telaSenha.style.display = "none";
+        } else {
+            erroSenha.style.display = "block";
+        }
+    }
+
+    document.getElementById("senhaInput").addEventListener("keydown", function(event) {
+        if (event.key === "Enter") {
+            verificarSenha();
+        }
+    });
+
+       function normalizarTexto(texto) {
+    return String(texto || "")
+        .normalize("NFD")
+        .replace(/[\u0300-\u036f]/g, "")
+        .replace(/[-_/]/g, " ")
+        .replace(/[^\w\s]/g, " ")
+        .replace(/\s+/g, " ")
+        .toLowerCase()
+        .trim();
+}
+
+function precoParaNumero(preco) {
+    let valor = String(preco || "")
+        .replace(/[^\d,]/g, "")
+        .replace(",", ".");
+
+    return Number(valor) || 0;
+}
+
+const sinonimosCategorias = {
+    roupeiros: [
+        "roupeiro",
+        "roupeiros",
+        "guarda roupa",
+        "guarda roupas",
+        "guarda roupa casal",
+        "guarda roupa solteiro",
+        "guarda-roupa",
+        "guardaroupa",
+        "guardaroupas",
+        "armario",
+        "armarios",
+        "armário",
+        "armários",
+        "armario de quarto",
+        "roupeiro casal",
+        "roupeiro solteiro"
+    ],
+
+    sofas: [
+        "sofa",
+        "sofas",
+        "sofá",
+        "sofás",
+        "sofa retratil",
+        "sofa reclinavel",
+        "sofá retrátil",
+        "sofá reclinável",
+        "estofado",
+        "estofados",
+        "poltrona",
+        "poltronas",
+        "chaise",
+        "sala de estar"
+    ],
+
+    camas: [
+        "cama",
+        "camas",
+        "cama box",
+        "box",
+        "colchao",
+        "colchão",
+        "colchoes",
+        "colchões",
+        "colchao casal",
+        "colchao solteiro",
+        "beliche",
+        "bicama",
+        "base box",
+        "cabeceira",
+        "quarto"
+    ],
+
+    mesas: [
+        "mesa",
+        "mesas",
+        "mesa jantar",
+        "mesa de jantar",
+        "cadeira",
+        "cadeiras",
+        "conjunto de mesa",
+        "sala de jantar",
+        "jantar",
+        "cozinha",
+        "bancada"
+    ],
+
+    eletros: [
+        "eletro",
+        "eletros",
+        "eletrodomestico",
+        "eletrodoméstico",
+        "eletrodomesticos",
+        "eletrodomésticos",
+        "fogao",
+        "fogão",
+        "geladeira",
+        "freezer",
+        "bebedouro",
+        "liquidificador",
+        "microondas",
+        "micro ondas",
+        "maquina",
+        "máquina",
+        "maquina de lavar",
+        "tanquinho",
+        "ventilador",
+        "air fryer",
+        "forno"
+    ],
+
+    outros: [
+        "rack",
+        "painel",
+        "comoda",
+        "cômoda",
+        "balcao",
+        "balcão",
+        "escrivaninha",
+        "sapateira",
+        "estante",
+        "criado",
+        "multiuso"
+    ]
+};
+
+function identificarCategoria(produto) {
+    const texto = normalizarTexto(`
+        ${produto.nome}
+        ${produto.link}
+        ${produto.imagem}
+    `);
+
+    for (const categoria in sinonimosCategorias) {
+        const palavras = sinonimosCategorias[categoria];
+
+        const encontrou = palavras.some(palavra => {
+            return texto.includes(normalizarTexto(palavra));
+        });
+
+        if (encontrou) {
+            return categoria;
+        }
+    }
+
+    return "outros";
+}
+
+function palavrasParecidas(palavraDigitada, palavraProduto) {
+    palavraDigitada = normalizarTexto(palavraDigitada);
+    palavraProduto = normalizarTexto(palavraProduto);
+
+    if (palavraDigitada.length < 4 || palavraProduto.length < 4) {
+        return false;
+    }
+
+    if (palavraProduto.includes(palavraDigitada)) {
+        return true;
+    }
+
+    if (palavraDigitada.includes(palavraProduto)) {
+        return true;
+    }
+
+    return palavraDigitada.slice(0, 5) === palavraProduto.slice(0, 5);
+}
+
+function produtoCombinaComPesquisa(produto, termoPesquisa) {
+    if (termoPesquisa === "") {
+        return true;
+    }
+
+    const categoriaProduto = identificarCategoria(produto);
+
+    const textoProduto = normalizarTexto(`
+        ${produto.nome}
+        ${produto.preco}
+        ${produto.precoCartao}
+        ${produto.link}
+        ${produto.imagem}
+        ${categoriaProduto}
+    `);
+
+    if (textoProduto.includes(termoPesquisa)) {
+        return true;
+    }
+
+    const sinonimosDaCategoria = sinonimosCategorias[categoriaProduto] || [];
+
+    const encontrouSinonimo = sinonimosDaCategoria.some(sinonimo => {
+        const sinonimoNormalizado = normalizarTexto(sinonimo);
+
+        return (
+            sinonimoNormalizado.includes(termoPesquisa) ||
+            termoPesquisa.includes(sinonimoNormalizado) ||
+            palavrasParecidas(termoPesquisa, sinonimoNormalizado)
+        );
+    });
+
+    if (encontrouSinonimo) {
+        return true;
+    }
+
+    const palavrasDigitadas = termoPesquisa.split(" ");
+    const palavrasDoProduto = textoProduto.split(" ");
+
+    return palavrasDigitadas.some(palavraDigitada => {
+        return palavrasDoProduto.some(palavraProduto => {
+            return palavrasParecidas(palavraDigitada, palavraProduto);
+        });
+    });
+}
+
+function filtrarEOrdenarProdutos(produtos) {
+    const pesquisa = document.getElementById("pesquisa");
+    const filtroCategoria = document.getElementById("filtroCategoria");
+    const filtroPreco = document.getElementById("filtroPreco");
+
+    const termo = normalizarTexto(pesquisa.value);
+    const categoriaSelecionada = filtroCategoria.value;
+    const ordemSelecionada = filtroPreco.value;
+
+    let produtosFiltrados = produtos.filter(produto => {
+        const categoriaProduto = identificarCategoria(produto);
+
+        const combinaCategoria =
+            categoriaSelecionada === "todos" ||
+            categoriaProduto === categoriaSelecionada;
+
+        const combinaPesquisa = produtoCombinaComPesquisa(produto, termo);
+
+        return combinaCategoria && combinaPesquisa;
+    });
+
+    if (ordemSelecionada === "maior") {
+        produtosFiltrados.sort((a, b) => {
+            return precoParaNumero(b.preco) - precoParaNumero(a.preco);
+        });
+    }
+
+    if (ordemSelecionada === "menor") {
+        produtosFiltrados.sort((a, b) => {
+            return precoParaNumero(a.preco) - precoParaNumero(b.preco);
+        });
+    }
+
+    if (ordemSelecionada === "recente") {
+        produtosFiltrados.reverse();
+    }
+
+    return produtosFiltrados;
+}
+
+async function carregarProdutos() {
+    let catalogo = JSON.parse(localStorage.getItem("produtos"));
+
+    if (!catalogo) {
+        const resposta = await fetch("produtos.json?v=2");
+        catalogo = await resposta.json();
+    }
+
+    let produtos = [];
+
+    if (Array.isArray(catalogo)) {
+        produtos = catalogo;
+    } else {
+        produtos = [
+            ...(catalogo.bloco1 || catalogo.roupeiros || []),
+            ...(catalogo.bloco2 || catalogo.sofas || []),
+            ...(catalogo.bloco3 || catalogo.mesas || []),
+            ...(catalogo.bloco4 || catalogo.camas || []),
+            ...(catalogo.bloco5 || catalogo.eletros || [])
+        ];
+    }
+
+    const lista = document.getElementById("listaProdutos");
+    const pesquisa = document.getElementById("pesquisa");
+    const filtroCategoria = document.getElementById("filtroCategoria");
+    const filtroPreco = document.getElementById("filtroPreco");
+
+    function mostrarProdutos() {
+        lista.innerHTML = "";
+
+        const produtosFiltrados = filtrarEOrdenarProdutos(produtos);
+
+        if (produtosFiltrados.length === 0) {
+            lista.innerHTML = `
+                <div class="produto-card" style="grid-template-columns: 1fr;">
+                    <div class="produto-info">
+                        <h2>Nenhum produto encontrado</h2>
+                        <small>Tente pesquisar por outro nome, categoria ou limpar os filtros.</small>
+                    </div>
+                </div>
+            `;
+            return;
+        }
+
+        produtosFiltrados.forEach(produto => {
+            const linkCompleto = new URL(produto.link, window.location.origin).href;
+
+            lista.innerHTML += `
+                <div class="produto-card">
+                    <img src="${produto.imagem}" alt="${produto.nome}">
+
+                    <div class="produto-info">
+                        <h2>${produto.nome}</h2>
+
+                        <p>${produto.preco}</p>
+
+                        <small>${linkCompleto}</small>
+                    </div>
+
+                    <button class="btn-copy" onclick="copiarLink('${linkCompleto}')">
+                        Copiar link
+                    </button>
+                </div>
+            `;
+        });
+    }
+
+    pesquisa.addEventListener("input", mostrarProdutos);
+    filtroCategoria.addEventListener("change", mostrarProdutos);
+    filtroPreco.addEventListener("change", mostrarProdutos);
+
+    mostrarProdutos();
+}
+
+function copiarLink(link) {
+    navigator.clipboard.writeText(link).then(function () {
+        alert("Link copiado!");
+    });
+}
+
+carregarProdutos(); 
+    </script>
+
+</body>
+</html>

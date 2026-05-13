@@ -1,0 +1,910 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin - SA Móveis</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&family=Archivo+Black&display=swap" rel="stylesheet">
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --vermelho-sa: #b90c29;
+            --azul-sa: #0047BB;
+            --azul-escuro: #003087;
+            --branco: #ffffff;
+            --cinza-bg: #f4f5f7;
+            --cinza-card: #ffffff;
+            --cinza-borda: #dcdcdc;
+            --texto: #1e1e1e;
+            --shadow: 0 10px 25px rgba(0,0,0,0.08);
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            background: var(--cinza-bg);
+            color: var(--texto);
+            padding: 30px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        .topo {
+            background: linear-gradient(135deg, var(--vermelho-sa), var(--azul-sa));
+            border-radius: 18px;
+            padding: 30px;
+            color: white;
+            margin-bottom: 30px;
+            box-shadow: var(--shadow);
+        }
+
+        .topo h1 {
+            font-family: 'Archivo Black', sans-serif;
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+
+        .topo p {
+            font-size: 1.1rem;
+            opacity: 0.95;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 25px;
+        }
+
+        .card {
+            background: var(--cinza-card);
+            border-radius: 18px;
+            padding: 25px;
+            box-shadow: var(--shadow);
+        }
+
+        .card h2 {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            color: var(--azul-escuro);
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+        }
+        input,
+        textarea,
+        select {
+            width: 100%;
+            padding: 14px;
+            border-radius: 12px;
+            border: 2px solid #e5e7eb;
+            font-size: 1rem;
+            outline: none;
+            transition: 0.3s;
+            background: #fff;
+            margin-bottom: 10px;
+        }
+
+        input:focus,
+        textarea:focus {
+            border-color: var(--azul-sa);
+            box-shadow: 0 0 0 4px rgba(0,71,187,0.10);
+        }
+
+        .bloco-card {
+            margin-bottom: 25px;
+        }
+
+        .bloco-card label {
+            display: block;
+            font-weight: 700;
+            color: var(--azul-escuro);
+            margin-bottom: 10px;
+        }
+
+        .bloco-card select {
+            margin-bottom: 10px;
+            cursor: pointer;
+        }
+
+        .bloco-card small {
+            color: #555;
+            font-weight: 500;
+        }
+
+
+        .btn {
+            border: none;
+            border-radius: 12px;
+            padding: 14px 18px;
+            cursor: pointer;
+            font-weight: 700;
+            font-size: 1rem;
+            transition: 0.3s;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--vermelho-sa), #8e081f);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 18px rgba(185,12,41,0.25);
+        }
+
+        .btn-download {
+            background: linear-gradient(135deg, var(--azul-sa), var(--azul-escuro));
+            color: white;
+            margin-bottom: 18px;
+        }
+
+        .btn-download:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 18px rgba(0,71,187,0.25);
+        }
+
+        .produto-item {
+            border: 1px solid var(--cinza-borda);
+            border-radius: 14px;
+            padding: 18px;
+            margin-bottom: 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 20px;
+            transition: 0.3s;
+        }
+
+        .produto-item:hover {
+            border-color: var(--azul-sa);
+            transform: translateY(-2px);
+        }
+
+        .produto-info h3 {
+            font-size: 1.1rem;
+            margin-bottom: 5px;
+        }
+
+        .produto-info p {
+            color: #555;
+            font-weight: 500;
+        }
+
+        .acoes {
+            display: flex;
+            gap: 10px;
+        }
+
+        .btn-edit {
+            background: var(--azul-sa);
+            color: white;
+        }
+
+        .btn-remove {
+            background: var(--vermelho-sa);
+            color: white;
+        }
+
+        .btn-edit,
+        .btn-remove {
+            border: none;
+            padding: 10px 14px;
+            border-radius: 10px;
+            cursor: pointer;
+            font-weight: 700;
+            transition: 0.3s;
+        }
+
+        .btn-edit:hover,
+        .btn-remove:hover {
+            transform: scale(1.05);
+        }
+
+        textarea {
+            min-height: 300px;
+            resize: vertical;
+            font-family: monospace;
+        }
+
+        #telaSenha {
+    position: fixed;
+    inset: 0;
+    background: #f4f5f7;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 99999;
+}
+
+.login-box {
+    background: white;
+    width: 100%;
+    max-width: 380px;
+    padding: 30px;
+    border-radius: 18px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.12);
+    text-align: center;
+}
+
+.login-box h2 {
+    color: var(--vermelho-sa);
+    margin-bottom: 10px;
+}
+
+.login-box p {
+    color: #555;
+    margin-bottom: 20px;
+}
+
+.login-box input {
+    width: 100%;
+    padding: 14px;
+    border-radius: 12px;
+    border: 2px solid #e5e7eb;
+    outline: none;
+    font-size: 1rem;
+    margin-bottom: 15px;
+}
+
+.btn-login {
+    width: 100%;
+    padding: 14px;
+    border: none;
+    border-radius: 12px;
+    background: linear-gradient(135deg, #b90c29, #0047BB);
+    color: white;
+    font-weight: bold;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+#erroSenha {
+    display: none;
+    color: var(--vermelho-sa);
+    margin-top: 15px;
+    font-weight: bold;
+}
+
+.grid > .card {
+    height: 620px;
+    display: flex;
+    flex-direction: column;
+}
+
+#pesquisaAdmin {
+    flex-shrink: 0;
+}
+
+#listaProdutosAdmin {
+    flex: 1;
+    min-height: 0;
+    overflow-y: auto;
+    padding-right: 8px;
+}
+
+/* Barra de rolagem mais bonita */
+#listaProdutosAdmin::-webkit-scrollbar {
+    width: 8px;
+}
+
+#listaProdutosAdmin::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 20px;
+}
+
+#listaProdutosAdmin::-webkit-scrollbar-thumb {
+    background: #b90c29;
+    border-radius: 20px;
+}
+
+#listaProdutosAdmin::-webkit-scrollbar-thumb:hover {
+    background: #8e081f;
+}
+        @media (max-width: 900px) {
+
+        .grid > .card {
+        height: auto;
+        }
+
+        #listaProdutosAdmin {
+            max-height: 500px;
+            overflow-y: auto;
+        }
+            .grid {
+                grid-template-columns: 1fr;
+            }
+
+            body {
+                padding: 15px;
+            }
+
+            .topo h1 {
+                font-size: 2rem;
+            }
+
+            .produto-item {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .acoes {
+                width: 100%;
+            }
+
+            .btn-edit,
+            .btn-remove {
+                flex: 1;
+            }
+        }
+
+        .json-wrapper {
+    position: relative;
+}
+
+.btn-copy-json {
+    position: absolute;
+    top: 12px;
+    right: 25px;
+    z-index: 2;
+    border: none;
+    border-radius: 10px;
+    padding: 8px 12px;
+    background: #1f2937;
+    color: white;
+    font-size: 0.9rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: 0.3s;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.18);
+}
+
+.btn-copy-json:hover {
+    background: var(--azul-sa);
+    
+}
+
+#jsonGerado {
+    padding-top: 50px;
+}
+
+.preview-imagem-box {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-top: -5px;
+    margin-bottom: 10px;
+}
+
+.btn-preview-img {
+    border: none;
+    border-radius: 10px;
+    padding: 10px 14px;
+    background: linear-gradient(135deg, #0047BB, #003087);
+    color: white;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+#previewImagemProduto {
+    display: none;
+    width: 70px;
+    height: 70px;
+    object-fit: cover;
+    border-radius: 10px;
+    border: 2px solid #e5e7eb;
+    background: #f4f5f7;
+}
+
+    </style>
+</head>
+<body>
+    <div id="telaSenha">
+
+    <div class="login-box">
+
+        <h2>Acesso restrito</h2>
+
+        <p>
+            Digite a senha para acessar o painel administrativo.
+        </p>
+
+        <input type="password" id="senhaInput" placeholder="Digite a senha">
+
+        <button class="btn-login" onclick="verificarSenha()">
+            Entrar
+        </button>
+
+        <div id="erroSenha">
+            Senha incorreta.
+        </div>
+
+    </div>
+
+</div>
+
+<script>
+    const senhaCorreta = "1234";
+    const chaveAcessoAdmin = "adminLiberadoSA";
+
+    window.addEventListener("load", function () {
+        const acessoLiberado = localStorage.getItem(chaveAcessoAdmin);
+        const telaSenha = document.getElementById("telaSenha");
+
+        if (acessoLiberado === "sim") {
+            telaSenha.style.display = "none";
+        }
+    });
+
+    function verificarSenha() {
+        const senhaDigitada = document.getElementById("senhaInput").value;
+        const erroSenha = document.getElementById("erroSenha");
+        const telaSenha = document.getElementById("telaSenha");
+
+        if (senhaDigitada === senhaCorreta) {
+            localStorage.setItem(chaveAcessoAdmin, "sim");
+            telaSenha.style.display = "none";
+        } else {
+            erroSenha.style.display = "block";
+        }
+    }
+
+    document.getElementById("senhaInput").addEventListener("keydown", function(event) {
+        if (event.key === "Enter") {
+            verificarSenha();
+        }
+    });
+</script>
+
+    <div class="container">
+
+        <div class="topo">
+            <h1>SA Móveis Admin</h1>
+            <p>Painel de gerenciamento de produtos da vitrine</p>
+        </div>
+
+        <div class="card bloco-card">
+    <label for="blocoAtual">
+        Escolha o bloco de produtos
+    </label>
+
+    <select id="blocoAtual">
+    <option value="bloco1">Bloco 1</option>
+    <option value="bloco2">Bloco 2</option>
+    <option value="bloco3">Bloco 3</option>
+    <option value="bloco4">Bloco 4</option>
+    <option value="bloco5">Bloco 5</option>
+</select>
+
+    <small>
+    Escolha em qual bloco/vitrine esse produto vai aparecer no site.
+    </small>
+</div>
+
+        <div class="grid">
+
+            <div class="card">
+                <h2>Adicionar produto</h2>
+
+                <form id="formProduto">
+                    <input type="text" id="nome" placeholder="Nome do produto" required>
+
+                    <input type="text" id="preco" placeholder="Preço à vista" inputmode="numeric" required>
+
+                    <input type="text" id="precoCartao" placeholder="Preço no cartão" inputmode="numeric" required>
+
+                    <input type="number" id="parcelas" placeholder="Quantidade de parcelas" min="1" required>
+
+                    <input 
+                        type="text" 
+                        id="imagem" 
+                        placeholder="Caminho da imagem" 
+                        list="listaImagens" 
+                        required>
+
+                    <datalist id="listaImagens">
+                        <option value="imgens/produtos/roupeiro1.jpeg">
+                        <option value="imgens/produtos/roupeiro2.jpeg">
+                        <option value="imgens/produtos/sofa1.jpeg">
+                        <option value="imgens/produtos/cama1.jpeg">
+                        <option value="imgens/produtos/mesa1.jpeg">
+                    </datalist>
+
+                    <div class="preview-imagem-box">
+                        <button type="button" class="btn-preview-img" onclick="mostrarPreviewImagem()">
+                            Ver imagem
+                        </button>
+
+                        <img id="previewImagemProduto" src="" alt="Prévia da imagem">
+                    </div>
+
+                    <input type="text" id="link" placeholder="Link da página do produto" required>
+
+                    <button class="btn btn-primary" type="submit">
+                        Adicionar produto
+                    </button>
+                </form>
+            </div>
+
+            <div class="card">
+                <h2>Produtos cadastrados</h2>
+<input type="text" id="pesquisaAdmin" placeholder="Buscar produto para editar...">
+                <div id="listaProdutosAdmin"></div>
+            </div>
+
+        </div>
+
+        <div class="card" style="margin-top:25px;">
+            <h2>Exportar catálogo</h2>
+
+            <button class="btn btn-download" id="baixarJson">
+                Baixar produtos.json
+            </button>
+
+            <div class="json-wrapper">
+    <button type="button" class="btn-copy-json" id="copiarJson">
+        Copiar
+    </button>
+
+    <textarea id="jsonGerado" readonly></textarea>
+</div>
+        </div>
+
+    </div>
+
+    <script>
+    // ===============================
+    // DADOS PRINCIPAIS
+    // ===============================
+    const blocosPadrao = {
+    bloco1: [],
+    bloco2: [],
+    bloco3: [],
+    bloco4: [],
+    bloco5: []
+    };
+
+    function carregarProdutos() {
+    const dadosSalvos = JSON.parse(localStorage.getItem("produtos")) || {};
+
+    if (Array.isArray(dadosSalvos)) {
+        return {
+            bloco1: dadosSalvos,
+            bloco2: [],
+            bloco3: [],
+            bloco4: [],
+            bloco5: []
+        };
+    }
+
+    return {
+        bloco1: dadosSalvos.bloco1 || dadosSalvos.roupeiros || [],
+        bloco2: dadosSalvos.bloco2 || dadosSalvos.sofas || [],
+        bloco3: dadosSalvos.bloco3 || dadosSalvos.mesas || [],
+        bloco4: dadosSalvos.bloco4 || dadosSalvos.camas || [],
+        bloco5: dadosSalvos.bloco5 || dadosSalvos.eletros || []
+    };
+}
+
+    let produtos = carregarProdutos();
+    let produtoEditando = null;
+
+    // ===============================
+    // ELEMENTOS DO HTML
+    // ===============================
+    const form = document.getElementById("formProduto");
+    const lista = document.getElementById("listaProdutosAdmin");
+    const jsonGerado = document.getElementById("jsonGerado");
+    const baixarJson = document.getElementById("baixarJson");
+    const botaoSubmit = form.querySelector("button[type='submit']");
+    const pesquisaAdmin = document.getElementById("pesquisaAdmin");
+    const copiarJson = document.getElementById("copiarJson");
+    const blocoAtual = document.getElementById("blocoAtual");
+
+    const nomeInput = document.getElementById("nome");
+    const precoInput = document.getElementById("preco");
+    const precoCartaoInput = document.getElementById("precoCartao");
+    const parcelasInput = document.getElementById("parcelas");
+    const imagemInput = document.getElementById("imagem");
+    const linkInput = document.getElementById("link");
+
+    // ===============================
+    // FUNÇÕES DOS BLOCOS
+    // ===============================
+    function pegarBlocoAtual() {
+        return blocoAtual.value;
+    }
+
+    function pegarProdutosDoBlocoAtual() {
+        const bloco = pegarBlocoAtual();
+
+        if (!produtos[bloco]) {
+            produtos[bloco] = [];
+        }
+
+        return produtos[bloco];
+    }
+
+    function salvarProdutos() {
+        localStorage.setItem("produtos", JSON.stringify(produtos));
+        jsonGerado.value = JSON.stringify(produtos, null, 4);
+    }
+
+    // ===============================
+    // FORMATAR PREÇO EM REAL
+    // ===============================
+    function formatarMoeda(input) {
+        let valor = input.value.replace(/\D/g, "");
+
+        valor = (Number(valor) / 100).toLocaleString("pt-BR", {
+            style: "currency",
+            currency: "BRL"
+        });
+
+        input.value = valor;
+    }
+
+    precoInput.addEventListener("input", function () {
+        formatarMoeda(precoInput);
+    });
+
+    precoCartaoInput.addEventListener("input", function () {
+        formatarMoeda(precoCartaoInput);
+    });
+
+    // ===============================
+    // CALCULAR VALOR DA PARCELA
+    // ===============================
+    function calcularParcela(precoCartao, quantidadeParcelas) {
+        const valorNumerico = Number(precoCartao.replace(/\D/g, "")) / 100;
+        const parcelas = Number(quantidadeParcelas);
+
+        if (!valorNumerico || !parcelas) {
+            return "R$ 0,00";
+        }
+
+        const valorParcela = valorNumerico / parcelas;
+
+        return valorParcela.toLocaleString("pt-BR", {
+            style: "currency",
+            currency: "BRL"
+        });
+    }
+
+    // ===============================
+    // ADICIONAR OU SALVAR ALTERAÇÃO
+    // ===============================
+    form.addEventListener("submit", function (e) {
+        e.preventDefault();
+
+        const produto = {
+            nome: nomeInput.value,
+            preco: precoInput.value,
+            precoCartao: precoCartaoInput.value,
+            parcelas: Number(parcelasInput.value),
+            valorParcela: calcularParcela(precoCartaoInput.value, parcelasInput.value),
+            imagem: imagemInput.value,
+            link: linkInput.value
+        };
+
+        const produtosDoBloco = pegarProdutosDoBlocoAtual();
+
+        if (produtoEditando === null) {
+            const confirmarAdicao = confirm(
+                `Deseja realmente adicionar o produto "${produto.nome}" neste bloco?`
+            );
+
+            if (!confirmarAdicao) {
+                return;
+            }
+
+            produtosDoBloco.push(produto);
+        } else {
+            const confirmarEdicao = confirm(
+                `Deseja realmente salvar as alterações do produto "${produto.nome}"?`
+            );
+
+            if (!confirmarEdicao) {
+                return;
+            }
+
+            produtosDoBloco[produtoEditando] = produto;
+
+            produtoEditando = null;
+            botaoSubmit.textContent = "Adicionar produto";
+        }
+
+        salvarProdutos();
+        form.reset();
+        atualizarTela();
+    });
+
+    // ===============================
+    // ATUALIZAR LISTA NA TELA
+    // ===============================
+    function atualizarTela() {
+        lista.innerHTML = "";
+
+        const termo = pesquisaAdmin.value.toLowerCase().trim();
+        const produtosDoBloco = pegarProdutosDoBlocoAtual();
+
+        let encontrouProduto = false;
+
+        produtosDoBloco.forEach((produto, index) => {
+            const nomeProduto = produto.nome.toLowerCase();
+
+            if (!nomeProduto.includes(termo)) {
+                return;
+            }
+
+            encontrouProduto = true;
+
+            lista.innerHTML += `
+                <div class="produto-item">
+                    <div class="produto-info">
+                        <h3>${produto.nome}</h3>
+                        <p>${produto.preco}</p>
+                        <small>
+                            Cartão: ${produto.precoCartao} em ${produto.parcelas}x de ${produto.valorParcela}
+                        </small>
+                    </div>
+
+                    <div class="acoes">
+                        <button class="btn-edit" onclick="editarProduto(${index})">
+                            Editar
+                        </button>
+
+                        <button class="btn-remove" onclick="removerProduto(${index})">
+                            Remover
+                        </button>
+                    </div>
+                </div>
+            `;
+        });
+
+        if (!encontrouProduto) {
+            lista.innerHTML = `
+                <div class="produto-item">
+                    <div class="produto-info">
+                        <h3>Nenhum produto neste bloco</h3>
+                        <p>Cadastre um produto para este bloco selecionado.</p>
+                    </div>
+                </div>
+            `;
+        }
+
+        jsonGerado.value = JSON.stringify(produtos, null, 4);
+    }
+
+
+    function mostrarPreviewImagem() {
+    const caminhoImagem = imagemInput.value.trim();
+    const preview = document.getElementById("previewImagemProduto");
+
+    if (caminhoImagem === "") {
+        alert("Coloque o caminho da imagem primeiro.");
+        return;
+    }
+
+    preview.src = caminhoImagem;
+    preview.style.display = "block";
+
+    preview.onerror = function () {
+        preview.style.display = "none";
+        alert("Imagem não encontrada. Confira se o caminho está correto.");
+    };
+}
+
+    // ===============================
+    // EDITAR PRODUTO
+    // ===============================
+    function editarProduto(index) {
+        const produto = pegarProdutosDoBlocoAtual()[index];
+
+        nomeInput.value = produto.nome;
+        precoInput.value = produto.preco;
+        precoCartaoInput.value = produto.precoCartao;
+        parcelasInput.value = produto.parcelas;
+        imagemInput.value = produto.imagem;
+        linkInput.value = produto.link;
+
+        produtoEditando = index;
+        botaoSubmit.textContent = "Salvar alteração";
+
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth"
+        });
+    }
+
+    // ===============================
+    // REMOVER PRODUTO
+    // ===============================
+    function removerProduto(index) {
+        const produtosDoBloco = pegarProdutosDoBlocoAtual();
+        const produto = produtosDoBloco[index];
+
+        const confirmar = confirm(
+            `Tem certeza que deseja remover o produto "${produto.nome}"?\n\nEssa ação não pode ser desfeita.`
+        );
+
+        if (!confirmar) {
+            return;
+        }
+
+        produtosDoBloco.splice(index, 1);
+        salvarProdutos();
+        atualizarTela();
+    }
+
+    // ===============================
+    // BAIXAR JSON
+    // ===============================
+    baixarJson.addEventListener("click", function () {
+        const conteudo = JSON.stringify(produtos, null, 4);
+
+        const blob = new Blob([conteudo], {
+            type: "application/json"
+        });
+
+        const link = document.createElement("a");
+        link.href = URL.createObjectURL(blob);
+        link.download = "produtos.json";
+        link.click();
+    });
+
+    // ===============================
+    // PESQUISA ADMIN
+    // ===============================
+    pesquisaAdmin.addEventListener("input", atualizarTela);
+
+    // ===============================
+    // TROCAR DE BLOCO
+    // ===============================
+    blocoAtual.addEventListener("change", function () {
+        produtoEditando = null;
+        botaoSubmit.textContent = "Adicionar produto";
+        pesquisaAdmin.value = "";
+        form.reset();
+        atualizarTela();
+    });
+
+    // ===============================
+    // COPIAR JSON
+    // ===============================
+    copiarJson.addEventListener("click", function () {
+        navigator.clipboard.writeText(jsonGerado.value).then(function () {
+            copiarJson.textContent = "Copiado!";
+
+            setTimeout(function () {
+                copiarJson.textContent = "Copiar";
+            }, 1500);
+        }).catch(function () {
+            jsonGerado.select();
+            document.execCommand("copy");
+
+            copiarJson.textContent = "Copiado!";
+
+            setTimeout(function () {
+                copiarJson.textContent = "Copiar";
+            }, 1500);
+        });
+    });
+
+    atualizarTela();
+</script>
+
+</body>
+</html>

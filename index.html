@@ -18,6 +18,9 @@
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-4N96KS2NQS"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css"/>
+<script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+
     <script>
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
@@ -39,21 +42,33 @@
         "addressRegion": "PI",
         "addressCountry": "BR"
         },
-        "areaServed": [
+        "areaServed": [ 
         "Teresina",
         "Timon"
         ]
         }
     </script>
+
+    
+    <style>
+       
+    </style>
+
 </head>
 <body>
-    <header id="header">
-        <div class="divlogo">
-                <img class="imglogo" src="imagens/logo/logoaaa.png" alt="Logo SA">
-        </div>
-    </header>
-
-    <div class="navbar1">
+        <header id="header">
+            <div class="divlogo">
+            <img class="imglogo" src="imagens/logo/logoaaa.png" alt="Logo SA Moveis">
+            </div>
+            
+        </header>
+        <div class="navbar1">
+            <div class="nomeloja-nav">
+                    <span class="S">S</span><span class="A">A</span> - <span class="MOVEIS">MÓVEIS</span> & <span class="ELETRO">ELETRO</span><span class="marca">&reg;</span>
+                </div> 
+            <!-- <div class="nav-imgg">
+                <img src="imagens/logo/logoaaa.png" alt="">
+            </div> -->
         <nav class="navbar">
                 <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">
                     <span></span>
@@ -61,225 +76,180 @@
                     <span></span>
                 </button>
                 <div class="links" id="navLinks">
-                    <a href="#header"><i class="fa fa-home" style="font-size: 30px;"></i></i> INÍCIO</a>
+                    <a href="#header"><i class="fa fa-home" style="font-size: 30px;"></i> INÍCIO</a>
                     <a href="https://www.instagram.com/s.a_moveiseletro/" target="_blank"><i class="fa fa-instagram" style="font-size: 30px;"></i> MÍDIAS</a>
-                    <a class="aloc" href="pagina-localizacao/localizacao.html"><i class="fa fa-map-marker" style="font-size: 30px;"></i> LOCALIZAÇÃO</a>
+                    <a class="aloc" href="#localizacao"><i class="fa fa-map-marker" style="font-size: 30px;"></i> LOCALIZAÇÃO</a>
                     <a id="lwtp" href="#" target="_blank"><i class="fa fa-whatsapp"></i> FALE NO WHATSAPP</a>
                 </div>
-        </nav>
-    </div>
-
+            </nav>
+        </div>
     <main>
         <section class="front">
             <div class="contentp">
-                <div class="nomeloja">
+                 <div class="nomeloja">
                     <span id="S">S</span><span id="A">A</span> - <span id="MOVEIS">MÓVEIS</span> & <span id="ELETRO">ELETRO</span><span class="marca">&reg;</span>
+                </div> 
+                <div class="front-p">
+                    <h1>
+                        Móveis e Eletrodomésticos<br>
+                        para sua casa
+                    </h1>
+                    <p>
+                        Qualidade, preço justo e <strong>entrega grátis</strong><br>
+                        para Teresina e Timon.
+                    </p>
                 </div>
-                <h1>
-                    Móveis e Eletrodomésticos<br>
-                    para sua casa
-                </h1>
-                <p>
-                    Qualidade, preço justo e <strong>entrega grátis</strong><br>
-                    para Teresina e Timon.
-                </p>
                 <div class="linkfrente">
-                    <a id="a2" href="#" target="_blank"><i style="font-size:25px" class="fa">&#xf232;</i> Falar no Whatsapp</a>
+                    <a id="a2" href="#" target="_blank"><i style="font-size:25px" class="fa">&#xf232;</i> &nbsp;Falar no Whatsapp</a>
                     <a class="a1" href="#produtosi">Ver Produtos</a>
                 </div>
             </div>
         </section>
 
         <section class="categorias2" id="produtosi">
-            <h1>CONHEÇA NOSSA VITRINE</h1>
-            <div class="subcategorias2">
-                <div class="c2divA">
-                    <a href="pagina-produtos/produto2.html">
-                        <img src="imagens/imgp/produtos2/produtoA.jpeg" alt="">
-                        <p class="produto">
-                            Guarda-roupa Solteiro Estrela Premium
-                        </p>
-                        <p class="valor">
-                            R$ 650,00
-                        </p>
-                        <p class="parcelas">
-                            ou R$ <span class="valor-acrescimo">750,00</span> em 10x de 75,00 no Cartão
-                        </p>
-                    </a>
-                </div>
-                <div class="c2divB">
-                    <a href="pagina-produtos/produto4.html">
-                        <img src="imagens/imgp/produtos4/produtoA.jpeg" alt="">
-                        <p class="produto">
-                            Guarda Roupa Com <br>Espelho
-                        </p>
-                        <p class="valor">
-                            R$ 1.100,00
-                        </p>
-                        <p class="parcelas">
-                            ou R$<span class="valor-acrescimo"> 1.260,00</span> em 12x de 105,00 no Cartão
-                        </p>
-                    </a>
-                </div>
-                <div class="c2divA">
-                    <a href="pagina-produtos/produto6.html">
-                        <img src="imagens/imgp/produtos6/produtoB.jpeg" alt="">
-                        <p class="produto">
-                            Roupeiro Casal <br>Andorinha
-                        </p>
-                        <p class="valor">
-                            R$ 1.299,99
-                        </p>
-                        <p class="parcelas">
-                            ou R$ <span class="valor-acrescimo">1.499,99</span> em 12x de 125,00 no Cartão
-                        </p>
-                    </a>
-                </div>
-                <div class="c2divB">
-                    <a href="pagina-produtos/produto.html">
-                        <img src="imagens/imgp/produtos1/produtoA.jpeg" alt="">
-                        <p class="produto">
-                            Guarda Roupa Panamá com Espelho
-                        </p>
-                        <p class="valor">
-                            <span class="S">R</span><span class="R">$</span> 1.400,00
-                        </p>
-                        <p class="parcelas">
-                            ou R$ <span class="valor-acrescimo">1.600,00</span> em 10x de 160,00 no Cartão
-                        </p>
-                    </a>
-                </div>
-            </div>
-            <div class="subcategorias2">
-                <div class="c2divA">
-                    <a href="pagina-produtos/produto5.html">
-                        <img src="imagens/imgp/produtos5/produtoA.jpg" alt="">
-                        <p class="produto">
-                            Roupeiro Casal Parma com Espelho
-                        </p>
-                        <p class="valor">
-                            R$ 1.499,99
-                        </p>
-                        <p class="parcelas">
-                            ou <span class="valor-acrescimo">1.699,99</span> em 10x de 169,99 no Cartão
-                        </p>
-                    </a>
-                </div>
-                <div class="c2divB">
-                    <a href="pagina-produtos/produto3.html">
-                        <img src="imagens/imgp/produtos3/produtoA.jpeg" alt="">
-                        <p class="produto">
-                            Guarda Roupa Casal <br>Chicago
-                        </p>
-                        <p class="valor">
-                            R$ 2.599,99
-                        </p>
-                        <p class="parcelas">
-                            ou <span class="valor-acrescimo">2.960,00</span> em 10x de 296,00 no Cartão
-                        </p>
-                    </a>
-                </div>
-                <div class="c2divA">
-                    <a href="pagina-produtos/produto7.html">
-                        <img src="imagens/imgp/produtos7/produtoA.jpeg" alt="">
-                        <p class="produto">
-                            Mesa de Jantar <br>Jade
-                        </p>
-                        <p class="valor">
-                            R$ 1.499,99
-                        </p>
-                        <p class="parcelas">
-                            ou R$ <span class="valor-acrescimo">1.740</span> em 12x 145,00 cartão
-                        </p>
-                    </a>
-                </div>
-                <div class="c2divB">
-                    <a href="pagina-produtos/produto8.html">
-                        <img src="imagens/imgp/produtos8/produtoA.jpeg" alt="">
-                        <p class="produto">
-                            Box Super King Size Vigor
-                        </p>
-                        <p class="valor">
-                            R$ 2.200,00
-                        </p>
-                        <p class="parcelas">
-                            ou R$ <span class="valor-acrescimo">2.541,00</span> em 12x de 212,00 no Cartão
-                        </p>
-                    </a>
-                </div>
-            </div>
-                <div class="subcategorias2">
-                    <div class="c2divA">
-                        <a href="pagina-produtos/produto9.html">
-                            <img src="imagens/imgp/produtos9/produtoA.jpeg" alt="">
-                            <p class="produto">
-                                Sofá Retrátil Reclinável Ibiza
-                            </p>
-                            <p class="valor">
-                                R$ 1.599,99
-                            </p>
-                            <p class="parcelas">
-                                ou R$ <span class="valor-acrescimo">1.845,00</span> em 12x de 153,75 no Cartão
-                            </p>
-                        </a>
-                    </div>
-                    <div class="c2divB">
-                        <a href="pagina-produtos/produto10.html">
-                            <img src="imagens/imgp/produtos10/produtoA.jpg" alt="">
-                            <p class="produto">
-                                Sofá Imola Onix
-                            </p>
-                            <p class="valor">
-                                R$ 1.499,99
-                            </p>
-                            <p class="parcelas">
-                                ou R$ <span class="valor-acrescimo">1.740,00</span> em 12x de 145,00 no Cartão
-                            </p>
-                        </a>
-                    </div>
-                    <div class="c2divA">
-                        <a href="pagina-produtos/produto11.html">
-                            <img src="imagens/imgp/produtos11/produtoA.jpeg" alt="">
-                            <p class="produto">
-                                Sofá Retrátil Reclinável Onix
-                            </p>
-                            <p class="valor">
-                                R$ 1.599,00
-                            </p>
-                            <p class="parcelas">
-                                ou R$ <span class="valor-acrescimo">1.835,00</span> em 12x de 153,75 no Cartão
-                            </p>
-                        </a>
-                    </div>
-                </div>
+    <h1>CONHEÇA NOSSA VITRINE</h1>
+
+    <div class="filtros-produtos">
+    <div class="search-box">
+        <i class="fa fa-search"></i>
+        <input type="text" id="searchInput" placeholder="Busque por produto">
+    </div>
+
+    <select id="filtroCategoria" class="filtro-select">
+        <option value="todos">Todas as categorias</option>
+        <option value="roupeiros">Roupeiros / Guarda-roupas</option>
+        <option value="sofas">Sofás</option>
+        <option value="camas">Camas / Colchões</option>
+        <option value="mesas">Mesas / Cadeiras</option>
+        <option value="eletros">Eletros</option>
+        <option value="outros">Outros produtos</option>
+    </select>
+
+    <select id="filtroPreco" class="filtro-select">
+        <option value="relevancia">Ordenar por</option>
+        <option value="maior">Maior preço</option>
+        <option value="menor">Menor preço</option>
+        <option value="recente">Mais recentes</option>
+    </select>
+</div>
+
+    <div class="bloco-vitrine" id="bloco1">
+        <h2 class="titulo-vitrine">Destaques da loja</h2>
+
+        <div class="swiper vitrine-bloco1">
+            <div class="swiper-wrapper" id="listaBloco1"></div>
+
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+        </div>
+    </div>
+
+    <div class="bloco-vitrine" id="bloco2">
+        <h2 class="titulo-vitrine">Ofertas especiais</h2>
+
+        <div class="swiper vitrine-bloco2">
+            <div class="swiper-wrapper" id="listaBloco2"></div>
+
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+        </div>
+    </div>
+
+    <div class="bloco-vitrine" id="bloco3">
+        <h2 class="titulo-vitrine">Mais procurados</h2>
+
+        <div class="swiper vitrine-bloco3">
+            <div class="swiper-wrapper" id="listaBloco3"></div>
+
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+        </div>
+    </div>
+
+    <div class="bloco-vitrine" id="bloco4">
+        <h2 class="titulo-vitrine">Novidades</h2>
+
+        <div class="swiper vitrine-bloco4">
+            <div class="swiper-wrapper" id="listaBloco4"></div>
+
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+        </div>
+    </div>
+
+    <div class="bloco-vitrine" id="bloco5">
+        <h2 class="titulo-vitrine">Produtos variados</h2>
+
+        <div class="swiper vitrine-bloco5">
+            <div class="swiper-wrapper" id="listaBloco5"></div>
+
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+        </div>
+    </div>
+</section>
+ 
+        <!-- </section> 
             <section class="aviso-novidades">
                 <p>🚀 Novos produtos e promoções chegando! Nosso catálogo está em expansão.</p>
-            </section>
+            </section> -->
 
-        <section class="qs">
-            <div class="subqs">
-                <div class="qs1">
-                    <h2>
-                        Quem Somos
-                    </h2>
-                    <p>
-                        A SA Móveis e Eletro trabalha com produtos de qualidade, oferecendo entrega e montagem gratuitas, além de um atendimento proximo e confiável.
-                    </p>
-                    <a href="" id="a3"><i style="font-size:24px" class="fa">&#xf232;</i> Comprar no Whatsapp</a>
-                </div>
-                <div class="qs2">
-                    <p>
-                        <img class="img1" src="imagens/icones/container (3).png" alt="">Entrega grátis em <br>Teresina e Timon
-                    </p>
-                    <p>
-                        <img class="img2" src="imagens/icones/repair-tools.png" alt="">Montagem Grátis <br>dos Móveis
-                    </p>
-                    <p>
-                        <img class="img3" src="imagens/icones/handshake (1).png" alt="">Atendimento Agil<br>e confiável
-                    </p>
-                </div>
+        <section class="localizacao-container" id="localizacao">
+        <h1>
+                    Nossa localização
+                    <i class="fa fa-map-marker" style="font-size: 30px;"></i>
+                </h1>
+    <div class="localizacao">
+
+       
+ 
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d993.4522006178613!2d-42.78579006900914!3d-5.134468860992902!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x78e31006960adf3%3A0xe3db99e6a61222d0!2sS%20A%20M%C3%93VEISELETRO!5e0!3m2!1spt-BR!2sbr!4v1778517664842!5m2!1spt-BR!2sbr" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+
+    </div>
+
+    <div class="info-box">
+
+        <div class="item">
+            <div class="icon">
+                <i class="fa fa-map-marker"></i>
             </div>
-        </section>
+
+            <div class="texto">
+                <h2>Endereço</h2>
+                <p>Rua Ivan Tito de Oliveira, nº 1947</p>
+                <p>Lourival Parente - Teresina - PI</p>
+            </div>
+        </div>
+
+        <div class="item">
+            <div class="icon">
+                <i class="fa fa-phone"></i>
+            </div>
+
+            <div class="texto">
+                <h2>Contato</h2>
+                <p>Telefone: (86) 98137-3829</p>
+                <p>E-mail: sbamoveisltda@gmail.com</p>
+            </div>
+        </div>
+
+        <div class="item">
+            <div class="icon">
+                <i class="fa fa-clock-o"></i>
+            </div>
+
+            <div class="texto">
+                <h2>Horário de atendimento</h2>
+                <p>Segunda a Sexta: 08:00 - 18:00</p>
+                <p>Sábado: 09:00 - 13:00</p>
+            </div>
+        </div>
+   
+
+    </div>
+
+</section>
     </main>
 
     <footer>
@@ -287,102 +257,6 @@
             <p>&copy; 2026 SA - MÓVEIS E ELETRO - TODOS OS DIREITOS RESERVADOS</p>
         </abbr>
     </footer>
-
-    <!-- Scripts -->
-    <script>
-        // Menu hambúrguer toggle
-        const menuToggle = document.getElementById('menuToggle');
-        const navLinks = document.getElementById('navLinks');
-
-        menuToggle.addEventListener('click', function() {
-            navLinks.classList.toggle('active');
-            menuToggle.classList.toggle('active');
-        });
-
-        // Fecha o menu ao clicar em um link (em mobile)
-        const links = document.querySelectorAll('.links a');
-        links.forEach(link => {
-            link.addEventListener('click', function() {
-                if (window.innerWidth <= 768) {
-                    navLinks.classList.remove('active');
-                    menuToggle.classList.remove('active');
-                }
-            });
-        });
-    </script>
-
-    <script>
-        document.getElementById('a2').addEventListener('click', function (e) {
-            e.preventDefault();
-            const linkProduto = window.location.href;
-            const mensagem = `👋 Olá! Acessei a página inicial do site da *S.A Móveis* e me interessei em conhecer melhor os produtos e condições de compra.🤩 
-            
-🔗 https://sa-moveis.github.io`.trim();
-            const url = `https://api.whatsapp.com/send?phone=5586981373829&text=${encodeURIComponent(mensagem)}`;
-            window.open(url, '_blank');
-        });
-    </script>
-
-    <script>
-        document.getElementById('a3').addEventListener('click', function (e) {
-            e.preventDefault();
-            const linkProduto = window.location.href;
-            const mensagem = `👋 Olá! Acessei a página inicial do *Site da S.A Móveis* e me interessei em conhecer melhor os produtos e condições de compra.🤩 
-            
-🔗 https://sa-moveis.github.io`.trim();
-            const url = `https://api.whatsapp.com/send?phone=5586981373829&text=${encodeURIComponent(mensagem)}`;
-            window.open(url, '_blank');
-        });
-    </script>
-
-    <script>
-        document.getElementById('lwtp').addEventListener('click', function (e) {
-            e.preventDefault();
-            const linkProduto = window.location.href;
-            const mensagem = `👋 Olá! Acessei a página inicial do *Site da S.A Móveis* e me interessei em conhecer melhor os produtos e condições de compra.🤩 
-            
-🔗 https://sa-moveis.github.io`.trim();
-            const url = `https://api.whatsapp.com/send?phone=5586981373829&text=${encodeURIComponent(mensagem)}`;
-            window.open(url, '_blank');
-        });
-    </script>
-
-    <script>
-        function scrollSuave(target, duration = 1000) {
-            const targetPosition = target.getBoundingClientRect().top;
-            const startPosition = window.pageYOffset;
-            let startTime = null;
-
-            function animation(currentTime) {
-                if (startTime === null) startTime = currentTime;
-                const timeElapsed = currentTime - startTime;
-                const ease = easeInOutCubic(timeElapsed, startPosition, targetPosition, duration);
-                window.scrollTo(0, ease);
-                if (timeElapsed < duration) requestAnimationFrame(animation);
-            }
-
-            function easeInOutCubic(t, b, c, d) {
-                t /= d / 2;
-                if (t < 1) return c / 2 * t * t * t + b;
-                t -= 2;
-                return c / 2 * (t * t * t + 2) + b;
-            }
-
-            requestAnimationFrame(animation);
-        }
-
-        document.querySelectorAll('a[href^="#"]').forEach(link => {
-            link.addEventListener('click', function (e) {
-                const alvo = document.querySelector(this.getAttribute('href'));
-                if (!alvo) return;
-                e.preventDefault();
-                scrollSuave(alvo, 1100);
-            });
-        });
-    </script>
+    <script src="index.js"></script>
 </body>
 </html>
-
-
-
-
