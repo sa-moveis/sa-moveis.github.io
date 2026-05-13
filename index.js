@@ -511,7 +511,7 @@ function iniciarSwipers() {
         vitrine.appendChild(pagination);
 
         const swiper = new Swiper(vitrine, {
-            loop: wrapper.children.length > 4,
+            loop: wrapper.children.length > 2,
             speed: 500,
             spaceBetween: 12,
 

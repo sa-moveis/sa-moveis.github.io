@@ -279,7 +279,8 @@
 }
 
 .grid > .card {
-    height: 620px;
+     min-height: 620px;
+    height: auto;
     display: flex;
     flex-direction: column;
 }
@@ -408,6 +409,58 @@
     background: #f4f5f7;
 }
 
+
+#resumo,
+#descricaoCompleta,
+#imagensExtras {
+    min-height: 120px;
+    font-family: 'Roboto', sans-serif;
+}
+
+#descricaoCompleta {
+    min-height: 180px;
+}
+
+#jsonGerado {
+    min-height: 300px;
+    font-family: monospace;
+}
+
+#link {
+    background: #f3f4f6;
+    color: #555;
+    cursor: not-allowed;
+}
+
+
+
+#formProduto {
+    max-height: none;
+    overflow: visible;
+}
+
+#imagensExtras,
+#resumo,
+#descricaoCompleta {
+    min-height: 110px;
+    font-family: 'Roboto', sans-serif;
+    resize: vertical;
+}
+
+#descricaoCompleta {
+    min-height: 160px;
+}
+
+#jsonGerado {
+    min-height: 300px;
+    font-family: monospace;
+}
+
+#link {
+    background: #f3f4f6;
+    color: #555;
+    cursor: not-allowed;
+}
     </style>
 </head>
 <body>
@@ -515,11 +568,11 @@
                         required>
 
                     <datalist id="listaImagens">
-                        <option value="imgens/produtos/roupeiro1.jpeg">
-                        <option value="imgens/produtos/roupeiro2.jpeg">
-                        <option value="imgens/produtos/sofa1.jpeg">
-                        <option value="imgens/produtos/cama1.jpeg">
-                        <option value="imgens/produtos/mesa1.jpeg">
+                        <option value="imagens/produtos/roupeiro1.jpeg">
+                        <option value="imagens/produtos/roupeiro2.jpeg">
+                        <option value="imagens/produtos/sofa1.jpeg">
+                        <option value="imagens/produtos/cama1.jpeg">
+                        <option value="imagens/produtos/mesa1.jpeg">
                     </datalist>
 
                     <div class="preview-imagem-box">
@@ -529,8 +582,19 @@
 
                         <img id="previewImagemProduto" src="" alt="Prévia da imagem">
                     </div>
+                    <textarea id="imagensExtras" placeholder="Outras imagens do produto, uma por linha. Exemplo:
+imagens/imgp/produtos1/produtoA1.jpeg
+imagens/imgp/produtos1/produtoB.jpeg"></textarea>
 
-                    <input type="text" id="link" placeholder="Link da página do produto" required>
+<textarea id="resumo" placeholder="Resumo curto do produto. Exemplo: Guarda Roupa Panamá com Espelho, 3 portas e 4 gavetas."></textarea>
+
+<textarea id="descricaoCompleta" placeholder="Descrição / especificações, uma informação por linha. Exemplo:
+Material: 100% MDP
+3 Portas
+4 Gavetas
+Altura: 208 cm"></textarea>
+
+                    <input type="text" id="link" placeholder="Link gerado automaticamente" readonly>
 
                     <button class="btn btn-primary" type="submit">
                         Adicionar produto
@@ -619,6 +683,9 @@
     const parcelasInput = document.getElementById("parcelas");
     const imagemInput = document.getElementById("imagem");
     const linkInput = document.getElementById("link");
+    const imagensExtrasInput = document.getElementById("imagensExtras");
+    const resumoInput = document.getElementById("resumo");
+    const descricaoCompletaInput = document.getElementById("descricaoCompleta");
 
     // ===============================
     // FUNÇÕES DOS BLOCOS
@@ -683,21 +750,69 @@
         });
     }
 
+    function criarIdProduto(nome) {
+    return nome
+        .toLowerCase()
+        .normalize("NFD")
+        .replace(/[\u0300-\u036f]/g, "")
+        .replace(/[^a-z0-9]+/g, "-")
+        .replace(/^-+|-+$/g, "");
+}
+
+function transformarLinhasEmArray(texto) {
+    return texto
+        .split("\n")
+        .map(item => item.trim())
+        .filter(item => item !== "");
+}
+
+function gerarLinkProduto() {
+    const idProduto = criarIdProduto(nomeInput.value);
+
+    if (!idProduto) {
+        linkInput.value = "";
+        return;
+    }
+
+    linkInput.value = `pagina-produtos/produto.html?id=${idProduto}`;
+}
+
+nomeInput.addEventListener("input", gerarLinkProduto);
+
     // ===============================
     // ADICIONAR OU SALVAR ALTERAÇÃO
     // ===============================
     form.addEventListener("submit", function (e) {
         e.preventDefault();
 
-        const produto = {
-            nome: nomeInput.value,
-            preco: precoInput.value,
-            precoCartao: precoCartaoInput.value,
-            parcelas: Number(parcelasInput.value),
-            valorParcela: calcularParcela(precoCartaoInput.value, parcelasInput.value),
-            imagem: imagemInput.value,
-            link: linkInput.value
-        };
+        const idProduto = criarIdProduto(nomeInput.value);
+const imagemPrincipal = imagemInput.value.trim();
+
+const imagensExtras = transformarLinhasEmArray(imagensExtrasInput.value);
+
+const imagensProduto = [
+    imagemPrincipal,
+    ...imagensExtras
+].filter(imagem => imagem !== "");
+
+const descricaoProduto = transformarLinhasEmArray(descricaoCompletaInput.value);
+
+const produto = {
+    id: idProduto,
+    nome: nomeInput.value.trim(),
+    preco: precoInput.value,
+    precoCartao: precoCartaoInput.value,
+    parcelas: Number(parcelasInput.value),
+    valorParcela: calcularParcela(precoCartaoInput.value, parcelasInput.value),
+
+    imagem: imagemPrincipal,
+    imagens: imagensProduto,
+
+    resumo: resumoInput.value.trim(),
+    descricao: descricaoProduto,
+
+    link: `pagina-produtos/produto.html?id=${idProduto}`
+};
 
         const produtosDoBloco = pegarProdutosDoBlocoAtual();
 
@@ -727,8 +842,13 @@
         }
 
         salvarProdutos();
-        form.reset();
-        atualizarTela();
+form.reset();
+
+document.getElementById("previewImagemProduto").style.display = "none";
+document.getElementById("previewImagemProduto").src = "";
+
+gerarLinkProduto();
+atualizarTela();
     });
 
     // ===============================
@@ -813,12 +933,22 @@
     function editarProduto(index) {
         const produto = pegarProdutosDoBlocoAtual()[index];
 
-        nomeInput.value = produto.nome;
-        precoInput.value = produto.preco;
-        precoCartaoInput.value = produto.precoCartao;
-        parcelasInput.value = produto.parcelas;
-        imagemInput.value = produto.imagem;
-        linkInput.value = produto.link;
+        nomeInput.value = produto.nome || "";
+precoInput.value = produto.preco || "";
+precoCartaoInput.value = produto.precoCartao || "";
+parcelasInput.value = produto.parcelas || "";
+imagemInput.value = produto.imagem || "";
+linkInput.value = produto.link || "";
+
+resumoInput.value = produto.resumo || "";
+
+descricaoCompletaInput.value = Array.isArray(produto.descricao)
+    ? produto.descricao.join("\n")
+    : "";
+
+imagensExtrasInput.value = Array.isArray(produto.imagens)
+    ? produto.imagens.filter(img => img !== produto.imagem).join("\n")
+    : "";
 
         produtoEditando = index;
         botaoSubmit.textContent = "Salvar alteração";
