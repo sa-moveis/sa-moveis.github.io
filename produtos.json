@@ -78,8 +78,8 @@
             "link": "pagina-produtos/produto.html?id=roupeiro-casal-chicago"
         },
         {
-            "id": "roupeiro-com-espelho",
-            "nome": "Roupeiro com espelho",
+            "id": "roupeiro-solteiro-panama",
+            "nome": "Roupeiro Solteiro Panamá",
             "preco": "R$ 1.100,00",
             "precoCartao": "R$ 1.260,00",
             "parcelas": 12,
@@ -101,8 +101,8 @@
                 "Portas: 2",
                 "Gavetas: 2"
             ],
-            "esgotado": false,
-            "link": "pagina-produtos/produto.html?id=roupeiro-com-espelho"
+            "esgotado": true,
+            "link": "pagina-produtos/produto.html?id=roupeiro-solteiro-panama"
         },
         {
             "id": "roupeiro-casal-parma",
@@ -227,10 +227,10 @@
         {
             "id": "sofa-retratil-reclinavel-ibiza",
             "nome": "Sofá Retrátil Reclinavel Ibiza",
-            "preco": "R$ 1.599,99",
-            "precoCartao": "R$ 1.836,00",
+            "preco": "R$ 1.699,99",
+            "precoCartao": "R$ 1.959,00",
             "parcelas": 12,
-            "valorParcela": "R$ 153,00",
+            "valorParcela": "R$ 163,25",
             "imagem": "imagens/imgp/produtos8/produto1.jpeg",
             "imagens": [
                 "imagens/imgp/produtos8/produto1.jpeg",
@@ -247,17 +247,17 @@
             "link": "pagina-produtos/produto.html?id=sofa-retratil-reclinavel-ibiza"
         },
         {
-            "id": "sofa-imola-onix",
-            "nome": "Sofá Imola Onix",
-            "preco": "R$ 1.499,99",
-            "precoCartao": "R$ 1.740,00",
+            "id": "sofa-imola-onix-3l",
+            "nome": "Sofá Imola Onix 3l",
+            "preco": "R$ 1.699,99",
+            "precoCartao": "R$ 1.959,00",
             "parcelas": 12,
-            "valorParcela": "R$ 145,00",
+            "valorParcela": "R$ 163,25",
             "imagem": "imagens/imgp/produtos9/produto1.jpg",
             "imagens": [
                 "imagens/imgp/produtos9/produto1.jpg",
-                "imagens/imgp/produtos9/produto2.jpg",
-                "imagens/imgp/produtos9/produto3.jpg"
+                "imagens/imgp/produtos9/produto2.jpeg",
+                "imagens/imgp/produtos9/produto3.jpeg"
             ],
             "resumo": "Sofá Imola Onix 3 lugares",
             "descricao": [
@@ -268,17 +268,39 @@
                 "Quantidade de Lugares: 3"
             ],
             "esgotado": false,
-            "link": "pagina-produtos/produto.html?id=sofa-imola-onix"
+            "link": "pagina-produtos/produto.html?id=sofa-imola-onix-3l"
+        },
+        {
+            "id": "bicama-solteirao-euro",
+            "nome": "Bicama Solteirão Euro",
+            "preco": "R$ 1.399,99",
+            "precoCartao": "R$ 1.620,00",
+            "parcelas": 12,
+            "valorParcela": "R$ 135,00",
+            "imagem": "imagens/imgp/produtos18/produto1.jpeg",
+            "imagens": [
+                "imagens/imgp/produtos18/produto1.jpeg",
+                "imagens/imgp/produtos18/produto2.jpeg"
+            ],
+            "resumo": "Bicama Solteirão Euro, Superior Molas ensacadas e auxiliar de espuma",
+            "descricao": [
+                "Dimensões:",
+                "Altura: 70cm",
+                "Comprimento: 200cm",
+                "Largura: 110cm"
+            ],
+            "esgotado": false,
+            "link": "pagina-produtos/produto.html?id=bicama-solteirao-euro"
         }
     ],
     "bloco3": [
         {
-            "id": "sofa-retratil-reclinavel-san-juan",
-            "nome": "Sófa retratil reclinável San Juan",
-            "preco": "R$ 1.599,99",
-            "precoCartao": "R$ 1.836,00",
+            "id": "sofa-retratil-san-juan",
+            "nome": "Sófa retratil San Juan",
+            "preco": "R$ 1.850,00",
+            "precoCartao": "R$ 2.130,00",
             "parcelas": 12,
-            "valorParcela": "R$ 153,00",
+            "valorParcela": "R$ 177,50",
             "imagem": "imagens/imgp/produtos10/produto1.jpeg",
             "imagens": [
                 "imagens/imgp/produtos10/produto1.jpeg",
@@ -293,7 +315,7 @@
                 "Profundidade do Assento Aberto: 140cm"
             ],
             "esgotado": false,
-            "link": "pagina-produtos/produto.html?id=sofa-retratil-reclinavel-san-juan"
+            "link": "pagina-produtos/produto.html?id=sofa-retratil-san-juan"
         },
         {
             "id": "roupeiro-andorinha",
@@ -320,8 +342,218 @@
             ],
             "esgotado": false,
             "link": "pagina-produtos/produto.html?id=roupeiro-andorinha"
+        },
+        {
+            "id": "cama-box-casal-nice",
+            "nome": "Cama Box casal Nice",
+            "preco": "R$ 999,99",
+            "precoCartao": "R$ 1.152,00",
+            "parcelas": 12,
+            "valorParcela": "R$ 96,00",
+            "imagem": "imagens/imgp/produtos14/produto1.jpeg",
+            "imagens": [
+                "imagens/imgp/produtos14/produto1.jpeg",
+                "imagens/imgp/produtos14/produto2.jpeg",
+                "imagens/imgp/produtos14/produto3.jpeg"
+            ],
+            "resumo": "Cama Box casal Nice Prime Molas Ensacadas.",
+            "descricao": [
+                "Especificações do produto:",
+                "Medidas: Comp: 188 cm",
+                "Larg: 138 cm",
+                "Alt: 76,5 cm",
+                "Altura do colchão: 24 cm",
+                "Tipo de mola: Ensacadas individualmente",
+                "Densidade da espuma: D-26",
+                "Revestimento: Malha fria",
+                "Tecnologia: Soft Pluma",
+                "Base: Estrutura resistente com pés fixos"
+            ],
+            "esgotado": false,
+            "link": "pagina-produtos/produto.html?id=cama-box-casal-nice"
+        },
+        {
+            "id": "box-dublim-casal-padrao",
+            "nome": "Box Dublim Casal padrão",
+            "preco": "R$ 1.399,99",
+            "precoCartao": "R$ 1.620,00",
+            "parcelas": 12,
+            "valorParcela": "R$ 135,00",
+            "imagem": "imagens/imgp/produtos15/produto1.jpeg",
+            "imagens": [
+                "imagens/imgp/produtos15/produto1.jpeg",
+                "imagens/imgp/produtos15/produto2.jpeg",
+                "imagens/imgp/produtos15/produto3.jpeg"
+            ],
+            "resumo": "Box Dublim Casal padrão Molas Ensacadas com Pillow Top",
+            "descricao": [
+                "Dimensões:",
+                "Altura: 70cm",
+                "Comprimento: 188cm",
+                "Largura: 138cm"
+            ],
+            "esgotado": false,
+            "link": "pagina-produtos/produto.html?id=box-dublim-casal-padrao"
+        },
+        {
+            "id": "roupeiro-capelinha-valenca",
+            "nome": "Roupeiro capelinha Valença",
+            "preco": "R$ 799,99",
+            "precoCartao": "R$ 930,00",
+            "parcelas": 12,
+            "valorParcela": "R$ 77,50",
+            "imagem": "imagens/imgp/produtos19/produto1.jpeg",
+            "imagens": [
+                "imagens/imgp/produtos19/produto1.jpeg",
+                "imagens/imgp/produtos19/produto2.jpeg",
+                "imagens/imgp/produtos19/produto3.jpeg",
+                "imagens/imgp/produtos19/produto4.jpeg"
+            ],
+            "resumo": "Roupeiro capelinha Valença Rodial",
+            "descricao": [
+                "Material Principal: MDP",
+                "Dimensões:",
+                "Altura: 180cm",
+                "Largura: 135,5cm",
+                "Profundidade: 35cm",
+                "Portas: 4",
+                "Gavetas: 3"
+            ],
+            "esgotado": false,
+            "link": "pagina-produtos/produto.html?id=roupeiro-capelinha-valenca"
         }
     ],
-    "bloco4": [],
+    "bloco4": [
+        {
+            "id": "mesa-de-jantar-jade",
+            "nome": "Mesa de Jantar Jade",
+            "preco": "R$ 1.499,99",
+            "precoCartao": "R$ 1.740,00",
+            "parcelas": 12,
+            "valorParcela": "R$ 145,00",
+            "imagem": "imagens/imgp/produtos12/produto1.jpeg",
+            "imagens": [
+                "imagens/imgp/produtos12/produto1.jpeg",
+                "imagens/imgp/produtos12/produto2.jpeg"
+            ],
+            "resumo": "Mesa de Jantar Jade 4c tampo de Vidro, MDF",
+            "descricao": [
+                "Dimensões:",
+                "Altura: 78cm",
+                "Comprimento: 1.20cm",
+                "Largura: 80cm"
+            ],
+            "esgotado": false,
+            "link": "pagina-produtos/produto.html?id=mesa-de-jantar-jade"
+        },
+        {
+            "id": "unibox-casal-esmeralda",
+            "nome": "Unibox Casal Esmeralda",
+            "preco": "R$ 849,99",
+            "precoCartao": "R$ 990,00",
+            "parcelas": 12,
+            "valorParcela": "R$ 82,50",
+            "imagem": "imagens/imgp/produtos13/produto1.jpeg",
+            "imagens": [
+                "imagens/imgp/produtos13/produto1.jpeg",
+                "imagens/imgp/produtos13/produto2.jpeg",
+                "imagens/imgp/produtos13/produto3.jpeg"
+            ],
+            "resumo": "Unibox Casal Esmeralda Molas Ensacadas",
+            "descricao": [
+                "Informações Técnicas:",
+                "Marca: Ley Colchões",
+                "Linha: Esmeralda",
+                "Modelo: Esmeralda",
+                "Tipo: Cama Box Casal",
+                "Estrutura: Compensado 4 mm",
+                "Molejo: Molas ensacadas individualmente",
+                "Quantidade de molas: 180 molas por m²",
+                "Bitola do arame: 2,2 mm",
+                "Borda perimetral: Aço 4,6 mm",
+                "Espuma principal: Convencional 3 cm D26 kg/m³",
+                "Espuma do bordado: Convencional 2 cm D20 kg/m³",
+                "Revestimento: Tecido plano 100% poliéster com 75 g/m²",
+                "Tratamento: Antiácaro",
+                "Altura dos pés: 12 cm",
+                "Dimensões",
+                "Comprimento: 188 cm",
+                "Largura: 138 cm",
+                "Altura total: 63 cm"
+            ],
+            "esgotado": false,
+            "link": "pagina-produtos/produto.html?id=unibox-casal-esmeralda"
+        },
+        {
+            "id": "box-queen-dublim-c-pillow-top",
+            "nome": "Box Queen Dublim c/ Pillow Top",
+            "preco": "R$ 1.599,99",
+            "precoCartao": "R$ 1.845,00",
+            "parcelas": 12,
+            "valorParcela": "R$ 153,75",
+            "imagem": "imagens/imgp/produtos16/produto1.jpeg",
+            "imagens": [
+                "imagens/imgp/produtos16/produto1.jpeg",
+                "imagens/imgp/produtos16/produto2.jpeg",
+                "imagens/imgp/produtos16/produto3.jpeg"
+            ],
+            "resumo": "Box Queen Dublim Molas Ensacadas com Pillow Top",
+            "descricao": [
+                "Dimensões:",
+                "Altura: 70cm",
+                "Comprimento: 198cm",
+                "Largura: 158cm"
+            ],
+            "esgotado": false,
+            "link": "pagina-produtos/produto.html?id=box-queen-dublim-c-pillow-top"
+        },
+        {
+            "id": "bicama-sofia-solteiro",
+            "nome": "Bicama Sofia Solteiro",
+            "preco": "R$ 899,99",
+            "precoCartao": "R$ 1.050,00",
+            "parcelas": 12,
+            "valorParcela": "R$ 87,50",
+            "imagem": "imagens/imgp/produtos17/produto1.jpeg",
+            "imagens": [
+                "imagens/imgp/produtos17/produto1.jpeg",
+                "imagens/imgp/produtos17/produto2.jpeg"
+            ],
+            "resumo": "Bicama Sofia Solteiro de Espuma",
+            "descricao": [
+                "Dimensões:",
+                "Altura: 53cm",
+                "Comprimento: 188cm",
+                "Largura: 88cm"
+            ],
+            "esgotado": false,
+            "link": "pagina-produtos/produto.html?id=bicama-sofia-solteiro"
+        },
+        {
+            "id": "sofa-imola-onix-2l",
+            "nome": "Sofá Imola Onix 2l",
+            "preco": "R$ 1.399,99",
+            "precoCartao": "R$ 1.620,00",
+            "parcelas": 12,
+            "valorParcela": "R$ 135,00",
+            "imagem": "imagens/imgp/produtos20/produto1.jpeg",
+            "imagens": [
+                "imagens/imgp/produtos20/produto1.jpeg",
+                "imagens/imgp/produtos20/produto2.jpeg"
+            ],
+            "resumo": "Sofá Imola Retrátil Onix 2l",
+            "descricao": [
+                "Dimensões:",
+                "Comprimento: 180m",
+                "Altura: 80cm",
+                "Profundidade: 83cm",
+                "Tecido: 100% poliéster.",
+                "Estofado: Espuma de Poliuretano D20 e D16.",
+                "Base: Madeira maciça c/ tratamento antimofo e secagem em estufa"
+            ],
+            "esgotado": false,
+            "link": "pagina-produtos/produto.html?id=sofa-imola-onix-2l"
+        }
+    ],
     "bloco5": []
 }
