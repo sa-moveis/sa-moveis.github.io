@@ -8,334 +8,514 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&family=Archivo+Black&display=swap" rel="stylesheet">
 
     <style>
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        :root {
-            --vermelho-sa: #b90c29;
-            --azul-sa: #0047BB;
-            --azul-escuro: #003087;
-            --cinza-bg: #f4f5f7;
-            --branco: #ffffff;
-            --texto: #1e1e1e;
-            --borda: #e5e7eb;
-            --shadow: 0 10px 25px rgba(0,0,0,0.08);
-        }
-
-        body {
-            font-family: 'Roboto', sans-serif;
-            background: var(--cinza-bg);
-            color: var(--texto);
-            padding: 30px;
-        }
-
-        .container {
-            max-width: 1100px;
-            margin: auto;
-        }
-
-        .topo {
-            background: linear-gradient(135deg, var(--vermelho-sa), var(--azul-sa));
-            color: white;
-            padding: 30px;
-            border-radius: 18px;
-            margin-bottom: 25px;
-            box-shadow: var(--shadow);
-        }
-
-        .topo h1 {
-            font-family: 'Archivo Black', sans-serif;
-            font-size: 2.4rem;
-            margin-bottom: 8px;
-        }
-
-        .topo p {
-            font-size: 1.1rem;
-            opacity: 0.95;
-        }
-
-        .search-box {
-            background: white;
-            padding: 18px;
-            border-radius: 18px;
-            box-shadow: var(--shadow);
-            margin-bottom: 25px;
-        }
-
-        .search-box input {
-            width: 100%;
-            padding: 15px;
-            border-radius: 12px;
-            border: 2px solid var(--borda);
-            font-size: 1rem;
-            outline: none;
-            transition: 0.3s;
-        }
-
-        .search-box input:focus {
-            border-color: var(--azul-sa);
-            box-shadow: 0 0 0 4px rgba(0,71,187,0.10);
-        }
-
-        .lista {
-            display: grid;
-            gap: 16px;
-        }
-
-        .produto-card {
-            background: white;
-            border-radius: 18px;
-            padding: 18px;
-            box-shadow: var(--shadow);
-            display: grid;
-            grid-template-columns: 90px 1fr auto;
-            gap: 18px;
-            align-items: center;
-            transition: 0.3s;
-        }
-
-        .produto-card:hover {
-            transform: translateY(-2px);
-        }
-
-        .produto-card img {
-            width: 90px;
-            height: 90px;
-            object-fit: cover;
-            border-radius: 14px;
-            background: #eee;
-        }
-
-        .produto-info h2 {
-            font-size: 1.2rem;
-            margin-bottom: 6px;
-            color: var(--azul-escuro);
-        }
-
-        .produto-info p {
-            font-weight: 700;
-            color: var(--vermelho-sa);
-            margin-bottom: 6px;
-        }
-
-        .produto-info small {
-            display: block;
-            color: #666;
-            word-break: break-all;
-            line-height: 1.4;
-        }
-
-        .btn-copy {
-            border: none;
-            padding: 13px 18px;
-            border-radius: 12px;
-            background: linear-gradient(135deg, var(--azul-sa), var(--azul-escuro));
-            color: white;
-            font-weight: 700;
-            cursor: pointer;
-            transition: 0.3s;
-            white-space: nowrap;
-        }
-
-        .btn-copy:hover {
-            transform: scale(1.04);
-            box-shadow: 0 8px 18px rgba(0,71,187,0.25);
-        }
-
-        #telaSenha {
-            position: fixed;
-            inset: 0;
-            background: #f4f5f7;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            z-index: 99999;
-        }
-
-        .login-box {
-            background: white;
-            width: 100%;
-            max-width: 380px;
-            padding: 30px;
-            border-radius: 18px;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.12);
-            text-align: center;
-        }
-
-        .login-box h2 {
-            color: var(--vermelho-sa);
-            margin-bottom: 10px;
-        }
-
-        .login-box p {
-            color: #555;
-            margin-bottom: 20px;
-        }
-
-        .login-box input {
-            width: 100%;
-            padding: 14px;
-            border-radius: 12px;
-            border: 2px solid var(--borda);
-            outline: none;
-            font-size: 1rem;
-            margin-bottom: 15px;
-        }
-
-        .btn-login {
-            width: 100%;
-            padding: 14px;
-            border: none;
-            border-radius: 12px;
-            background: linear-gradient(135deg, #b90c29, #0047BB);
-            color: white;
-            font-weight: bold;
-            font-size: 1rem;
-            cursor: pointer;
-        }
-
-        #erroSenha {
-            display: none;
-            color: var(--vermelho-sa);
-            margin-top: 15px;
-            font-weight: bold;
-        }
-
-        @media (max-width: 700px) {
-
-             body {
-        padding: 12px;
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
     }
 
+    :root {
+        --vermelho-sa: #b90c29;
+        --azul-sa: #0047BB;
+        --azul-escuro: #003087;
+        --cinza-bg: #f4f5f7;
+        --branco: #ffffff;
+        --texto: #1e1e1e;
+        --borda: #e5e7eb;
+        --shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+        --shadow-hover: 0 14px 32px rgba(0, 0, 0, 0.14);
+    }
+
+    body {
+        font-family: 'Roboto', sans-serif;
+        background: var(--cinza-bg);
+        color: var(--texto);
+        padding: 30px;
+    }
+
+    .container {
+        width: 100%;
+        max-width: 1400px;
+        margin: 0 auto;
+    }
+
+    /* ================= TOPO ================= */
+
     .topo {
-        padding: 22px;
+        background: linear-gradient(135deg, var(--vermelho-sa), var(--azul-sa));
+        color: var(--branco);
+        padding: 30px;
+        border-radius: 18px;
+        margin-bottom: 25px;
+        box-shadow: var(--shadow);
     }
 
     .topo h1 {
-        font-size: 1.6rem;
+        font-family: 'Archivo Black', sans-serif;
+        font-size: 2.4rem;
+        margin-bottom: 8px;
+    }
+
+    .topo p {
+        font-size: 1.1rem;
+        line-height: 1.5;
+        opacity: 0.95;
+    }
+
+    /* ================= FILTROS FIXOS ================= */
+
+    .filtros-produtos {
+        position: sticky;
+        top: 0;
+        z-index: 9999;
+
+        background: var(--branco);
+        padding: 14px;
+        border-radius: 15px;
+        margin-bottom: 22px;
+
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas:
+            "pesquisa pesquisa"
+            "categoria ordem";
+        gap: 10px;
+
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+    }
+
+    .filtros-produtos .search-box {
+        grid-area: pesquisa;
+        width: 100%;
+        background: transparent;
+        padding: 0;
+        margin: 0;
+        border-radius: 0;
+        box-shadow: none;
+    }
+
+    .filtros-produtos .search-box input,
+    .filtro-select {
+        width: 100%;
+        height: 50px;
+        padding: 0 14px;
+
+        border-radius: 12px;
+        border: 2px solid var(--borda);
+        background: #f9fafb;
+
+        font-family: 'Roboto', sans-serif;
+        font-size: 1rem;
+        font-weight: 600;
+        color: var(--texto);
+
+        outline: none;
+        transition: 0.3s;
+    }
+
+    .filtros-produtos .search-box input:focus,
+    .filtro-select:focus {
+        background: var(--branco);
+        border-color: var(--azul-sa);
+        box-shadow: 0 0 0 4px rgba(0, 71, 187, 0.10);
+    }
+
+    #filtroCategoria {
+        grid-area: categoria;
+    }
+
+    #filtroPreco {
+        grid-area: ordem;
+    }
+
+    /* ================= CONTADOR ================= */
+
+    .contador-produtos {
+        margin: -6px 0 18px;
+        padding-left: 4px;
+
+        font-size: 1.1rem;
+        font-weight: 700;
+        color: #555555;
+    }
+
+    .contador-produtos strong {
+        color: var(--azul-sa);
+        font-size: 1.2em;
+    }
+
+    .contador-produtos span {
+        color: var(--vermelho-sa);
+    }
+
+    /* ================= GRADE DE PRODUTOS ================= */
+
+    .lista {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 18px;
+        align-items: stretch;
     }
 
     .produto-card {
+        width: 100%;
+        min-width: 0;
+        height: 100%;
 
-        grid-template-columns: 65px 1fr auto;
+        background: var(--branco);
+        border-radius: 18px;
+        padding: 14px;
+        box-shadow: var(--shadow);
 
+        display: flex;
+        flex-direction: column;
         gap: 12px;
 
-        padding: 12px;
+        overflow: hidden;
+        transition: 0.3s ease;
+    }
 
-        align-items: center;
+    .produto-card:hover {
+        transform: translateY(-4px);
+        box-shadow: var(--shadow-hover);
     }
 
     .produto-card img {
+        width: 100%;
+        height: 190px;
 
-        width: 65px;
-        height: 65px;
+        object-fit: cover;
+        display: block;
 
-        border-radius: 10px;
+        border-radius: 14px;
+        background: #eeeeee;
+    }
+
+    .produto-info {
+        flex: 1;
+        min-width: 0;
+
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
     }
 
     .produto-info h2 {
-        font-size: 0.95rem;
-        margin-bottom: 4px;
+        min-height: 42px;
+
+        color: var(--azul-escuro);
+        font-size: 1rem;
+        font-weight: 900;
+        line-height: 1.25;
+
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+
+        overflow: hidden;
     }
 
     .produto-info p {
-        font-size: 0.9rem;
-        margin-bottom: 3px;
+        margin: 0;
+
+        color: var(--vermelho-sa);
+        font-size: 1.05rem;
+        font-weight: 900;
     }
 
     .produto-info small {
-        font-size: 0.7rem;
+        color: #666666;
+        font-size: 0.72rem;
+        line-height: 1.35;
+        word-break: break-all;
+
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+
+        overflow: hidden;
     }
 
-    .btn-copy {
+    /* ================= BOTÕES DOS CARDS ================= */
 
-        width: auto;
+    .produto-acoes {
+        width: 100%;
+        margin-top: auto;
 
-        padding: 10px 12px;
-
-        font-size: 0.8rem;
-
-        border-radius: 10px;
-    }
-}
-
-.filtros-produtos {
-    background: white;
-    padding: 14px;
-    border-radius: 18px;
-    box-shadow: var(--shadow);
-    margin-bottom: 25px;
-
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-areas:
-        "pesquisa pesquisa"
-        "categoria ordem";
-    gap: 10px;
-}
-
-.filtros-produtos .search-box {
-    grid-area: pesquisa;
-    padding: 0;
-    margin: 0;
-    box-shadow: none;
-    border-radius: 0;
-    background: transparent;
-}
-
-.filtros-produtos .search-box input,
-.filtro-select {
-    width: 100%;
-    height: 50px;
-    padding: 0 14px;
-    border-radius: 12px;
-    border: 2px solid var(--borda);
-    background: #f9fafb;
-    font-size: 1rem;
-    font-family: 'Roboto', sans-serif;
-    font-weight: 600;
-    outline: none;
-    transition: 0.3s;
-}
-
-.filtros-produtos .search-box input:focus,
-.filtro-select:focus {
-    background: white;
-    border-color: var(--azul-sa);
-    box-shadow: 0 0 0 4px rgba(0,71,187,0.10);
-}
-
-#filtroCategoria {
-    grid-area: categoria;
-}
-
-#filtroPreco {
-    grid-area: ordem;
-}
-
-@media (max-width: 700px) {
-    .filtros-produtos {
-        padding: 10px;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
         gap: 8px;
     }
 
-    .filtros-produtos .search-box input {
-        height: 44px;
+    .btn-copy,
+    .btn-view {
+        width: 100%;
+        min-width: 0;
+        min-height: 42px;
+
+        border: none;
+        border-radius: 12px;
+        padding: 0 10px;
+
+        color: var(--branco);
+        font-family: 'Roboto', sans-serif;
         font-size: 0.85rem;
+        font-weight: 800;
+        text-align: center;
+        text-decoration: none;
+        white-space: nowrap;
+
+        cursor: pointer;
+        transition: 0.3s;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
 
-    .filtro-select {
-        height: 42px;
-        font-size: 0.72rem;
-        padding: 0 6px;
+    .btn-copy {
+        background: linear-gradient(135deg, var(--azul-sa), var(--azul-escuro));
     }
-}
-    </style>
+
+    .btn-view {
+        background: linear-gradient(135deg, var(--vermelho-sa), #8e081f);
+    }
+
+    .btn-copy:hover,
+    .btn-view:hover {
+        transform: scale(1.04);
+    }
+
+    /* ================= TELA DE SENHA ================= */
+
+    #telaSenha {
+        position: fixed;
+        inset: 0;
+        z-index: 99999;
+
+        background: var(--cinza-bg);
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .login-box {
+        width: calc(100% - 30px);
+        max-width: 380px;
+
+        background: var(--branco);
+        padding: 30px;
+        border-radius: 18px;
+        text-align: center;
+
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+    }
+
+    .login-box h2 {
+        color: var(--vermelho-sa);
+        margin-bottom: 10px;
+    }
+
+    .login-box p {
+        color: #555555;
+        line-height: 1.5;
+        margin-bottom: 20px;
+    }
+
+    .login-box input {
+        width: 100%;
+        height: 48px;
+        padding: 0 14px;
+
+        border-radius: 12px;
+        border: 2px solid var(--borda);
+
+        font-size: 1rem;
+        outline: none;
+        margin-bottom: 15px;
+    }
+
+    .login-box input:focus {
+        border-color: var(--azul-sa);
+        box-shadow: 0 0 0 4px rgba(0, 71, 187, 0.10);
+    }
+
+    .btn-login {
+        width: 100%;
+        height: 48px;
+
+        border: none;
+        border-radius: 12px;
+
+        background: linear-gradient(135deg, var(--vermelho-sa), var(--azul-sa));
+        color: var(--branco);
+
+        font-size: 1rem;
+        font-weight: 800;
+        cursor: pointer;
+    }
+
+    #erroSenha {
+        display: none;
+
+        color: var(--vermelho-sa);
+        margin-top: 15px;
+        font-weight: 800;
+    }
+
+    /* ================= RESPONSIVO ================= */
+
+    @media (max-width: 1200px) {
+        .lista {
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+        }
+
+        .produto-card img {
+            height: 180px;
+        }
+    }
+
+    @media (max-width: 850px) {
+        body {
+            padding: 16px;
+        }
+
+        .topo {
+            padding: 24px;
+            border-radius: 16px;
+        }
+
+        .topo h1 {
+            font-size: 1.8rem;
+        }
+
+        .topo p {
+            font-size: 1rem;
+        }
+
+        .lista {
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 12px;
+        }
+
+        .produto-card {
+            padding: 10px;
+            border-radius: 14px;
+            gap: 10px;
+        }
+
+        .produto-card img {
+            height: 150px;
+            border-radius: 11px;
+        }
+
+        .produto-info h2 {
+            min-height: 38px;
+            font-size: 0.85rem;
+        }
+
+        .produto-info p {
+            font-size: 0.9rem;
+        }
+
+        .produto-info small {
+            font-size: 0.65rem;
+        }
+
+        .produto-acoes {
+            grid-template-columns: 1fr;
+            gap: 6px;
+        }
+
+        .btn-copy,
+        .btn-view {
+            min-height: 36px;
+            border-radius: 9px;
+            font-size: 0.72rem;
+        }
+    }
+
+    @media (max-width: 700px) {
+        body {
+            padding: 0;
+        }
+
+        .topo {
+            border-radius: 0;
+            margin-bottom: 18px;
+            padding: 22px 16px;
+        }
+
+        .topo h1 {
+            font-size: 1.6rem;
+        }
+
+        .filtros-produtos {
+            border-radius: 0;
+            margin-bottom: 18px;
+            padding: 10px;
+            gap: 8px;
+        }
+
+        .filtros-produtos .search-box input {
+            height: 44px;
+            font-size: 0.85rem;
+        }
+
+        .filtro-select {
+            height: 42px;
+            padding: 0 6px;
+            font-size: 0.72rem;
+        }
+
+        .contador-produtos {
+            padding: 0 10px;
+            margin: -6px 0 14px;
+            font-size: 0.95rem;
+        }
+
+        .lista {
+            padding: 0 10px 20px;
+        }
+    }
+
+    @media (max-width: 430px) {
+        .lista {
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 9px;
+            padding: 0 8px 20px;
+        }
+
+        .produto-card {
+            padding: 8px;
+            gap: 8px;
+        }
+
+        .produto-card img {
+            height: 120px;
+        }
+
+        .produto-info h2 {
+            min-height: 34px;
+            font-size: 0.75rem;
+        }
+
+        .produto-info p {
+            font-size: 0.8rem;
+        }
+
+        .produto-info small {
+            display: none;
+        }
+
+        .btn-copy,
+        .btn-view {
+            min-height: 34px;
+            font-size: 0.68rem;
+        }
+    }
+</style>
 </head>
 <body>
 
@@ -395,6 +575,10 @@
         <option value="recente">Mais recentes</option>
     </select>
 </div>
+
+<p class="contador-produtos" id="contadorProdutos">
+    Carregando produtos cadastrados...
+</p>
 
         <div class="lista" id="listaProdutos"></div>
 
@@ -707,11 +891,28 @@ async function carregarProdutos() {
     const pesquisa = document.getElementById("pesquisa");
     const filtroCategoria = document.getElementById("filtroCategoria");
     const filtroPreco = document.getElementById("filtroPreco");
+    const contadorProdutos = document.getElementById("contadorProdutos");
 
     function mostrarProdutos() {
         lista.innerHTML = "";
 
         const produtosFiltrados = filtrarEOrdenarProdutos(produtos);
+        const totalProdutos = produtos.length;
+        const totalFiltrados = produtosFiltrados.length;
+
+        if (totalProdutos === 0) {
+            contadorProdutos.innerHTML = `Nenhum produto cadastrado no momento.`;
+        } else if (totalFiltrados === totalProdutos) {
+            contadorProdutos.innerHTML = `
+            Total de Produtos Cadastrados: <strong>${totalProdutos}</strong> 
+                <span>${totalProdutos === 1 ? "produto cadastrado" : ""}</span>
+            `;
+        } else {
+            contadorProdutos.innerHTML = `
+                Mostrando <strong>${totalFiltrados}</strong> de 
+                <strong>${totalProdutos}</strong> produtos cadastrados.
+            `;
+        }
 
         if (produtosFiltrados.length === 0) {
             lista.innerHTML = `
@@ -740,9 +941,15 @@ async function carregarProdutos() {
                         <small>${linkCompleto}</small>
                     </div>
 
-                    <button class="btn-copy" onclick="copiarLink('${linkCompleto}')">
-                        Copiar link
-                    </button>
+                    <div class="produto-acoes">
+    <button class="btn-copy" onclick="copiarLink('${linkCompleto}')">
+        Copiar link
+    </button>
+
+    <a class="btn-view" href="${linkCompleto}" target="_blank">
+        Ver produto
+    </a>
+</div>
                 </div>
             `;
         });
