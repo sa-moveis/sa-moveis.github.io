@@ -74,7 +74,7 @@
                 "Portas: 6",
                 "Gavetas: 7"
             ],
-            "esgotado": false,
+            "esgotado": true,
             "link": "pagina-produtos/produto.html?id=roupeiro-casal-chicago"
         },
         {
