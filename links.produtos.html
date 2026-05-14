@@ -586,11 +586,29 @@
 
     <script>
 
-    const senhaCorreta = "1234";
+    const senhaCorreta = "saadmin@2026";
     const telaSenha = document.getElementById("telaSenha");
 
-    if (localStorage.getItem("adminAutorizado") === "sim") {
+    const chaveAcesso = "adminAutorizadoAte";
+    const tempoAcessoHoras = 24;
+
+    localStorage.removeItem("adminAutorizado");
+
+    function acessoAindaValido() {
+        const acessoExpiraEm = Number(localStorage.getItem(chaveAcesso));
+
+        if (!acessoExpiraEm) {
+            return false;
+        }
+
+        return Date.now() < acessoExpiraEm;
+    }
+
+    if (acessoAindaValido()) {
         telaSenha.style.display = "none";
+    } else {
+        localStorage.removeItem(chaveAcesso);
+        telaSenha.style.display = "flex";
     }
 
     function verificarSenha() {
@@ -598,8 +616,12 @@
         const erroSenha = document.getElementById("erroSenha");
 
         if (senhaDigitada === senhaCorreta) {
-            localStorage.setItem("adminAutorizado", "sim");
+            const tempoEmMilissegundos = tempoAcessoHoras * 60 * 60 * 1000;
+            const horarioDeExpiracao = Date.now() + tempoEmMilissegundos;
+
+            localStorage.setItem(chaveAcesso, horarioDeExpiracao);
             telaSenha.style.display = "none";
+            erroSenha.style.display = "none";
         } else {
             erroSenha.style.display = "block";
         }
