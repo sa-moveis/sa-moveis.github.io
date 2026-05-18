@@ -34,7 +34,7 @@ body {
     font-family: var(--roboto);
     /* animation: fadeIn 0.8s ease-in-out forwards; */
     position: relative;
-    background-color: #F4F5F7;
+    background-color: #ebebeb;
 }
 
 @keyframes fadeIn {
@@ -1190,6 +1190,9 @@ footer {
     }
     .swiper {
         padding: 0;
+    }
+    .nomeloja {
+        
     }
 
 
