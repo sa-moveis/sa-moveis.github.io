@@ -428,10 +428,10 @@
         {
             "id": "mesa-de-jantar-jade",
             "nome": "Mesa de Jantar Jade",
-            "preco": "R$ 1.599,99",
-            "precoCartao": "R$ 1.840,00",
+            "preco": "R$ 1.699,99",
+            "precoCartao": "R$ 1.980,00",
             "parcelas": 12,
-            "valorParcela": "R$ 145,00",
+            "valorParcela": "R$ 165,00",
             "imagem": "imagens/imgp/produtos12/produto1.jpeg",
             "imagens": [
                 "imagens/imgp/produtos12/produto1.jpeg",
