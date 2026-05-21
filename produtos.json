@@ -68,7 +68,6 @@
             "resumo": "Roupeiro Casal Chicago C/Espelho-Carmolar -Naturale/Off White",
             "descricao": [
                 "Dimensões:",
-                "Material: MDP",
                 "Altura: 180cm",
                 "Largura: 100cm",
                 "Profundidade: 40cm",
@@ -77,33 +76,6 @@
             ],
             "esgotado": true,
             "link": "pagina-produtos/produto.html?id=roupeiro-casal-chicago"
-        },
-        {
-            "id": "roupeiro-solteiro-panama",
-            "nome": "Roupeiro Solteiro Panamá",
-            "preco": "R$ 1.100,00",
-            "precoCartao": "R$ 1.260,00",
-            "parcelas": 12,
-            "valorParcela": "R$ 105,00",
-            "imagem": "imagens/imgp/produtos4/produto1.jpeg",
-            "imagens": [
-                "imagens/imgp/produtos4/produto1.jpeg",
-                "imagens/imgp/produtos4/produto2.jpeg",
-                "imagens/imgp/produtos4/produto3.jpeg",
-                "imagens/imgp/produtos4/produto4.jpeg",
-                "imagens/imgp/produtos4/produto5.jpeg"
-            ],
-            "resumo": "Roupeiro com espelho 2 Portas",
-            "descricao": [
-                "Dimensões:",
-                "Altura: 213cm",
-                "Largura: 126,5cm",
-                "Profundidade: 47cm",
-                "Portas: 2",
-                "Gavetas: 2"
-            ],
-            "esgotado": true,
-            "link": "pagina-produtos/produto.html?id=roupeiro-solteiro-panama"
         },
         {
             "id": "roupeiro-casal-parma",
@@ -130,6 +102,34 @@
             ],
             "esgotado": false,
             "link": "pagina-produtos/produto.html?id=roupeiro-casal-parma"
+        },
+        {
+            "id": "roupeiro-solteiro-panama",
+            "nome": "Roupeiro Solteiro Panamá",
+            "preco": "R$ 1.100,00",
+            "precoCartao": "R$ 1.260,00",
+            "parcelas": 12,
+            "valorParcela": "R$ 105,00",
+            "imagem": "imagens/imgp/produtos4/produto1.jpeg",
+            "imagens": [
+                "imagens/imgp/produtos4/produto1.jpeg",
+                "imagens/imgp/produtos4/produto2.jpeg",
+                "imagens/imgp/produtos4/produto3.jpeg",
+                "imagens/imgp/produtos4/produto4.jpeg",
+                "imagens/imgp/produtos4/produto5.jpeg"
+            ],
+            "resumo": "Roupeiro solteiro Panamá",
+            "descricao": [
+                "Material: MDP",
+                "Dimensões:",
+                "Altura: 213cm",
+                "Largura: 126,5cm",
+                "Profundidade: 47cm",
+                "Portas: 2",
+                "Gavetas: 2"
+            ],
+            "esgotado": true,
+            "link": "pagina-produtos/produto.html?id=roupeiro-solteiro-panama"
         }
     ],
     "bloco2": [
