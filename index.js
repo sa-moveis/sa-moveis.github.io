@@ -1,99 +1,129 @@
- // Menu hambúrguer toggle
-        const menuToggle = document.getElementById('menuToggle');
-        const navLinks = document.getElementById('navLinks');
+// ===============================
+// MENU HAMBÚRGUER
+// ===============================
 
-        menuToggle.addEventListener('click', function() {
-            navLinks.classList.toggle('active');
-            menuToggle.classList.toggle('active');
-        });
+const menuToggle = document.getElementById("menuToggle");
+const navLinks = document.getElementById("navLinks");
 
-        // Fecha o menu ao clicar em um link (em mobile)
-        const links = document.querySelectorAll('.links a');
-        links.forEach(link => {
-            link.addEventListener('click', function() {
-                if (window.innerWidth <= 768) {
-                    navLinks.classList.remove('active');
-                    menuToggle.classList.remove('active');
-                }
-            });
-        });
+if (menuToggle && navLinks) {
+    menuToggle.addEventListener("click", function () {
+        navLinks.classList.toggle("active");
+        menuToggle.classList.toggle("active");
+    });
+}
 
-        
+const links = document.querySelectorAll(".links a");
+
+links.forEach(link => {
+    link.addEventListener("click", function () {
+        if (window.innerWidth <= 768) {
+            navLinks.classList.remove("active");
+            menuToggle.classList.remove("active");
+        }
+    });
+});
 
 
-        document.getElementById('a2').addEventListener('click', function (e) {
-            e.preventDefault();
-            const linkProduto = window.location.href;
-            const mensagem = `👋 Olá! Acessei a página inicial do site da *S.A Móveis* e me interessei em conhecer melhor os produtos e condições de compra.🤩 
-            
+// ===============================
+// WHATSAPP DA PÁGINA INICIAL
+// ===============================
+
+function abrirWhatsappPaginaInicial(e) {
+    e.preventDefault();
+
+    const mensagem = `👋 Olá! Acessei a página inicial do site da *S.A Móveis* e me interessei em conhecer melhor os produtos e condições de compra.🤩 
+
 🔗 https://sa-moveis.github.io`.trim();
-            const url = `https://api.whatsapp.com/send?phone=5586981373829&text=${encodeURIComponent(mensagem)}`;
-            window.open(url, '_blank');
-        });
+
+    const url = `https://api.whatsapp.com/send?phone=5586981373829&text=${encodeURIComponent(mensagem)}`;
+
+    window.open(url, "_blank");
+}
+
+const botaoWhatsappFrente = document.getElementById("a2");
+const botaoWhatsappNav = document.getElementById("lwtp");
+
+if (botaoWhatsappFrente) {
+    botaoWhatsappFrente.addEventListener("click", abrirWhatsappPaginaInicial);
+}
+
+if (botaoWhatsappNav) {
+    botaoWhatsappNav.addEventListener("click", abrirWhatsappPaginaInicial);
+}
 
 
+// ===============================
+// SCROLL SUAVE
+// ===============================
 
-        document.getElementById('lwtp').addEventListener('click', function (e) {
-            e.preventDefault();
-            const linkProduto = window.location.href;
-            const mensagem = `👋 Olá! Acessei a página inicial do *Site da S.A Móveis* e me interessei em conhecer melhor os produtos e condições de compra.🤩 
-            
-🔗 https://sa-moveis.github.io`.trim();
-            const url = `https://api.whatsapp.com/send?phone=5586981373829&text=${encodeURIComponent(mensagem)}`;
-            window.open(url, '_blank');
-        });
+function scrollSuave(target, duration = 1000) {
+    const targetPosition = target.getBoundingClientRect().top;
+    const startPosition = window.pageYOffset;
+    let startTime = null;
 
-
-
-        function scrollSuave(target, duration = 1000) {
-            const targetPosition = target.getBoundingClientRect().top;
-            const startPosition = window.pageYOffset;
-            let startTime = null;
-
-            function animation(currentTime) {
-                if (startTime === null) startTime = currentTime;
-                const timeElapsed = currentTime - startTime;
-                const ease = easeInOutCubic(timeElapsed, startPosition, targetPosition, duration);
-                window.scrollTo(0, ease);
-                if (timeElapsed < duration) requestAnimationFrame(animation);
-            }
-
-            function easeInOutCubic(t, b, c, d) {
-                t /= d / 2;
-                if (t < 1) return c / 2 * t * t * t + b;
-                t -= 2;
-                return c / 2 * (t * t * t + 2) + b;
-            }
-
-            requestAnimationFrame(animation);
+    function animation(currentTime) {
+        if (startTime === null) {
+            startTime = currentTime;
         }
 
-        document.querySelectorAll('a[href^="#"]').forEach(link => {
-            link.addEventListener('click', function (e) {
-                const alvo = document.querySelector(this.getAttribute('href'));
-                if (!alvo) return;
-                e.preventDefault();
-                scrollSuave(alvo, 1100);
-            });
-        });
-       let swipersCriados = [];
+        const timeElapsed = currentTime - startTime;
+        const ease = easeInOutCubic(timeElapsed, startPosition, targetPosition, duration);
 
-let catalogoOriginal = {
-    bloco1: [],
-    bloco2: [],
-    bloco3: [],
-    bloco4: [],
-    bloco5: []
-};
+        window.scrollTo(0, ease);
+
+        if (timeElapsed < duration) {
+            requestAnimationFrame(animation);
+        }
+    }
+
+    function easeInOutCubic(t, b, c, d) {
+        t /= d / 2;
+
+        if (t < 1) {
+            return c / 2 * t * t * t + b;
+        }
+
+        t -= 2;
+
+        return c / 2 * (t * t * t + 2) + b;
+    }
+
+    requestAnimationFrame(animation);
+}
+
+document.querySelectorAll('a[href^="#"]').forEach(link => {
+    link.addEventListener("click", function (e) {
+        const alvo = document.querySelector(this.getAttribute("href"));
+
+        if (!alvo) {
+            return;
+        }
+
+        e.preventDefault();
+        scrollSuave(alvo, 1100);
+    });
+});
+
+
+// ===============================
+// SISTEMA DE PRODUTOS
+// ===============================
+
+let swipersCriados = [];
+let catalogoOriginal = [];
+
+const PRODUTOS_POR_BLOCO = 5;
 
 const searchInput = document.getElementById("searchInput");
 const filtroCategoria = document.getElementById("filtroCategoria");
 const filtroPreco = document.getElementById("filtroPreco");
+const containerVitrines = document.getElementById("vitrinesProdutos");
+
 
 // ===============================
 // NORMALIZAR TEXTO
-// Remove acentos, hífens, símbolos e deixa tudo comparável
 // ===============================
+
 function normalizarTexto(texto) {
     return String(texto || "")
         .normalize("NFD")
@@ -105,21 +135,24 @@ function normalizarTexto(texto) {
         .trim();
 }
 
+
 // ===============================
 // PREÇO PARA NÚMERO
-// Converte "R$ 1.299,90" em 1299.90
 // ===============================
+
 function precoParaNumero(preco) {
-    let valor = String(preco || "")
+    const valor = String(preco || "")
         .replace(/[^\d,]/g, "")
         .replace(",", ".");
 
     return Number(valor) || 0;
 }
 
+
 // ===============================
-// SINÔNIMOS E PALAVRAS RELACIONADAS
+// SINÔNIMOS DAS CATEGORIAS
 // ===============================
+
 const sinonimosCategorias = {
     roupeiros: [
         "roupeiro",
@@ -215,10 +248,11 @@ const sinonimosCategorias = {
     ]
 };
 
+
 // ===============================
-// IDENTIFICAR CATEGORIA AUTOMATICAMENTE
-// Ele olha nome, link e imagem do produto
+// IDENTIFICAR CATEGORIA
 // ===============================
+
 function identificarCategoria(produto) {
     const texto = normalizarTexto(`
         ${produto.nome}
@@ -241,10 +275,11 @@ function identificarCategoria(produto) {
     return "outros";
 }
 
+
 // ===============================
-// SIMILARIDADE SIMPLES ENTRE PALAVRAS
-// Ajuda com pequenas variações digitadas pelo cliente
+// PALAVRAS PARECIDAS
 // ===============================
+
 function palavrasParecidas(palavraDigitada, palavraProduto) {
     palavraDigitada = normalizarTexto(palavraDigitada);
     palavraProduto = normalizarTexto(palavraProduto);
@@ -267,10 +302,11 @@ function palavrasParecidas(palavraDigitada, palavraProduto) {
     return inicioDigitado === inicioProduto;
 }
 
+
 // ===============================
 // BUSCA INTELIGENTE
-// Busca por nome, preço, link, imagem, categoria e sinônimos
 // ===============================
+
 function produtoCombinaComPesquisa(produto, termoPesquisa) {
     if (termoPesquisa === "") {
         return true;
@@ -287,12 +323,10 @@ function produtoCombinaComPesquisa(produto, termoPesquisa) {
         ${categoriaProduto}
     `);
 
-    // Busca direta
     if (textoProduto.includes(termoPesquisa)) {
         return true;
     }
 
-    // Busca por sinônimos da categoria
     const sinonimosDaCategoria = sinonimosCategorias[categoriaProduto] || [];
 
     const encontrouSinonimo = sinonimosDaCategoria.some(sinonimo => {
@@ -309,22 +343,71 @@ function produtoCombinaComPesquisa(produto, termoPesquisa) {
         return true;
     }
 
-    // Busca por palavras separadas
     const palavrasDigitadas = termoPesquisa.split(" ");
     const palavrasDoProduto = textoProduto.split(" ");
 
-    const encontrouPalavraParecida = palavrasDigitadas.some(palavraDigitada => {
+    return palavrasDigitadas.some(palavraDigitada => {
         return palavrasDoProduto.some(palavraProduto => {
             return palavrasParecidas(palavraDigitada, palavraProduto);
         });
     });
-
-    return encontrouPalavraParecida;
 }
+
+
+// ===============================
+// TRANSFORMAR CATÁLOGO EM LISTA ÚNICA
+// ===============================
+
+function transformarCatalogoEmListaUnica(catalogo) {
+    if (Array.isArray(catalogo)) {
+        return catalogo;
+    }
+
+    if (!catalogo || typeof catalogo !== "object") {
+        return [];
+    }
+
+    if (Array.isArray(catalogo.produtos)) {
+        return catalogo.produtos;
+    }
+
+    const blocosAntigos = Object.keys(catalogo)
+        .filter(chave => /^bloco\d+$/i.test(chave))
+        .sort((a, b) => {
+            const numeroA = Number(a.replace(/\D/g, ""));
+            const numeroB = Number(b.replace(/\D/g, ""));
+
+            return numeroA - numeroB;
+        })
+        .map(chave => catalogo[chave]);
+
+    const existeBlocoAntigo = blocosAntigos.some(bloco => Array.isArray(bloco));
+
+    if (existeBlocoAntigo) {
+        return blocosAntigos.flatMap(bloco => {
+            return Array.isArray(bloco) ? bloco : [];
+        });
+    }
+
+    const categoriasAntigas = [
+        catalogo.roupeiros,
+        catalogo.sofas,
+        catalogo.mesas,
+        catalogo.camas,
+        catalogo.eletros,
+        catalogo.outros
+    ];
+
+    return categoriasAntigas.flatMap(categoria => {
+        return Array.isArray(categoria) ? categoria : [];
+    });
+}
+
 
 // ===============================
 // FILTRAR E ORDENAR PRODUTOS
 // ===============================
+
 function filtrarEOrdenarProdutos(produtos) {
     const termo = normalizarTexto(searchInput.value);
     const categoriaSelecionada = filtroCategoria.value;
@@ -361,41 +444,66 @@ function filtrarEOrdenarProdutos(produtos) {
     return produtosFiltrados;
 }
 
+
+// ===============================
+// DIVIDIR PRODUTOS EM BLOCOS DE 5
+// ===============================
+
+function dividirProdutosEmBlocos(produtos, quantidadePorBloco = PRODUTOS_POR_BLOCO) {
+    const blocos = [];
+
+    for (let i = 0; i < produtos.length; i += quantidadePorBloco) {
+        blocos.push(produtos.slice(i, i + quantidadePorBloco));
+    }
+
+    return blocos;
+}
+
+
 // ===============================
 // CARREGAR PRODUTOS
 // ===============================
+
 async function carregarProdutos() {
-    let catalogo = JSON.parse(localStorage.getItem("produtos"));
+    try {
+        let catalogo = null;
+        const produtosSalvos = localStorage.getItem("produtos");
 
-    if (!catalogo) {
-        const resposta = await fetch("produtos.json");
-        catalogo = await resposta.json();
+        if (produtosSalvos) {
+            catalogo = JSON.parse(produtosSalvos);
+        }
+
+        if (!catalogo) {
+            const resposta = await fetch("produtos.json");
+
+            if (!resposta.ok) {
+                throw new Error("Não foi possível carregar o arquivo produtos.json");
+            }
+
+            catalogo = await resposta.json();
+        }
+
+        catalogoOriginal = transformarCatalogoEmListaUnica(catalogo);
+
+        atualizarVitrines();
+    } catch (erro) {
+        console.error("Erro ao carregar os produtos:", erro);
+
+        if (containerVitrines) {
+            containerVitrines.innerHTML = `
+                <div class="mensagem-sem-produtos" style="display: block;">
+                    Não foi possível carregar os produtos.
+                </div>
+            `;
+        }
     }
-
-    if (Array.isArray(catalogo)) {
-        catalogo = {
-            bloco1: catalogo,
-            bloco2: [],
-            bloco3: [],
-            bloco4: [],
-            bloco5: []
-        };
-    }
-
-    catalogoOriginal = {
-        bloco1: catalogo.bloco1 || catalogo.roupeiros || [],
-        bloco2: catalogo.bloco2 || catalogo.sofas || [],
-        bloco3: catalogo.bloco3 || catalogo.mesas || [],
-        bloco4: catalogo.bloco4 || catalogo.camas || [],
-        bloco5: catalogo.bloco5 || catalogo.eletros || []
-    };
-
-    atualizarVitrines();
 }
 
+
 // ===============================
-// ATUALIZAR TODAS AS VITRINES
+// ATUALIZAR VITRINES
 // ===============================
+
 function atualizarVitrines() {
     swipersCriados.forEach(swiper => {
         swiper.destroy(true, true);
@@ -403,101 +511,89 @@ function atualizarVitrines() {
 
     swipersCriados = [];
 
-    let totalProdutosExibidos = 0;
-
-    totalProdutosExibidos += renderizarVitrine(
-        "listaBloco1",
-        "bloco1",
-        filtrarEOrdenarProdutos(catalogoOriginal.bloco1)
-    );
-
-    totalProdutosExibidos += renderizarVitrine(
-        "listaBloco2",
-        "bloco2",
-        filtrarEOrdenarProdutos(catalogoOriginal.bloco2)
-    );
-
-    totalProdutosExibidos += renderizarVitrine(
-        "listaBloco3",
-        "bloco3",
-        filtrarEOrdenarProdutos(catalogoOriginal.bloco3)
-    );
-
-    totalProdutosExibidos += renderizarVitrine(
-        "listaBloco4",
-        "bloco4",
-        filtrarEOrdenarProdutos(catalogoOriginal.bloco4)
-    );
-
-    totalProdutosExibidos += renderizarVitrine(
-        "listaBloco5",
-        "bloco5",
-        filtrarEOrdenarProdutos(catalogoOriginal.bloco5)
-    );
-
-    mostrarMensagemSemProdutos(totalProdutosExibidos);
-    iniciarSwipers();
-}
-// ===============================
-// RENDERIZAR PRODUTOS NA TELA
-// ===============================
-function renderizarVitrine(idLista, idBloco, produtos) {
-    const lista = document.getElementById(idLista);
-    const bloco = document.getElementById(idBloco);
-
-    lista.innerHTML = "";
-
-    if (!produtos || produtos.length === 0) {
-        bloco.style.display = "none";
-        return 0;
+    if (!containerVitrines) {
+        console.error("Container #vitrinesProdutos não encontrado.");
+        return;
     }
 
-    bloco.style.display = "block";
+    containerVitrines.innerHTML = "";
 
-    produtos.forEach(produto => {
-        const categoriaProduto = identificarCategoria(produto);
-        const precoNumerico = precoParaNumero(produto.preco);
-        const produtoEsgotado = produto.esgotado === true || produto.esgotado === "true";
+    const produtosFiltrados = filtrarEOrdenarProdutos(catalogoOriginal);
+    const blocosAutomaticos = dividirProdutosEmBlocos(produtosFiltrados);
 
-        lista.innerHTML += `
-            <div class="swiper-slide"
-                data-name="${normalizarTexto(produto.nome)}"
-                data-categoria="${categoriaProduto}"
-                data-preco="${precoNumerico}">
+    blocosAutomaticos.forEach((produtosDoBloco, index) => {
+        const numeroBloco = index + 1;
 
-                <div class="produto-card ${produtoEsgotado ? 'produto-esgotado' : ''}">
-                    ${produtoEsgotado ? '<div class="faixa-esgotado">ESGOTADO</div>' : ''}
+        const bloco = document.createElement("div");
+        bloco.className = "bloco-vitrine";
+        bloco.id = `bloco${numeroBloco}`;
 
-                    <a 
-                        href="${produtoEsgotado ? '#' : produto.link}" 
-                        ${produtoEsgotado ? 'onclick="event.preventDefault(); return false;" aria-disabled="true"' : ''}>
-
-                        <img src="${produto.imagem}" alt="${produto.nome}">
-
-                        <h3 class="nome-produto">${produto.nome}</h3>
-
-                        <p class="valor-produto">${produto.preco}</p>
-
-                        <p class="parcelas-produto">
-                            ou <span class="valor-acrescimo">${produto.precoCartao}</span>
-                            em ${produto.parcelas}x de ${produto.valorParcela} no Cartão
-                        </p>
-                    </a>
+        bloco.innerHTML = `
+            <div class="swiper vitrine-bloco${numeroBloco}">
+                <div class="swiper-wrapper" id="listaBloco${numeroBloco}">
+                    ${produtosDoBloco.map(produto => criarSlideProduto(produto)).join("")}
                 </div>
+
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-button-next"></div>
             </div>
         `;
+
+        containerVitrines.appendChild(bloco);
     });
 
-    return produtos.length;
+    mostrarMensagemSemProdutos(produtosFiltrados.length);
+    iniciarSwipers();
 }
+
+
+// ===============================
+// CRIAR CARD DO PRODUTO
+// ===============================
+
+function criarSlideProduto(produto) {
+    const categoriaProduto = identificarCategoria(produto);
+    const precoNumerico = precoParaNumero(produto.preco);
+    const produtoEsgotado = produto.esgotado === true || produto.esgotado === "true";
+
+    return `
+        <div class="swiper-slide"
+            data-name="${normalizarTexto(produto.nome)}"
+            data-categoria="${categoriaProduto}"
+            data-preco="${precoNumerico}">
+
+            <div class="produto-card ${produtoEsgotado ? "produto-esgotado" : ""}">
+                ${produtoEsgotado ? '<div class="faixa-esgotado">ESGOTADO</div>' : ""}
+
+                <a
+                    href="${produtoEsgotado ? "#" : produto.link}"
+                    ${produtoEsgotado ? 'onclick="event.preventDefault(); return false;" aria-disabled="true"' : ""}>
+
+                    <img src="${produto.imagem}" alt="${produto.nome}">
+
+                    <h3 class="nome-produto">${produto.nome}</h3>
+
+                    <p class="valor-produto">${produto.preco}</p>
+
+                    <p class="parcelas-produto">
+                        ou <span class="valor-acrescimo">${produto.precoCartao}</span>
+                        em ${produto.parcelas}x de ${produto.valorParcela} no Cartão
+                    </p>
+                </a>
+            </div>
+        </div>
+    `;
+}
+
 
 // ===============================
 // INICIAR SWIPER
 // ===============================
-function iniciarSwipers() {
-    const vitrines = document.querySelectorAll(".swiper");
 
-    vitrines.forEach((vitrine) => {
+function iniciarSwipers() {
+    const vitrines = document.querySelectorAll("#vitrinesProdutos .swiper");
+
+    vitrines.forEach(vitrine => {
         const wrapper = vitrine.querySelector(".swiper-wrapper");
 
         if (!wrapper || wrapper.children.length === 0) {
@@ -520,7 +616,7 @@ function iniciarSwipers() {
         const swiper = new Swiper(vitrine, {
             loop: true,
             rewind: true,
-            watchOverflow: false,
+            watchOverflow: true,
             centerInsufficientSlides: false,
             centeredSlides: false,
             freeMode: false,
@@ -532,37 +628,31 @@ function iniciarSwipers() {
 
             navigation: {
                 nextEl: next,
-                prevEl: prev,
+                prevEl: prev
             },
 
             pagination: {
                 el: pagination,
-                clickable: true,
+                clickable: true
             },
 
             breakpoints: {
                 0: {
                     slidesPerView: 2,
                     slidesPerGroup: 1,
-                    spaceBetween: 10,
+                    spaceBetween: 10
                 },
 
                 768: {
-                    slidesPerView: 2,
-                    slidesPerGroup: 1,
-                    spaceBetween: 12,
-                },
-
-                900: {
                     slidesPerView: 3,
                     slidesPerGroup: 1,
-                    spaceBetween: 16,
+                    spaceBetween: 12
                 },
 
                 1100: {
                     slidesPerView: 4,
                     slidesPerGroup: 1,
-                    spaceBetween: 20,
+                    spaceBetween: 18
                 }
             }
         });
@@ -570,9 +660,12 @@ function iniciarSwipers() {
         swipersCriados.push(swiper);
     });
 }
+
+
 // ===============================
-// MENSAGEM QUANDO NÃO ENCONTRA PRODUTO
+// MENSAGEM SEM PRODUTOS
 // ===============================
+
 function mostrarMensagemSemProdutos(total) {
     let mensagem = document.getElementById("mensagemSemProdutos");
 
@@ -584,18 +677,29 @@ function mostrarMensagemSemProdutos(total) {
         document.getElementById("produtosi").appendChild(mensagem);
     }
 
-    if (total === 0) {
-        mensagem.style.display = "block";
-    } else {
-        mensagem.style.display = "none";
-    }
+    mensagem.style.display = total === 0 ? "block" : "none";
 }
+
 
 // ===============================
 // EVENTOS DOS FILTROS
 // ===============================
-searchInput.addEventListener("input", atualizarVitrines);
-filtroCategoria.addEventListener("change", atualizarVitrines);
-filtroPreco.addEventListener("change", atualizarVitrines);
+
+if (searchInput) {
+    searchInput.addEventListener("input", atualizarVitrines);
+}
+
+if (filtroCategoria) {
+    filtroCategoria.addEventListener("change", atualizarVitrines);
+}
+
+if (filtroPreco) {
+    filtroPreco.addEventListener("change", atualizarVitrines);
+}
+
+
+// ===============================
+// INICIAR SITE
+// ===============================
 
 carregarProdutos();
