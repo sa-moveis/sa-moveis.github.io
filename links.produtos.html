@@ -563,6 +563,7 @@
         <option value="roupeiros">Roupeiros / Guarda-roupas</option>
         <option value="sofas">Sofás</option>
         <option value="camas">Camas / Colchões</option>
+        <option value="comodas">Cômodas</option>
         <option value="mesas">Mesas / Cadeiras</option>
         <option value="eletros">Eletros</option>
         <option value="outros">Outros produtos</option>
@@ -661,6 +662,29 @@ const sinonimosCategorias = {
         "quarto"
     ],
 
+    comodas: [
+        "comoda",
+        "comodas",
+        "cômoda",
+        "cômodas",
+        "comoda quarto",
+        "comoda de quarto",
+        "cômoda quarto",
+        "cômoda de quarto",
+        "comoda infantil",
+        "cômoda infantil",
+        "comoda sapateira",
+        "cômoda sapateira",
+        "gaveteiro",
+        "gaveteiros",
+        "gavetas",
+        "movel com gavetas",
+        "móvel com gavetas",
+        "roupeiro comoda",
+        "guarda roupa com comoda",
+        "quarto comoda"
+    ],
+
     mesas: [
         "mesa",
         "mesas",
@@ -702,8 +726,6 @@ const sinonimosCategorias = {
     outros: [
         "rack",
         "painel",
-        "comoda",
-        "cômoda",
         "balcao",
         "balcão",
         "escrivaninha",
@@ -853,14 +875,34 @@ async function carregarProdutos() {
 
     if (Array.isArray(catalogo)) {
         produtos = catalogo;
-    } else {
-        produtos = [
-            ...(catalogo.bloco1 || catalogo.roupeiros || []),
-            ...(catalogo.bloco2 || catalogo.sofas || []),
-            ...(catalogo.bloco3 || catalogo.mesas || []),
-            ...(catalogo.bloco4 || catalogo.camas || []),
-            ...(catalogo.bloco5 || catalogo.eletros || [])
-        ];
+    } else if (catalogo && typeof catalogo === "object") {
+        const blocosAntigos = Object.keys(catalogo)
+            .filter(chave => /^bloco\d+$/i.test(chave))
+            .sort((a, b) => {
+                const numeroA = Number(a.replace(/\D/g, ""));
+                const numeroB = Number(b.replace(/\D/g, ""));
+
+                return numeroA - numeroB;
+            })
+            .map(chave => catalogo[chave]);
+
+        const existeBlocoAntigo = blocosAntigos.some(bloco => Array.isArray(bloco));
+
+        if (existeBlocoAntigo) {
+            produtos = blocosAntigos.flatMap(bloco => {
+                return Array.isArray(bloco) ? bloco : [];
+            });
+        } else {
+            produtos = [
+                ...(catalogo.roupeiros || []),
+                ...(catalogo.sofas || []),
+                ...(catalogo.camas || []),
+                ...(catalogo.comodas || []),
+                ...(catalogo.mesas || []),
+                ...(catalogo.eletros || []),
+                ...(catalogo.outros || [])
+            ];
+        }
     }
 
     const lista = document.getElementById("listaProdutos");
