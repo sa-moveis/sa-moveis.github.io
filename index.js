@@ -118,6 +118,8 @@ const searchInput = document.getElementById("searchInput");
 const filtroCategoria = document.getElementById("filtroCategoria");
 const filtroPreco = document.getElementById("filtroPreco");
 const containerVitrines = document.getElementById("vitrinesProdutos");
+const btnCompartilharFiltro = document.getElementById("btnCompartilharFiltro");
+
 
 
 // ===============================
@@ -200,6 +202,29 @@ const sinonimosCategorias = {
         "quarto"
     ],
 
+    comodas: [
+        "comoda",
+        "comodas",
+        "cômoda",
+        "cômodas",
+        "comoda quarto",
+        "comoda de quarto",
+        "cômoda quarto",
+        "cômoda de quarto",
+        "comoda infantil",
+        "cômoda infantil",
+        "comoda sapateira",
+        "cômoda sapateira",
+        "gaveteiro",
+        "gaveteiros",
+        "gavetas",
+        "movel com gavetas",
+        "móvel com gavetas",
+        "roupeiro comoda",
+        "guarda roupa com comoda",
+        "quarto comoda"
+    ],
+
     mesas: [
         "mesa",
         "mesas",
@@ -237,7 +262,6 @@ const sinonimosCategorias = {
     outros: [
         "rack",
         "painel",
-        "comoda",
         "balcao",
         "balcão",
         "escrivaninha",
@@ -392,8 +416,9 @@ function transformarCatalogoEmListaUnica(catalogo) {
     const categoriasAntigas = [
         catalogo.roupeiros,
         catalogo.sofas,
-        catalogo.mesas,
         catalogo.camas,
+        catalogo.comodas,
+        catalogo.mesas,
         catalogo.eletros,
         catalogo.outros
     ];
@@ -485,6 +510,7 @@ async function carregarProdutos() {
 
         catalogoOriginal = transformarCatalogoEmListaUnica(catalogo);
 
+        aplicarFiltrosPelaURL();
         atualizarVitrines();
     } catch (erro) {
         console.error("Erro ao carregar os produtos:", erro);
@@ -544,6 +570,7 @@ function atualizarVitrines() {
 
     mostrarMensagemSemProdutos(produtosFiltrados.length);
     iniciarSwipers();
+    atualizarBotaoCompartilharFiltro();
 }
 
 
@@ -701,5 +728,110 @@ if (filtroPreco) {
 // ===============================
 // INICIAR SITE
 // ===============================
+
+// ===============================
+// APLICAR FILTRO PELA URL
+// ===============================
+
+function aplicarFiltrosPelaURL() {
+    const parametros = new URLSearchParams(window.location.search);
+
+    const categoriaURL = parametros.get("categoria");
+    const buscaURL = parametros.get("busca");
+    const ordemURL = parametros.get("ordem");
+
+    if (categoriaURL && filtroCategoria) {
+        const existeCategoria = [...filtroCategoria.options].some(option => {
+            return option.value === categoriaURL;
+        });
+
+        if (existeCategoria) {
+            filtroCategoria.value = categoriaURL;
+        }
+    }
+
+    if (buscaURL && searchInput) {
+        searchInput.value = buscaURL;
+    }
+
+    if (ordemURL && filtroPreco) {
+        const existeOrdem = [...filtroPreco.options].some(option => {
+            return option.value === ordemURL;
+        });
+
+        if (existeOrdem) {
+            filtroPreco.value = ordemURL;
+        }
+    }
+}
+
+// ===============================
+// COMPARTILHAR FILTRO
+// ===============================
+
+function gerarLinkDoFiltroAtual() {
+    const url = new URL(window.location.origin + window.location.pathname);
+
+    const categoriaSelecionada = filtroCategoria ? filtroCategoria.value : "todos";
+    const termoBuscado = searchInput ? searchInput.value.trim() : "";
+    const ordemSelecionada = filtroPreco ? filtroPreco.value : "relevancia";
+
+    if (categoriaSelecionada !== "todos") {
+        url.searchParams.set("categoria", categoriaSelecionada);
+    }
+
+    if (termoBuscado !== "") {
+        url.searchParams.set("busca", termoBuscado);
+    }
+
+    if (ordemSelecionada !== "relevancia") {
+        url.searchParams.set("ordem", ordemSelecionada);
+    }
+
+    url.hash = "produtosi";
+
+    return url.toString();
+}
+
+function copiarLinkDoFiltro() {
+    const linkGerado = gerarLinkDoFiltroAtual();
+
+    navigator.clipboard.writeText(linkGerado).then(() => {
+        const textoOriginal = btnCompartilharFiltro.innerHTML;
+
+        btnCompartilharFiltro.innerHTML = `<i class="fa fa-check"></i> Link copiado`;
+        btnCompartilharFiltro.classList.add("copiado");
+
+        setTimeout(() => {
+            btnCompartilharFiltro.innerHTML = textoOriginal;
+            btnCompartilharFiltro.classList.remove("copiado");
+        }, 2000);
+    }).catch(() => {
+        prompt("Copie o link abaixo:", linkGerado);
+    });
+}
+
+if (btnCompartilharFiltro) {
+    btnCompartilharFiltro.addEventListener("click", copiarLinkDoFiltro);
+}
+
+function atualizarBotaoCompartilharFiltro() {
+    if (!btnCompartilharFiltro) {
+        return;
+    }
+
+    const temCategoriaFiltrada = filtroCategoria && filtroCategoria.value !== "todos";
+    const temBuscaDigitada = searchInput && searchInput.value.trim() !== "";
+
+    const temFiltroAtivo = temCategoriaFiltrada || temBuscaDigitada;
+
+    if (temFiltroAtivo) {
+        btnCompartilharFiltro.classList.add("ativo");
+    } else {
+        btnCompartilharFiltro.classList.remove("ativo");
+    }
+}
+
+
 
 carregarProdutos();

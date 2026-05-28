@@ -777,7 +777,7 @@ footer {
 .filtros-produtos {
     width: 100% !important;
     max-width: 1180px !important;
-    margin: 0 auto 35px auto !important;
+    margin: 0 auto 10px auto !important;
     padding: 12px !important;
 
     display: grid !important;
@@ -1539,7 +1539,100 @@ footer {
 
 
 
+/* ===============================
+   BOTÃO PEQUENO DE COMPARTILHAR FILTRO
+   =============================== */
 
+#btnCompartilharFiltro {
+    grid-area: compartilhar !important;
+
+    display: flex !important;
+    width: 46px !important;
+    height: 50px !important;
+
+    border: 2px solid #e5e7eb !important;
+    background: #f9fafb !important;
+    color: #555555 !important;
+
+    padding: 0 !important;
+    margin: 0 !important;
+
+    border-radius: 12px !important;
+    font-size: 17px !important;
+    cursor: pointer !important;
+
+    align-items: center !important;
+    justify-content: center !important;
+
+    transition: 0.25s ease !important;
+}
+
+#btnCompartilharFiltro.ativo {
+    display: flex !important;
+}
+
+#btnCompartilharFiltro:hover {
+    background: #ffffff !important;
+    border-color: var(--azul-medio-sa) !important;
+    color: var(--azul-medio-sa) !important;
+}
+
+#btnCompartilharFiltro.copiado {
+    background: #f3fff8 !important;
+    border-color: #17603c !important;
+    color: #17603c !important;
+}
+
+#btnCompartilharFiltro i {
+    font-size: 17px !important;
+    line-height: 1 !important;
+}
+
+/* Ajuste necessário para o botão caber dentro da caixa dos filtros */
+.filtros-produtos {
+    grid-template-columns: 1fr 1fr 46px !important;
+    grid-template-areas:
+        "pesquisa pesquisa pesquisa"
+        "categoria ordem compartilhar" !important;
+}
+
+/* Celular */
+@media (max-width: 600px) {
+    .filtros-produtos {
+        grid-template-columns: 1fr 1fr 42px !important;
+        grid-template-areas:
+            "pesquisa pesquisa pesquisa"
+            "categoria ordem compartilhar" !important;
+    }
+
+    #btnCompartilharFiltro {
+        width: 42px !important;
+        height: 42px !important;
+        border-radius: 10px !important;
+        font-size: 15px !important;
+    }
+
+    #btnCompartilharFiltro i {
+        font-size: 15px !important;
+    }
+}
+
+/* Celular muito pequeno */
+@media (max-width: 390px) {
+    .filtros-produtos {
+        grid-template-columns: 1fr 1fr 38px !important;
+    }
+
+    #btnCompartilharFiltro {
+        width: 38px !important;
+        height: 42px !important;
+        font-size: 14px !important;
+    }
+
+    #btnCompartilharFiltro i {
+        font-size: 14px !important;
+    }
+}
 
 
 
