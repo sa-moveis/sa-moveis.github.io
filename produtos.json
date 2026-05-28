@@ -1287,17 +1287,17 @@
         "link": "pagina-produtos/produto.html?id=mesa-de-jantar-dora"
     },
     {
-        "id": "comoda-lagun-rodial",
-        "nome": "Cômoda Lagun Rodial",
+        "id": "comoda-laguna-rodial",
+        "nome": "Cômoda Laguna Rodial",
         "preco": "R$ 599,99",
         "precoCartao": "R$ 660,00",
         "parcelas": 12,
         "valorParcela": "R$ 55,00",
-        "imagem": "imagens/imgp/produtos38/produto1.jpeg",
+        "imagem": "imagens/imgp/produtos37/produto1.jpeg",
         "imagens": [
-            "imagens/imgp/produtos38/produto1.jpeg",
-            "imagens/imgp/produtos38/produto2.jpeg",
-            "imagens/imgp/produtos38/produto3.jpeg"
+            "imagens/imgp/produtos37/produto1.jpeg",
+            "imagens/imgp/produtos37/produto2.jpeg",
+            "imagens/imgp/produtos37/produto3.jpeg"
         ],
         "resumo": "Cômoda Laguna 4 Gavetas com 2 Sapateiras – Rodial Móveis",
         "descricao": [
@@ -1320,7 +1320,7 @@
             "A Cômoda Laguna é um móvel funcional e completo, ideal para organizar roupas, acessórios e calçados em um único lugar. Possui 4 gavetas e 2 sapateiras, além de estrutura resistente em MDP com acabamento em pintura UV."
         ],
         "esgotado": false,
-        "link": "pagina-produtos/produto.html?id=comoda-lagun-rodial"
+        "link": "pagina-produtos/produto.html?id=comoda-laguna-rodial"
     },
     {
         "id": "comoda-kyra-rodial",
@@ -1329,14 +1329,14 @@
         "precoCartao": "R$ 870,00",
         "parcelas": 12,
         "valorParcela": "R$ 72,50",
-        "imagem": "imagens/imgp/produtos39/produto1.jpeg",
+        "imagem": "imagens/imgp/produtos38/produto1.jpeg",
         "imagens": [
-            "imagens/imgp/produtos39/produto1.jpeg",
-            "imagens/imgp/produtos39/produto2.jpeg",
-            "imagens/imgp/produtos39/produto3.jpeg",
-            "imagens/imgp/produtos39/produto4.jpeg",
-            "imagens/imgp/produtos39/produto5.jpeg",
-            "imagens/imgp/produtos39/produto6.jpeg"
+            "imagens/imgp/produtos38/produto1.jpeg",
+            "imagens/imgp/produtos38/produto2.jpeg",
+            "imagens/imgp/produtos38/produto3.jpeg",
+            "imagens/imgp/produtos38/produto4.jpeg",
+            "imagens/imgp/produtos38/produto5.jpeg",
+            "imagens/imgp/produtos38/produto6.jpeg"
         ],
         "resumo": "Cômoda Kyra 4 Gavetas 2 Portas Rodial",
         "descricao": [
@@ -1373,13 +1373,13 @@
         "precoCartao": "R$ 645,00",
         "parcelas": 12,
         "valorParcela": "R$ 53,75",
-        "imagem": "imagens/imgp/produtos40/produto1.jpeg",
+        "imagem": "imagens/imgp/produtos39/produto1.jpeg",
         "imagens": [
-            "imagens/imgp/produtos40/produto1.jpeg",
-            "imagens/imgp/produtos40/produto2.jpeg",
-            "imagens/imgp/produtos40/produto3.jpeg",
-            "imagens/imgp/produtos40/produto4.jpeg",
-            "imagens/imgp/produtos40/produto5.jpeg"
+            "imagens/imgp/produtos39/produto1.jpeg",
+            "imagens/imgp/produtos39/produto2.jpeg",
+            "imagens/imgp/produtos39/produto3.jpeg",
+            "imagens/imgp/produtos39/produto4.jpeg",
+            "imagens/imgp/produtos39/produto5.jpeg"
         ],
         "resumo": "Cômoda Montevidéu 4 Gavetas 1 Porta – Demóbile",
         "descricao": [
@@ -1414,12 +1414,12 @@
         "precoCartao": "R$ 1.260,00",
         "parcelas": 12,
         "valorParcela": "R$ 105,00",
-        "imagem": "imagens/imgp/produtos41/produto1.jpeg",
+        "imagem": "imagens/imgp/produtos40/produto1.jpeg",
         "imagens": [
-            "imagens/imgp/produtos41/produto1.jpeg",
-            "imagens/imgp/produtos41/produto2.jpeg",
-            "imagens/imgp/produtos41/produto3.jpeg",
-            "imagens/imgp/produtos41/produto4.jpeg"
+            "imagens/imgp/produtos40/produto1.jpeg",
+            "imagens/imgp/produtos40/produto2.jpeg",
+            "imagens/imgp/produtos40/produto3.jpeg",
+            "imagens/imgp/produtos40/produto4.jpeg"
         ],
         "resumo": "Cômoda London com Cabideiro Demóbile",
         "descricao": [
