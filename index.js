@@ -466,6 +466,16 @@ function filtrarEOrdenarProdutos(produtos) {
         produtosFiltrados.reverse();
     }
 
+    produtosFiltrados.sort((a, b) => {
+    const produtoAEsgotado = a.esgotado === true || a.esgotado === "true";
+    const produtoBEsgotado = b.esgotado === true || b.esgotado === "true";
+
+    if (produtoAEsgotado === produtoBEsgotado) {
+        return 0;
+    }
+
+    return produtoAEsgotado ? 1 : -1;
+    });
     return produtosFiltrados;
 }
 

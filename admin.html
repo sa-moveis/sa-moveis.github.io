@@ -35,7 +35,7 @@
         }
 
         .container {
-            max-width: 1200px;
+            max-width: 1300px;
             margin: auto;
         }
 
@@ -168,6 +168,125 @@
             transition: 0.3s;
         }
 
+        .produto-controle-ordem {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            flex-shrink: 0;
+        }
+
+        .drag-handle {
+           width: 42px;
+    height: 42px;
+    border: none;
+    border-radius: 12px;
+    background: #1f2937;
+    color: white;
+    font-size: 1.4rem;
+    font-weight: 900;
+    cursor: grab;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    user-select: none;
+    touch-action: none;
+        }
+
+        .drag-handle:active {
+            cursor: grabbing;
+        }
+
+        .produto-posicao {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 4px;
+            min-width: 65px;
+        }
+
+        .produto-posicao span {
+            font-size: 0.7rem;
+            font-weight: 900;
+            color: var(--azul-escuro);
+        }
+
+        .produto-posicao input {
+            width: 60px;
+            margin: 0;
+            padding: 8px;
+            text-align: center;
+            border-radius: 10px;
+            border: 2px solid #e5e7eb;
+            font-weight: 900;
+        }
+
+        .produto-item.arrastando {
+            opacity: 0.45;
+            transform: scale(0.98);
+            border: 2px dashed var(--azul-sa);
+        }
+
+        .produto-item.drop-antes {
+            border-top: 4px solid var(--azul-sa);
+        }
+
+        .produto-item.drop-depois {
+            border-bottom: 4px solid var(--azul-sa);
+        }
+
+
+        .produto-miniatura-admin {
+    width: 72px;
+    height: 72px;
+    border-radius: 12px;
+    overflow: hidden;
+    background: #f3f4f6;
+    border: 2px solid #e5e7eb;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.produto-miniatura-admin img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.produto-miniatura-admin.sem-imagem::after {
+    content: "Sem foto";
+    font-size: 0.7rem;
+    font-weight: 900;
+    color: #777;
+    text-align: center;
+}
+
+.produto-info {
+    flex: 1;
+    min-width: 0;
+}
+
+.produto-info h3 {
+    word-break: break-word;
+}
+
+@media (max-width: 900px) {
+    .produto-miniatura-admin {
+        width: 100%;
+        height: 160px;
+    }
+}
+
+        @media (max-width: 900px) {
+            .produto-controle-ordem {
+                width: 100%;
+                justify-content: space-between;
+            }
+        }
+
         .produto-item:hover {
             border-color: var(--azul-sa);
             transform: translateY(-2px);
@@ -291,7 +410,8 @@
 
 #listaProdutosAdmin {
     flex: 1;
-    min-height: 0;
+    min-height: 300px;
+    max-height: 970px;
     overflow-y: auto;
     padding-right: 8px;
 }
@@ -315,42 +435,42 @@
     background: #8e081f;
 }
         @media (max-width: 900px) {
-
-        .grid > .card {
+    .grid > .card {
         height: auto;
-        }
+    }
 
-        #listaProdutosAdmin {
-            max-height: 500px;
-            overflow-y: auto;
-        }
-            .grid {
-                grid-template-columns: 1fr;
-            }
+    #listaProdutosAdmin {
+        min-height: 300px;
+        max-height: 500px;
+        overflow-y: auto;
+    }
 
-            body {
-                padding: 15px;
-            }
+    .grid {
+        grid-template-columns: 1fr;
+    }
 
-            .topo h1 {
-                font-size: 2rem;
-            }
+    body {
+        padding: 15px;
+    }
 
-            .produto-item {
-                flex-direction: column;
-                align-items: flex-start;
-            }
+    .topo h1 {
+        font-size: 2rem;
+    }
 
-            .acoes {
-                width: 100%;
-            }
+    .produto-item {
+        flex-direction: column;
+        align-items: flex-start;
+    }
 
-            .btn-edit,
-            .btn-remove {
-                flex: 1;
-            }
-        }
+    .acoes {
+        width: 100%;
+    }
 
+    .btn-edit,
+    .btn-remove {
+        flex: 1;
+    }
+}
         .json-wrapper {
     position: relative;
 }
@@ -492,6 +612,10 @@
     font-size: 0.75rem;
     font-weight: 900;
 }
+
+
+
+
     </style>
 </head>
 <body>
@@ -913,7 +1037,6 @@ form.addEventListener("submit", function (e) {
 // ===============================
 // ATUALIZAR LISTA NA TELA
 // ===============================
-
 function atualizarTela() {
     lista.innerHTML = "";
 
@@ -931,7 +1054,32 @@ function atualizarTela() {
         encontrouProduto = true;
 
         lista.innerHTML += `
-            <div class="produto-item">
+            <div class="produto-item" data-index="${index}">
+                <div class="produto-controle-ordem">
+                    <div 
+                        class="drag-handle" 
+                        draggable="true"
+                        title="Arrastar produto">
+                        ☰
+                    </div>
+
+                    <label class="produto-posicao">
+                        <span>POS.</span>
+                        <input 
+                            type="number" 
+                            min="1" 
+                            max="${produtos.length}" 
+                            value="${index + 1}" 
+                            onchange="moverProdutoParaPosicao(${index}, this.value)">
+                    </label>
+                </div>
+                <div class="produto-miniatura-admin">
+                    <img 
+                        src="${produto.imagem}" 
+                        alt="${produto.nome}"
+                        onerror="this.style.display='none'; this.parentElement.classList.add('sem-imagem');">
+                </div>
+
                 <div class="produto-info">
                     <h3>${produto.nome}</h3>
                     <p>${produto.preco}</p>
@@ -974,8 +1122,156 @@ function atualizarTela() {
     }
 
     jsonGerado.value = JSON.stringify(produtos, null, 4);
+
+    configurarArrastarProdutos();
+}
+// ===============================
+// REORDENAR PRODUTOS
+// ===============================
+
+let indexProdutoArrastado = null;
+
+function limparMarcacoesDrag() {
+    const itens = lista.querySelectorAll(".produto-item");
+
+    itens.forEach(item => {
+        item.classList.remove("arrastando", "drop-antes", "drop-depois");
+    });
 }
 
+function cancelarEdicaoAoReordenar() {
+    if (produtoEditando !== null) {
+        produtoEditando = null;
+        botaoSubmit.textContent = "Adicionar produto";
+        form.reset();
+
+        document.getElementById("previewImagemProduto").style.display = "none";
+        document.getElementById("previewImagemProduto").src = "";
+
+        gerarLinkProduto();
+    }
+}
+
+function finalizarReordenacao() {
+    cancelarEdicaoAoReordenar();
+    salvarProdutos();
+    atualizarTela();
+}
+
+function moverProdutoParaPosicao(indexOrigem, novaPosicao) {
+    const posicao = Number(novaPosicao);
+
+    if (!posicao || posicao < 1 || posicao > produtos.length) {
+        atualizarTela();
+        return;
+    }
+
+    const indexDestino = posicao - 1;
+
+    if (indexOrigem === indexDestino) {
+        atualizarTela();
+        return;
+    }
+
+    const produtoMovido = produtos.splice(indexOrigem, 1)[0];
+
+    produtos.splice(indexDestino, 0, produtoMovido);
+
+    finalizarReordenacao();
+}
+
+function moverProdutoPorArrasto(indexOrigem, indexDestino, colocarDepois) {
+    if (
+        indexOrigem === null ||
+        indexOrigem === indexDestino ||
+        indexOrigem < 0 ||
+        indexDestino < 0 ||
+        indexOrigem >= produtos.length ||
+        indexDestino >= produtos.length
+    ) {
+        limparMarcacoesDrag();
+        return;
+    }
+
+    let indexInsercao = colocarDepois ? indexDestino + 1 : indexDestino;
+
+    if (indexOrigem < indexInsercao) {
+        indexInsercao--;
+    }
+
+    const produtoMovido = produtos.splice(indexOrigem, 1)[0];
+
+    produtos.splice(indexInsercao, 0, produtoMovido);
+
+    limparMarcacoesDrag();
+    finalizarReordenacao();
+}
+
+function configurarArrastarProdutos() {
+    const itens = lista.querySelectorAll(".produto-item[data-index]");
+    const alcas = lista.querySelectorAll(".drag-handle[draggable='true']");
+
+    alcas.forEach(alca => {
+        alca.addEventListener("dragstart", function (e) {
+            const item = this.closest(".produto-item");
+
+            if (!item) {
+                return;
+            }
+
+            indexProdutoArrastado = Number(item.dataset.index);
+
+            item.classList.add("arrastando");
+
+            e.dataTransfer.effectAllowed = "move";
+            e.dataTransfer.setData("text/plain", String(indexProdutoArrastado));
+
+            if (e.dataTransfer.setDragImage) {
+                e.dataTransfer.setDragImage(item, 20, 20);
+            }
+        });
+
+        alca.addEventListener("dragend", function () {
+            indexProdutoArrastado = null;
+            limparMarcacoesDrag();
+        });
+    });
+
+    itens.forEach(item => {
+        item.addEventListener("dragover", function (e) {
+            e.preventDefault();
+
+            if (indexProdutoArrastado === null) {
+                return;
+            }
+
+            const caixa = this.getBoundingClientRect();
+            const metade = caixa.top + caixa.height / 2;
+            const mouseEstaDepois = e.clientY > metade;
+
+            this.classList.toggle("drop-antes", !mouseEstaDepois);
+            this.classList.toggle("drop-depois", mouseEstaDepois);
+        });
+
+        item.addEventListener("dragleave", function () {
+            this.classList.remove("drop-antes", "drop-depois");
+        });
+
+        item.addEventListener("drop", function (e) {
+            e.preventDefault();
+
+            const indexDestino = Number(this.dataset.index);
+
+            const caixa = this.getBoundingClientRect();
+            const metade = caixa.top + caixa.height / 2;
+            const colocarDepois = e.clientY > metade;
+
+            moverProdutoPorArrasto(indexProdutoArrastado, indexDestino, colocarDepois);
+
+            indexProdutoArrastado = null;
+        });
+    });
+}
 // ===============================
 // PRÉVIA DA IMAGEM
 // ===============================
@@ -1044,10 +1340,15 @@ function alternarEsgotado(index) {
 
     produto.esgotado = !produto.esgotado;
 
+    if (produto.esgotado === true) {
+        const produtoEsgotado = produtos.splice(index, 1)[0];
+
+        produtos.push(produtoEsgotado);
+    }
+
     salvarProdutos();
     atualizarTela();
 }
-
 // ===============================
 // REMOVER PRODUTO
 // ===============================

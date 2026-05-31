@@ -1,80 +1,73 @@
 [
     {
-        "id": "roupeiro-casal-panama",
-        "nome": "Roupeiro casal Panamá",
-        "preco": "R$ 1.400,00",
-        "precoCartao": "R$ 1.600,00",
-        "parcelas": 10,
-        "valorParcela": "R$ 160,00",
-        "imagem": "imagens/imgp/produtos1/produto1.jpeg",
+        "id": "roupeiro-solteiro-tuco",
+        "nome": "Roupeiro Solteiro Tuco",
+        "preco": "R$ 1.199,99",
+        "precoCartao": "R$ 1.380,00",
+        "parcelas": 12,
+        "valorParcela": "R$ 115,00",
+        "imagem": "imagens/imgp/produtos29/produto1.jpeg",
         "imagens": [
-            "imagens/imgp/produtos1/produto1.jpeg",
-            "imagens/imgp/produtos1/produto2.jpeg",
-            "imagens/imgp/produtos1/produto3.jpeg",
-            "imagens/imgp/produtos1/produto4.jpeg"
+            "imagens/imgp/produtos29/produto1.jpeg",
+            "imagens/imgp/produtos29/produto2.jpeg",
+            "imagens/imgp/produtos29/produto3.jpeg",
+            "imagens/imgp/produtos29/produto4.jpeg",
+            "imagens/imgp/produtos29/produto5.jpeg"
         ],
-        "resumo": "Guarda Roupa Casal com Espelho 3 Portas 4 Gavetas Panamá",
+        "resumo": "Roupeiro Solteiro Tuco",
         "descricao": [
-            "Dimensões:",
-            "Altura: 180cm",
-            "Largura: 100cm",
-            "Profundidade: 40cm",
-            "Portas: 3",
-            "Gavetas: 4"
+            "Informações do Produto",
+            "Marca: Yescasa",
+            "Modelo: Tuco",
+            "Material: MDP",
+            "Quantidade de portas: 2 portas de correr",
+            "Quantidade de gavetas: 2 gavetas",
+            "Possui espelho: Não",
+            "Puxadores: Embutidos",
+            "Necessita montagem: Sim",
+            "Acompanha manual: Sim",
+            "Dimensões",
+            "Altura: 202 cm",
+            "Largura: 134 cm",
+            "Profundidade: 52 cm",
+            "Guarda-roupa compacto e funcional, ideal para quartos pequenos. Possui 2 portas de correr, 2 gavetas e estrutura resistente em MDP, oferecendo praticidade e melhor organização no dia a dia."
         ],
         "esgotado": false,
-        "link": "pagina-produtos/produto.html?id=roupeiro-casal-panama"
+        "link": "pagina-produtos/produto.html?id=roupeiro-solteiro-tuco"
     },
     {
-        "id": "roupeiro-solteiro-estrela",
-        "nome": "Roupeiro Solteiro Estrela",
-        "preco": "R$ 650,00",
-        "precoCartao": "R$ 750,00",
-        "parcelas": 10,
-        "valorParcela": "R$ 75,00",
-        "imagem": "imagens/imgp/produtos2/produto1.jpeg",
+        "id": "cama-box-queen-topazio-vigor",
+        "nome": "Cama Box Queen Topázio Vigor",
+        "preco": "R$ 1.899,99",
+        "precoCartao": "R$ 2.220,00",
+        "parcelas": 12,
+        "valorParcela": "R$ 185,00",
+        "imagem": "imagens/imgp/produtos33/produto1.jpeg",
         "imagens": [
-            "imagens/imgp/produtos2/produto1.jpeg",
-            "imagens/imgp/produtos2/produto2.jpeg",
-            "imagens/imgp/produtos2/produto3.jpeg",
-            "imagens/imgp/produtos2/produto4.jpeg"
+            "imagens/imgp/produtos33/produto1.jpeg",
+            "imagens/imgp/produtos33/produto2.jpeg"
         ],
-        "resumo": "Guarda-roupa Solteiro Estrela Premium",
+        "resumo": "Cama Box Queen Topázio Vigor Molas Ensacadas",
         "descricao": [
-            "Dimensões:",
-            "Altura: 180cm",
-            "Largura: 100cm",
-            "Profundidade: 40cm",
-            "Portas: 4",
-            "Gavetas: 2"
+            "Informações do Produto",
+            "Marca: Topázio",
+            "Modelo: Vigor",
+            "Tipo: Cama Box Casal",
+            "Conjunto: Colchão + Base",
+            "Tipo de colchão: Molas ensacadas individualmente",
+            "Camadas de conforto: Espuma + Pillow Top",
+            "Estrutura da base: Madeira",
+            "Pés: Fixos",
+            "Capacidade",
+            "Suporta até 120 kg por pessoa",
+            "Dimensões",
+            "Largura: 158 cm",
+            "Comprimento: 198 cm",
+            "Altura total: 77 cm",
+            "A Cama Box Vigor oferece conforto, suporte e praticidade para o dia a dia. O conjunto conta com colchão de molas ensacadas, Pillow Top e base resistente, proporcionando noites de sono mais confortáveis e estáveis."
         ],
         "esgotado": false,
-        "link": "pagina-produtos/produto.html?id=roupeiro-solteiro-estrela"
-    },
-    {
-        "id": "roupeiro-casal-chicago",
-        "nome": "Roupeiro casal Chicago",
-        "preco": "R$ 2.600,00",
-        "precoCartao": "R$ 2.960,00",
-        "parcelas": 10,
-        "valorParcela": "R$ 296,00",
-        "imagem": "imagens/imgp/produtos3/produto1.jpeg",
-        "imagens": [
-            "imagens/imgp/produtos3/produto1.jpeg",
-            "imagens/imgp/produtos3/produto2.jpeg",
-            "imagens/imgp/produtos3/produto3.jpeg"
-        ],
-        "resumo": "Roupeiro Casal Chicago C/Espelho-Carmolar -Naturale/Off White",
-        "descricao": [
-            "Dimensões:",
-            "Altura: 180cm",
-            "Largura: 100cm",
-            "Profundidade: 40cm",
-            "Portas: 6",
-            "Gavetas: 7"
-        ],
-        "esgotado": true,
-        "link": "pagina-produtos/produto.html?id=roupeiro-casal-chicago"
+        "link": "pagina-produtos/produto.html?id=cama-box-queen-topazio-vigor"
     },
     {
         "id": "roupeiro-casal-parma",
@@ -103,6 +96,159 @@
         "link": "pagina-produtos/produto.html?id=roupeiro-casal-parma"
     },
     {
+        "id": "cama-box-king-vigor-com-pillow-top",
+        "nome": "Cama Box King Vigor com Pillow Top",
+        "preco": "R$ 2.300,00",
+        "precoCartao": "R$ 2.670,00",
+        "parcelas": 12,
+        "valorParcela": "R$ 222,50",
+        "imagem": "imagens/imgp/produtos30/produto1.jpeg",
+        "imagens": [
+            "imagens/imgp/produtos30/produto1.jpeg",
+            "imagens/imgp/produtos30/produto2.jpeg",
+            "imagens/imgp/produtos30/produto3.jpeg"
+        ],
+        "resumo": "",
+        "descricao": [
+            "Características Técnicas",
+            "Marca: Topázio",
+            "Modelo: Vigor",
+            "Tipo: Cama Box King",
+            "Colchão com molas ensacadas individualmente",
+            "Pillow Top em espuma D-28",
+            "Manta de espuma D-26",
+            "Manta AG",
+            "Material isolante",
+            "Lâmina de EPS",
+            "Base:",
+            "Estrutura em madeira de pinus",
+            "Pés fixos em PVC",
+            "Suporte de peso: até 120 kg por pessoa",
+            "Dimensões do Produto Montado",
+            "Comprimento: 198 cm",
+            "Largura: 198 cm",
+            "Altura: 77 cm",
+            "A Cama Box King Vigor oferece conforto, espaço e qualidade para noites de sono mais tranquilas. Possui colchão com molas ensacadas individualmente, Pillow Top em espuma D-28 e base resistente em madeira de pinus, garantindo maior conforto, estabilidade e durabilidade."
+        ],
+        "esgotado": false,
+        "link": "pagina-produtos/produto.html?id=cama-box-king-vigor-com-pillow-top"
+    },
+    {
+        "id": "roupeiro-casal-panama",
+        "nome": "Roupeiro casal Panamá",
+        "preco": "R$ 1.400,00",
+        "precoCartao": "R$ 1.600,00",
+        "parcelas": 10,
+        "valorParcela": "R$ 160,00",
+        "imagem": "imagens/imgp/produtos1/produto1.jpeg",
+        "imagens": [
+            "imagens/imgp/produtos1/produto1.jpeg",
+            "imagens/imgp/produtos1/produto2.jpeg",
+            "imagens/imgp/produtos1/produto3.jpeg",
+            "imagens/imgp/produtos1/produto4.jpeg"
+        ],
+        "resumo": "Guarda Roupa Casal com Espelho 3 Portas 4 Gavetas Panamá",
+        "descricao": [
+            "Dimensões:",
+            "Altura: 180cm",
+            "Largura: 100cm",
+            "Profundidade: 40cm",
+            "Portas: 3",
+            "Gavetas: 4"
+        ],
+        "esgotado": false,
+        "link": "pagina-produtos/produto.html?id=roupeiro-casal-panama"
+    },
+    {
+        "id": "conjunto-box-veneza-pillow-top-queen",
+        "nome": "Conjunto Box Veneza Pillow Top Queen",
+        "preco": "R$ 2.499,99",
+        "precoCartao": "R$ 2.880,00",
+        "parcelas": 12,
+        "valorParcela": "R$ 240,00",
+        "imagem": "imagens/imgp/produtos44/produto1.jpeg",
+        "imagens": [
+            "imagens/imgp/produtos44/produto1.jpeg",
+            "imagens/imgp/produtos44/produto2.jpeg",
+            "imagens/imgp/produtos44/produto3.jpeg"
+        ],
+        "resumo": "Conjunto Box Veneza Pocket Pillow Top Queen Premium",
+        "descricao": [
+            "Características do produto:",
+            "Modelo: Veneza",
+            "Tipo: Conjunto Box Queen",
+            "Conforto: Premium",
+            "Estrutura do colchão: Pillow Top",
+            "Molas: Ensacadas individualmente Pocket",
+            "Espuma: Lâmina de espuma D28, lâmina de espuma AG e camada adicional de espuma D28",
+            "Tampo do colchão: Tecido em malha 290 fios bordado em espuma D20",
+            "Laterais do colchão: Tecido Suede Europa bordado em espuma D20",
+            "Estrutura interna: Contém poliestireno expandido",
+            "Base: Madeira de reflorestamento e compensado",
+            "Tampo da base: Tecido antiderrapante",
+            "Laterais da base: Tecido Suede Europa bordado",
+            "Indicação: Hotéis, pousadas e alto padrão de conforto",
+            "Dimensões:",
+            "Comprimento: 198 cm",
+            "Largura: 158 cm",
+            "Altura: 71 cm",
+            "O Conjunto Box Veneza Queen oferece conforto premium, acabamento sofisticado e excelente durabilidade. Possui molas Pocket, Pillow Top, espumas D28 e AG, revestimento em malha e suede, sendo uma ótima opção para quem busca mais conforto, qualidade e um descanso de alto padrão."
+        ],
+        "esgotado": false,
+        "link": "pagina-produtos/produto.html?id=conjunto-box-veneza-pillow-top-queen"
+    },
+    {
+        "id": "roupeiro-casal-chicago",
+        "nome": "Roupeiro casal Chicago",
+        "preco": "R$ 2.600,00",
+        "precoCartao": "R$ 2.960,00",
+        "parcelas": 10,
+        "valorParcela": "R$ 296,00",
+        "imagem": "imagens/imgp/produtos3/produto1.jpeg",
+        "imagens": [
+            "imagens/imgp/produtos3/produto1.jpeg",
+            "imagens/imgp/produtos3/produto2.jpeg",
+            "imagens/imgp/produtos3/produto3.jpeg"
+        ],
+        "resumo": "Roupeiro Casal Chicago C/Espelho-Carmolar -Naturale/Off White",
+        "descricao": [
+            "Dimensões:",
+            "Altura: 180cm",
+            "Largura: 100cm",
+            "Profundidade: 40cm",
+            "Portas: 6",
+            "Gavetas: 7"
+        ],
+        "esgotado": true,
+        "link": "pagina-produtos/produto.html?id=roupeiro-casal-chicago"
+    },
+    {
+        "id": "roupeiro-solteiro-estrela",
+        "nome": "Roupeiro Solteiro Estrela",
+        "preco": "R$ 650,00",
+        "precoCartao": "R$ 750,00",
+        "parcelas": 10,
+        "valorParcela": "R$ 75,00",
+        "imagem": "imagens/imgp/produtos2/produto1.jpeg",
+        "imagens": [
+            "imagens/imgp/produtos2/produto1.jpeg",
+            "imagens/imgp/produtos2/produto2.jpeg",
+            "imagens/imgp/produtos2/produto3.jpeg",
+            "imagens/imgp/produtos2/produto4.jpeg"
+        ],
+        "resumo": "Guarda-roupa Solteiro Estrela Premium",
+        "descricao": [
+            "Dimensões:",
+            "Altura: 180cm",
+            "Largura: 100cm",
+            "Profundidade: 40cm",
+            "Portas: 4",
+            "Gavetas: 2"
+        ],
+        "esgotado": false,
+        "link": "pagina-produtos/produto.html?id=roupeiro-solteiro-estrela"
+    },
+    {
         "id": "roupeiro-solteiro-panama",
         "nome": "Roupeiro Solteiro Panamá",
         "preco": "R$ 1.100,00",
@@ -129,46 +275,6 @@
         ],
         "esgotado": true,
         "link": "pagina-produtos/produto.html?id=roupeiro-solteiro-panama"
-    },
-    {
-        "id": "cama-box-bau-casal-socimol",
-        "nome": "Cama Box Baú Casal Socimol",
-        "preco": "R$ 3.499,99",
-        "precoCartao": "R$ 3.924,00",
-        "parcelas": 12,
-        "valorParcela": "R$ 327,00",
-        "imagem": "imagens/imgp/produtos6/produto1.jpeg",
-        "imagens": [
-            "imagens/imgp/produtos6/produto1.jpeg",
-            "imagens/imgp/produtos6/produto2.jpeg",
-            "imagens/imgp/produtos6/produto3.jpeg",
-            "imagens/imgp/produtos6/produto4.jpeg"
-        ],
-        "resumo": "Cama Box Baú Casal Socimol Sintra New com Molas Fio Contínuo",
-        "descricao": [
-            "Medidas:",
-            "Comp: 188 cm",
-            "Larg: 138 cm",
-            "Alt: 70 cm",
-            "Marca: Onix Socimol",
-            "Modelo: Sintra New",
-            "Tipo: Casal",
-            "Tipo de mola: Fio contínuo ensacadas",
-            "Estofamento e composição:",
-            "Espuma de aglomerado densidade 70 kg/m³ (5 cm em cada face)",
-            "Feltro resinado 3 mm / 500 g/m² em cada face",
-            "Revestimento:",
-            "Tecido 100% poliéster",
-            "Tratamento antiácaro",
-            "Faixa lateral em poliéster e polipropileno",
-            "Acabamento:",
-            "Agulhamento na capa",
-            "Agulhamento lateral",
-            "Base:",
-            "Box baú com estrutura resistente"
-        ],
-        "esgotado": false,
-        "link": "pagina-produtos/produto.html?id=cama-box-bau-casal-socimol"
     },
     {
         "id": "cama-box-casal-libre",
@@ -221,6 +327,75 @@
         ],
         "esgotado": false,
         "link": "pagina-produtos/produto.html?id=cama-box-casal-libre"
+    },
+    {
+        "id": "cama-box-casal-nice",
+        "nome": "Cama Box casal Nice",
+        "preco": "R$ 999,99",
+        "precoCartao": "R$ 1.152,00",
+        "parcelas": 12,
+        "valorParcela": "R$ 96,00",
+        "imagem": "imagens/imgp/produtos14/produto1.jpeg",
+        "imagens": [
+            "imagens/imgp/produtos14/produto1.jpeg",
+            "imagens/imgp/produtos14/produto2.jpeg",
+            "imagens/imgp/produtos14/produto3.jpeg"
+        ],
+        "resumo": "Cama Box casal Nice Prime Molas Ensacadas.",
+        "descricao": [
+            "Especificações do produto:",
+            "Medidas: Comp: 188 cm",
+            "Larg: 138 cm",
+            "Alt: 76,5 cm",
+            "Altura do colchão: 24 cm",
+            "Tipo de mola: Ensacadas individualmente",
+            "Densidade da espuma: D-26",
+            "Revestimento: Malha fria",
+            "Tecnologia: Soft Pluma",
+            "Base: Estrutura resistente com pés fixos"
+        ],
+        "esgotado": false,
+        "link": "pagina-produtos/produto.html?id=cama-box-casal-nice"
+    },
+    {
+        "id": "cama-box-bau-casal-socimol",
+        "nome": "Cama Box Baú Casal Socimol",
+        "preco": "R$ 3.499,99",
+        "precoCartao": "R$ 3.924,00",
+        "parcelas": 12,
+        "valorParcela": "R$ 327,00",
+        "imagem": "imagens/imgp/produtos6/produto1.jpeg",
+        "imagens": [
+            "imagens/imgp/produtos6/produto1.jpeg",
+            "imagens/imgp/produtos6/produto2.jpeg",
+            "imagens/imgp/produtos6/produto3.jpeg",
+            "imagens/imgp/produtos6/produto4.jpeg"
+        ],
+        "resumo": "Cama Box Baú Casal Socimol Sintra New com Molas Fio Contínuo",
+        "descricao": [
+            "Medidas:",
+            "Comp: 188 cm",
+            "Larg: 138 cm",
+            "Alt: 70 cm",
+            "Marca: Onix Socimol",
+            "Modelo: Sintra New",
+            "Tipo: Casal",
+            "Tipo de mola: Fio contínuo ensacadas",
+            "Estofamento e composição:",
+            "Espuma de aglomerado densidade 70 kg/m³ (5 cm em cada face)",
+            "Feltro resinado 3 mm / 500 g/m² em cada face",
+            "Revestimento:",
+            "Tecido 100% poliéster",
+            "Tratamento antiácaro",
+            "Faixa lateral em poliéster e polipropileno",
+            "Acabamento:",
+            "Agulhamento na capa",
+            "Agulhamento lateral",
+            "Base:",
+            "Box baú com estrutura resistente"
+        ],
+        "esgotado": false,
+        "link": "pagina-produtos/produto.html?id=cama-box-bau-casal-socimol"
     },
     {
         "id": "sofa-retratil-reclinavel-ibiza",
@@ -338,35 +513,6 @@
         ],
         "esgotado": false,
         "link": "pagina-produtos/produto.html?id=roupeiro-andorinha"
-    },
-    {
-        "id": "cama-box-casal-nice",
-        "nome": "Cama Box casal Nice",
-        "preco": "R$ 999,99",
-        "precoCartao": "R$ 1.152,00",
-        "parcelas": 12,
-        "valorParcela": "R$ 96,00",
-        "imagem": "imagens/imgp/produtos14/produto1.jpeg",
-        "imagens": [
-            "imagens/imgp/produtos14/produto1.jpeg",
-            "imagens/imgp/produtos14/produto2.jpeg",
-            "imagens/imgp/produtos14/produto3.jpeg"
-        ],
-        "resumo": "Cama Box casal Nice Prime Molas Ensacadas.",
-        "descricao": [
-            "Especificações do produto:",
-            "Medidas: Comp: 188 cm",
-            "Larg: 138 cm",
-            "Alt: 76,5 cm",
-            "Altura do colchão: 24 cm",
-            "Tipo de mola: Ensacadas individualmente",
-            "Densidade da espuma: D-26",
-            "Revestimento: Malha fria",
-            "Tecnologia: Soft Pluma",
-            "Base: Estrutura resistente com pés fixos"
-        ],
-        "esgotado": false,
-        "link": "pagina-produtos/produto.html?id=cama-box-casal-nice"
     },
     {
         "id": "box-dublim-casal-padrao",
@@ -974,80 +1120,6 @@
         "link": "pagina-produtos/produto.html?id=roupeiro-casal-london"
     },
     {
-        "id": "roupeiro-solteiro-tuco",
-        "nome": "Roupeiro Solteiro Tuco",
-        "preco": "R$ 1.199,99",
-        "precoCartao": "R$ 1.380,00",
-        "parcelas": 12,
-        "valorParcela": "R$ 115,00",
-        "imagem": "imagens/imgp/produtos29/produto1.jpeg",
-        "imagens": [
-            "imagens/imgp/produtos29/produto1.jpeg",
-            "imagens/imgp/produtos29/produto2.jpeg",
-            "imagens/imgp/produtos29/produto3.jpeg",
-            "imagens/imgp/produtos29/produto4.jpeg",
-            "imagens/imgp/produtos29/produto5.jpeg"
-        ],
-        "resumo": "Roupeiro Solteiro Tuco",
-        "descricao": [
-            "Informações do Produto",
-            "Marca: Yescasa",
-            "Modelo: Tuco",
-            "Material: MDP",
-            "Quantidade de portas: 2 portas de correr",
-            "Quantidade de gavetas: 2 gavetas",
-            "Possui espelho: Não",
-            "Puxadores: Embutidos",
-            "Necessita montagem: Sim",
-            "Acompanha manual: Sim",
-            "Dimensões",
-            "Altura: 202 cm",
-            "Largura: 134 cm",
-            "Profundidade: 52 cm",
-            "Guarda-roupa compacto e funcional, ideal para quartos pequenos. Possui 2 portas de correr, 2 gavetas e estrutura resistente em MDP, oferecendo praticidade e melhor organização no dia a dia."
-        ],
-        "esgotado": false,
-        "link": "pagina-produtos/produto.html?id=roupeiro-solteiro-tuco"
-    },
-    {
-        "id": "cama-box-king-vigor-com-pillow-top",
-        "nome": "Cama Box King Vigor com Pillow Top",
-        "preco": "R$ 2.300,00",
-        "precoCartao": "R$ 2.670,00",
-        "parcelas": 12,
-        "valorParcela": "R$ 222,50",
-        "imagem": "imagens/imgp/produtos30/produto1.jpeg",
-        "imagens": [
-            "imagens/imgp/produtos30/produto1.jpeg",
-            "imagens/imgp/produtos30/produto2.jpeg",
-            "imagens/imgp/produtos30/produto3.jpeg"
-        ],
-        "resumo": "",
-        "descricao": [
-            "Características Técnicas",
-            "Marca: Topázio",
-            "Modelo: Vigor",
-            "Tipo: Cama Box King",
-            "Colchão com molas ensacadas individualmente",
-            "Pillow Top em espuma D-28",
-            "Manta de espuma D-26",
-            "Manta AG",
-            "Material isolante",
-            "Lâmina de EPS",
-            "Base:",
-            "Estrutura em madeira de pinus",
-            "Pés fixos em PVC",
-            "Suporte de peso: até 120 kg por pessoa",
-            "Dimensões do Produto Montado",
-            "Comprimento: 198 cm",
-            "Largura: 198 cm",
-            "Altura: 77 cm",
-            "A Cama Box King Vigor oferece conforto, espaço e qualidade para noites de sono mais tranquilas. Possui colchão com molas ensacadas individualmente, Pillow Top em espuma D-28 e base resistente em madeira de pinus, garantindo maior conforto, estabilidade e durabilidade."
-        ],
-        "esgotado": false,
-        "link": "pagina-produtos/produto.html?id=cama-box-king-vigor-com-pillow-top"
-    },
-    {
         "id": "cama-box-king-liz-premium",
         "nome": "Cama Box King Liz Premium",
         "preco": "R$ 3.799,99",
@@ -1100,75 +1172,6 @@
         "link": "pagina-produtos/produto.html?id=cama-box-king-liz-premium"
     },
     {
-        "id": "cama-unibox-eurosono-europlus",
-        "nome": "Cama Unibox Eurosono Europlus",
-        "preco": "R$ 1.100,00",
-        "precoCartao": "R$ 1.284,60",
-        "parcelas": 12,
-        "valorParcela": "R$ 107,05",
-        "imagem": "imagens/imgp/produtos32/produto1.jpeg",
-        "imagens": [
-            "imagens/imgp/produtos32/produto1.jpeg",
-            "imagens/imgp/produtos32/produto2.jpeg"
-        ],
-        "resumo": "Cama Unibox Eurosono Europlus Conjugado Molas Ensacadas",
-        "descricao": [
-            "Informações do Produto",
-            "Marca: Eurosono",
-            "Modelo: Europlus",
-            "Tipo: Cama Unibox Conjugada",
-            "Tamanho: Casal",
-            "Tipo de colchão: Molas Ensacadas",
-            "Espuma: D26",
-            "Estrutura: Madeira reflorestada seca em estufa",
-            "Tecido superior: Malha fria 100% poliéster",
-            "Revestimento lateral: Tecido plano 100% poliéster",
-            "Borda perimetral: Espuma D26",
-            "Pés: PVC",
-            "Dimensões",
-            "Largura: 138 cm",
-            "Profundidade: 188 cm",
-            "Altura: 70 cm",
-            "A Cama Unibox Europlus oferece conforto, resistência e ótimo suporte para o dia a dia. Conta com molas ensacadas individualmente, espuma D26 e estrutura reforçada em madeira reflorestada, proporcionando mais estabilidade e conforto durante o sono."
-        ],
-        "esgotado": false,
-        "link": "pagina-produtos/produto.html?id=cama-unibox-eurosono-europlus"
-    },
-    {
-        "id": "cama-box-queen-topazio-vigor",
-        "nome": "Cama Box Queen Topázio Vigor",
-        "preco": "R$ 1.899,99",
-        "precoCartao": "R$ 2.220,00",
-        "parcelas": 12,
-        "valorParcela": "R$ 185,00",
-        "imagem": "imagens/imgp/produtos33/produto1.jpeg",
-        "imagens": [
-            "imagens/imgp/produtos33/produto1.jpeg",
-            "imagens/imgp/produtos33/produto2.jpeg"
-        ],
-        "resumo": "Cama Box Queen Topázio Vigor Molas Ensacadas",
-        "descricao": [
-            "Informações do Produto",
-            "Marca: Topázio",
-            "Modelo: Vigor",
-            "Tipo: Cama Box Casal",
-            "Conjunto: Colchão + Base",
-            "Tipo de colchão: Molas ensacadas individualmente",
-            "Camadas de conforto: Espuma + Pillow Top",
-            "Estrutura da base: Madeira",
-            "Pés: Fixos",
-            "Capacidade",
-            "Suporta até 120 kg por pessoa",
-            "Dimensões",
-            "Largura: 158 cm",
-            "Comprimento: 198 cm",
-            "Altura total: 77 cm",
-            "A Cama Box Vigor oferece conforto, suporte e praticidade para o dia a dia. O conjunto conta com colchão de molas ensacadas, Pillow Top e base resistente, proporcionando noites de sono mais confortáveis e estáveis."
-        ],
-        "esgotado": false,
-        "link": "pagina-produtos/produto.html?id=cama-box-queen-topazio-vigor"
-    },
-    {
         "id": "cama-box-unibox-casal-delfos",
         "nome": "Cama Box Unibox casal Delfos",
         "preco": "R$ 999,99",
@@ -1205,6 +1208,41 @@
         ],
         "esgotado": false,
         "link": "pagina-produtos/produto.html?id=cama-box-unibox-casal-delfos"
+    },
+    {
+        "id": "cama-unibox-eurosono-europlus",
+        "nome": "Cama Unibox Eurosono Europlus",
+        "preco": "R$ 1.100,00",
+        "precoCartao": "R$ 1.284,60",
+        "parcelas": 12,
+        "valorParcela": "R$ 107,05",
+        "imagem": "imagens/imgp/produtos32/produto1.jpeg",
+        "imagens": [
+            "imagens/imgp/produtos32/produto1.jpeg",
+            "imagens/imgp/produtos32/produto2.jpeg"
+        ],
+        "resumo": "Cama Unibox Eurosono Europlus Conjugado Molas Ensacadas",
+        "descricao": [
+            "Informações do Produto",
+            "Marca: Eurosono",
+            "Modelo: Europlus",
+            "Tipo: Cama Unibox Conjugada",
+            "Tamanho: Casal",
+            "Tipo de colchão: Molas Ensacadas",
+            "Espuma: D26",
+            "Estrutura: Madeira reflorestada seca em estufa",
+            "Tecido superior: Malha fria 100% poliéster",
+            "Revestimento lateral: Tecido plano 100% poliéster",
+            "Borda perimetral: Espuma D26",
+            "Pés: PVC",
+            "Dimensões",
+            "Largura: 138 cm",
+            "Profundidade: 188 cm",
+            "Altura: 70 cm",
+            "A Cama Unibox Europlus oferece conforto, resistência e ótimo suporte para o dia a dia. Conta com molas ensacadas individualmente, espuma D26 e estrutura reforçada em madeira reflorestada, proporcionando mais estabilidade e conforto durante o sono."
+        ],
+        "esgotado": false,
+        "link": "pagina-produtos/produto.html?id=cama-unibox-eurosono-europlus"
     },
     {
         "id": "comoda-atria-demobile",
@@ -1517,6 +1555,42 @@
         "link": "pagina-produtos/produto.html?id=cama-box-solteiro-topazio-d26"
     },
     {
+        "id": "conjunto-box-veneza-com-pillow-top",
+        "nome": "Conjunto Box Veneza com Pillow Top",
+        "preco": "R$ 2.999,99",
+        "precoCartao": "R$ 3.450,00",
+        "parcelas": 12,
+        "valorParcela": "R$ 287,50",
+        "imagem": "imagens/imgp/produtos45/produto1.jpeg",
+        "imagens": [
+            "imagens/imgp/produtos45/produto1.jpeg",
+            "imagens/imgp/produtos45/produto2.jpeg",
+            "imagens/imgp/produtos45/produto3.jpeg"
+        ],
+        "resumo": "Conjunto Box Veneza Super King Size com Pillow Top Premium",
+        "descricao": [
+            "Características do produto:",
+            "Modelo: Veneza",
+            "Tipo: Conjunto Box Super King Size",
+            "Molas: Ensacadas individualmente",
+            "Estrutura interna: Molas ensacadas com camadas de espuma",
+            "Pillow Top: Camada extra de conforto",
+            "Conforto: Intermediário para macio",
+            "Suporte: Adaptável ao corpo",
+            "Revestimento: Confortável e resistente",
+            "Base: Box reforçada para melhor estabilidade",
+            "Diferencial: Excelente absorção de movimentos",
+            "Indicação: Ideal para quem busca mais espaço, conforto e durabilidade",
+            "Dimensões:",
+            "Comprimento: 203 cm",
+            "Largura: 193 cm",
+            "Altura: 71 cm",
+            "O Conjunto Box Veneza Super King Size oferece muito espaço, conforto e estabilidade para o descanso diário. Possui molas ensacadas, Pillow Top, camadas de espuma e base reforçada, garantindo boa absorção de movimentos, suporte ao corpo e maior durabilidade."
+        ],
+        "esgotado": false,
+        "link": "pagina-produtos/produto.html?id=conjunto-box-veneza-com-pillow-top"
+    },
+    {
         "id": "box-queen-venezza-eurosono",
         "nome": "Box Queen Venezza Eurosono",
         "preco": "R$ 2.100,00",
@@ -1554,79 +1628,5 @@
         ],
         "esgotado": false,
         "link": "pagina-produtos/produto.html?id=box-queen-venezza-eurosono"
-    },
-    {
-        "id": "conjunto-box-veneza-pillow-top-queen",
-        "nome": "Conjunto Box Veneza Pillow Top Queen",
-        "preco": "R$ 2.499,99",
-        "precoCartao": "R$ 2.880,00",
-        "parcelas": 12,
-        "valorParcela": "R$ 240,00",
-        "imagem": "imagens/imgp/produtos44/produto1.jpeg",
-        "imagens": [
-            "imagens/imgp/produtos44/produto1.jpeg",
-            "imagens/imgp/produtos44/produto2.jpeg",
-            "imagens/imgp/produtos44/produto3.jpeg"
-        ],
-        "resumo": "Conjunto Box Veneza Pocket Pillow Top Queen Premium",
-        "descricao": [
-            "Características do produto:",
-            "Modelo: Veneza",
-            "Tipo: Conjunto Box Queen",
-            "Conforto: Premium",
-            "Estrutura do colchão: Pillow Top",
-            "Molas: Ensacadas individualmente Pocket",
-            "Espuma: Lâmina de espuma D28, lâmina de espuma AG e camada adicional de espuma D28",
-            "Tampo do colchão: Tecido em malha 290 fios bordado em espuma D20",
-            "Laterais do colchão: Tecido Suede Europa bordado em espuma D20",
-            "Estrutura interna: Contém poliestireno expandido",
-            "Base: Madeira de reflorestamento e compensado",
-            "Tampo da base: Tecido antiderrapante",
-            "Laterais da base: Tecido Suede Europa bordado",
-            "Indicação: Hotéis, pousadas e alto padrão de conforto",
-            "Dimensões:",
-            "Comprimento: 198 cm",
-            "Largura: 158 cm",
-            "Altura: 71 cm",
-            "O Conjunto Box Veneza Queen oferece conforto premium, acabamento sofisticado e excelente durabilidade. Possui molas Pocket, Pillow Top, espumas D28 e AG, revestimento em malha e suede, sendo uma ótima opção para quem busca mais conforto, qualidade e um descanso de alto padrão."
-        ],
-        "esgotado": false,
-        "link": "pagina-produtos/produto.html?id=conjunto-box-veneza-pillow-top-queen"
-    },
-    {
-        "id": "conjunto-box-veneza-com-pillow-top",
-        "nome": "Conjunto Box Veneza com Pillow Top",
-        "preco": "R$ 2.999,99",
-        "precoCartao": "R$ 3.450,00",
-        "parcelas": 12,
-        "valorParcela": "R$ 287,50",
-        "imagem": "imagens/imgp/produtos45/produto1.jpeg",
-        "imagens": [
-            "imagens/imgp/produtos45/produto1.jpeg",
-            "imagens/imgp/produtos45/produto2.jpeg",
-            "imagens/imgp/produtos45/produto3.jpeg"
-        ],
-        "resumo": "Conjunto Box Veneza Super King Size com Pillow Top Premium",
-        "descricao": [
-            "Características do produto:",
-            "Modelo: Veneza",
-            "Tipo: Conjunto Box Super King Size",
-            "Molas: Ensacadas individualmente",
-            "Estrutura interna: Molas ensacadas com camadas de espuma",
-            "Pillow Top: Camada extra de conforto",
-            "Conforto: Intermediário para macio",
-            "Suporte: Adaptável ao corpo",
-            "Revestimento: Confortável e resistente",
-            "Base: Box reforçada para melhor estabilidade",
-            "Diferencial: Excelente absorção de movimentos",
-            "Indicação: Ideal para quem busca mais espaço, conforto e durabilidade",
-            "Dimensões:",
-            "Comprimento: 203 cm",
-            "Largura: 193 cm",
-            "Altura: 71 cm",
-            "O Conjunto Box Veneza Super King Size oferece muito espaço, conforto e estabilidade para o descanso diário. Possui molas ensacadas, Pillow Top, camadas de espuma e base reforçada, garantindo boa absorção de movimentos, suporte ao corpo e maior durabilidade."
-        ],
-        "esgotado": false,
-        "link": "pagina-produtos/produto.html?id=conjunto-box-veneza-com-pillow-top"
     }
 ]
